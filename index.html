@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OmniFabric — The Unified Intelligence Fabric for Data &amp; AI</title>
+  <meta name="description" content="OmniFabric weaves data, models, and agents into one self-reinforcing intelligence fabric. A hyper-converged, cloud-native data platform with built-in vector search, multimodal processing, and production-grade AI agents." />
+  <meta property="og:title" content="OmniFabric — Control Your Data, Power Your AI" />
+  <meta property="og:description" content="One unified fabric for data, models, and agents. Turn AI strategy into real business ROI." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230bb3c9'/%3E%3Cstop offset='1' stop-color='%2367e3f2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M9 9h14M9 16h14M9 23h14' stroke='%23032128' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='9' r='2.4' fill='%23032128'/%3E%3Ccircle cx='20' cy='16' r='2.4' fill='%23032128'/%3E%3Ccircle cx='14' cy='23' r='2.4' fill='%23032128'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav" id="nav">
+        <a class="brand" href="#top" aria-label="OmniFabric home">
+          <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#0bb3c9"/><stop offset="1" stop-color="#67e3f2"/>
+            </linearGradient></defs>
+            <rect width="32" height="32" rx="8" fill="url(#lg)"/>
+            <path d="M9 9h14M9 16h14M9 23h14" stroke="#032128" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="12" cy="9" r="2.4" fill="#032128"/>
+            <circle cx="20" cy="16" r="2.4" fill="#032128"/>
+            <circle cx="14" cy="23" r="2.4" fill="#032128"/>
+          </svg>
+          Omni<b>Fabric</b>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#platform">Platform</a></li>
+          <li><a href="#capabilities">Capabilities</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#outcomes">Outcomes</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="#" class="signin">Sign in</a>
+          <a href="#get-started" class="btn btn-primary">Start building
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="hero-badge"><span class="pill">NEW</span> Memory &amp; Agent runtime now in general availability</span>
+          <h1>Control your data.<br><span class="grad">Power your AI.</span></h1>
+          <p class="lead">OmniFabric weaves data, models, and agents into one self-reinforcing
+            intelligence fabric — so every AI decision is grounded in trusted, governed,
+            real-time data.</p>
+          <div class="hero-cta">
+            <a href="#get-started" class="btn btn-primary btn-lg">Start building free
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#platform" class="btn btn-outline btn-lg">Explore the platform</a>
+          </div>
+          <div class="hero-trust">
+            <div class="dots"><span></span><span></span><span></span><span></span></div>
+            Trusted by data &amp; AI teams shipping production agents
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="flywheel">
+            <div class="ring"></div>
+            <div class="ring inner"></div>
+            <div class="core"><div><span>Intelligence</span><br><b>Flywheel</b></div></div>
+            <div class="node n1"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></i>Agent</div>
+            <div class="node n2"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></i>Model</div>
+            <div class="node n3"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></i>Data</div>
+          </div>
+          <div class="float-card fc1"><span class="dot"></span> Vector search · 4ms p99</div>
+          <div class="float-card fc2"><span class="dot"></span> Decision lineage captured</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LOGOS ============ -->
+    <section class="logos">
+      <div class="container">
+        <p>One fabric for the modern data &amp; AI stack</p>
+        <div class="logos-row">
+          <span class="lg">Northwind</span>
+          <span class="lg">Vertex&nbsp;Bank</span>
+          <span class="lg">Helix&nbsp;Labs</span>
+          <span class="lg">Acme&nbsp;Logistics</span>
+          <span class="lg">Quanta</span>
+          <span class="lg">Meridian</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PILLARS / FLYWHEEL ============ -->
+    <section class="section" id="platform">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">The intelligence flywheel</span>
+          <h2>Agent · Model · Data — unified in one fabric</h2>
+          <p>Traditional stacks bolt a vector store, a model gateway, and an orchestration
+            layer onto a legacy database. OmniFabric collapses them into a single
+            hyper-converged platform where each layer makes the others smarter.</p>
+        </div>
+        <div class="pillars-grid">
+          <article class="pillar reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+            <span class="tag">Data Layer</span>
+            <h3>One source of truth</h3>
+            <p>A cloud-native, hyper-converged engine unifies transactional and analytical
+              workloads with native vectors — no ETL sprawl, no stale copies.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+            <span class="tag">Model Layer</span>
+            <h3>Any model, governed</h3>
+            <p>Route to any LLM or embedding model through one surface, with every call
+              wrapped in a context snapshot and full audit lineage.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+            <span class="tag">Agent Layer</span>
+            <h3>Agents that improve</h3>
+            <p>Production agents learn from implicit feedback, retain long-term memory,
+              and self-evolve behind regression gates — safely, in production.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats section--tight">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat reveal"><div class="num" data-count="1">1</div><div class="lbl">Unified fabric — DB, vectors, models &amp; agents</div></div>
+          <div class="stat reveal"><div class="num" data-count="100">100+</div><div class="lbl">Models reachable through one API</div></div>
+          <div class="stat reveal"><div class="num">4ms</div><div class="lbl">p99 hybrid &amp; vector search latency</div></div>
+          <div class="stat reveal"><div class="num">99.99%</div><div class="lbl">Availability with decoupled storage</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CAPABILITIES ============ -->
+    <section class="section" id="capabilities">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Platform capabilities</span>
+          <h2>A data platform built for the age of agents</h2>
+          <p>Everything you need to take AI applications from evaluation to production,
+            without stitching together half a dozen systems.</p>
+        </div>
+
+        <!-- Capability 1 — Data platform -->
+        <div class="feature-block reveal">
+          <div class="fb-text">
+            <span class="eyebrow">OmniFabric Core · Data Platform</span>
+            <h3>Hyper-converged, cloud-native data foundation</h3>
+            <p>A single engine that runs transactions and analytics together, with
+              storage and compute decoupled for elastic, independent scaling.</p>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>HTAP in one engine</b> — serve OLTP and OLAP from the same data, no pipelines to sync.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Decoupled storage &amp; compute</b> — scale query power and capacity independently.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Native vector search + ML</b> — embeddings and models live next to your data.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Zero-copy clone &amp; time travel</b> — branch and rewind datasets instantly.</span></li>
+            </ul>
+            <a href="#get-started" class="link-arrow">Explore OmniFabric Core
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="fb-media">
+            <div class="panel">
+              <div class="panel-bar"><i></i><i></i><i></i></div>
+              <pre class="code"><span class="c">-- One query: relational filter + vector recall</span>
+<span class="k">SELECT</span> id, title, <span class="p">summary</span>
+<span class="k">FROM</span>   documents
+<span class="k">WHERE</span>  tenant = <span class="s">'acme'</span>
+  <span class="k">AND</span>  status = <span class="s">'active'</span>
+<span class="k">ORDER BY</span> embedding <span class="m">&lt;-&gt;</span> <span class="p">:query_vec</span>
+<span class="k">LIMIT</span>  8;
+<span class="c">-- p99 4ms · no separate vector DB</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Capability 2 — Multimodal intelligence -->
+        <div class="feature-block reverse reveal">
+          <div class="fb-text">
+            <span class="eyebrow">OmniFabric Intelligence · Multimodal</span>
+            <h3>Turn any data into AI-ready knowledge</h3>
+            <p>Ingest structured, semi-structured, and unstructured sources, then parse,
+              extract, and correlate them into a living knowledge base.</p>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Unified ingestion</b> — databases, files, APIs, and streams into one fabric.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Multimodal processing</b> — PDFs, images, and video parsed and embedded automatically.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Knowledge graphs</b> — semantic correlation links entities across every source.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Automated extraction</b> — document understanding that keeps itself current.</span></li>
+            </ul>
+            <a href="#get-started" class="link-arrow">See multimodal pipelines
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="fb-media">
+            <div class="panel">
+              <div class="panel-bar"><i></i><i></i><i></i></div>
+              <div class="flow">
+                <div class="frow"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></span><div><b>Ingest</b><small>PDF · image · video · tables · streams</small></div></div>
+                <div class="farrow">↓</div>
+                <div class="frow"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></span><div><b>Parse &amp; embed</b><small>extraction · chunking · vectors</small></div></div>
+                <div class="farrow">↓</div>
+                <div class="frow"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.6 7.6 11 16M16.4 7.6 13 16"/></svg></span><div><b>Knowledge base</b><small>semantically linked &amp; queryable</small></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Capability 3 — Agent runtime -->
+        <div class="feature-block reveal">
+          <div class="fb-text">
+            <span class="eyebrow">OmniFabric Agent · AI Runtime</span>
+            <h3>Ship agents you can actually trust in production</h3>
+            <p>An agent harness that captures a context snapshot before every model call,
+              so each decision is explainable, testable, and reversible.</p>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Auditable decision lineage</b> — full context captured before every LLM call.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Self-evolving</b> — prompts and skills auto-update from implicit feedback.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Safe A/B testing</b> — experiment on production data with no duplication risk.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Regression gating</b> — promote only changes that pass quality checks.</span></li>
+            </ul>
+            <a href="#get-started" class="link-arrow">Build trusted agents
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="fb-media">
+            <div class="panel">
+              <div class="panel-bar"><i></i><i></i><i></i></div>
+              <div class="panel-metrics">
+                <div class="pm"><div class="v">100%</div><div class="l">Calls with captured lineage</div></div>
+                <div class="pm"><div class="v">A/B</div><div class="l">Live experiments, zero copies</div></div>
+                <div class="pm"><div class="v">↺</div><div class="l">Point-in-time rollback</div></div>
+                <div class="pm"><div class="v">+31%</div><div class="l">Task success after self-tuning</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Capability 4 — Memory -->
+        <div class="feature-block reverse reveal">
+          <div class="fb-text">
+            <span class="eyebrow">OmniFabric Memory · Agent Memory</span>
+            <h3>Long-term memory with enterprise guardrails</h3>
+            <p>Give agents durable memory that persists across sessions and refines itself
+              over time — fully audited and access-controlled.</p>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Long-term context</b> — retain knowledge across sessions and users.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Adaptive learning</b> — memory continuously refines as the agent works.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Full audit trails</b> — every memory write is traceable and reversible.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Enterprise access control</b> — fine-grained, role-based memory governance.</span></li>
+            </ul>
+            <a href="#get-started" class="link-arrow">Add agent memory
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="fb-media">
+            <div class="panel">
+              <div class="panel-bar"><i></i><i></i><i></i></div>
+              <pre class="code"><span class="c"># Memory that persists and rolls back</span>
+memory.<span class="p">remember</span>(<span class="s">"customer prefers async updates"</span>)
+ctx = memory.<span class="p">recall</span>(user=<span class="s">"acme-42"</span>)
+
+<span class="c"># point-in-time view, fully audited</span>
+memory.<span class="p">as_of</span>(<span class="s">"2026-05-01"</span>).<span class="p">recall</span>(...)
+<span class="c"># access governed by role &amp; policy</span></pre>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ OUTCOMES ============ -->
+    <section class="section outcomes" id="outcomes">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Real business ROI</span>
+          <h2>Turn AI strategy into measurable outcomes</h2>
+          <p>When data, models, and agents share one fabric, work that took days collapses
+            into seconds — and the numbers show up on the bottom line.</p>
+        </div>
+        <div class="outcomes-grid">
+          <div class="outcome reveal">
+            <div class="change"><span class="from">16 days</span><span class="arr">→</span><span class="to">1 min</span></div>
+            <h4>Contract review</h4>
+            <p>Legal teams surface risk clauses instantly instead of reading line by line.</p>
+          </div>
+          <div class="outcome reveal">
+            <div class="change"><span class="from">3 hrs</span><span class="arr">→</span><span class="to">10 sec</span></div>
+            <h4>Data entry</h4>
+            <p>Documents are parsed, structured, and written back automatically.</p>
+          </div>
+          <div class="outcome reveal">
+            <div class="change"><span class="to">80%</span></div>
+            <h4>Less analyst workload</h4>
+            <p>Routine reporting and reconciliation handled by trusted agents.</p>
+          </div>
+          <div class="outcome reveal">
+            <div class="change"><span class="to">90%</span></div>
+            <h4>Faster bid prep</h4>
+            <p>Proposals assembled from the knowledge base in a fraction of the time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOLUTIONS ============ -->
+    <section class="section" id="solutions">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Solutions</span>
+          <h2>Built for the workloads that matter most</h2>
+          <p>One fabric powers a range of high-value, production AI applications.</p>
+        </div>
+        <div class="sol-grid">
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg></div>
+            <h4>Document intelligence</h4>
+            <p>Contract review, claims, and compliance — parsed, understood, and answered with citations.</p>
+            <a href="#get-started" class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <h4>Customer-facing copilots</h4>
+            <p>Support and sales agents grounded in real account data, with memory across every conversation.</p>
+            <a href="#get-started" class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+            <h4>Real-time analytics</h4>
+            <p>HTAP queries over fresh operational data — dashboards and agents read the same source of truth.</p>
+            <a href="#get-started" class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+            <h4>Enterprise search &amp; RAG</h4>
+            <p>Hybrid keyword + vector retrieval across every source, with governance built in.</p>
+            <a href="#get-started" class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h4>Risk &amp; compliance</h4>
+            <p>Every agent decision carries lineage and audit trails regulators can inspect.</p>
+            <a href="#get-started" class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17V9a2 2 0 0 1 2-2h2l2-3h4l2 3h2a2 2 0 0 1 2 2v8"/><circle cx="12" cy="13" r="3"/></svg></div>
+            <h4>Process automation</h4>
+            <p>Back-office workflows — data entry, reconciliation, reporting — run by self-improving agents.</p>
+            <a href="#get-started" class="link-arrow">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section" id="how" style="background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">How it works</span>
+          <h2>From evaluation to production in three steps</h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="n">1</div>
+            <h4>Connect your data</h4>
+            <p>Point OmniFabric at your databases, files, and streams. It ingests, parses, and
+              embeds everything into one governed fabric — no separate vector store required.</p>
+          </div>
+          <div class="step reveal">
+            <div class="n">2</div>
+            <h4>Compose your agents</h4>
+            <p>Wire any model into agents with built-in memory and skills. Every call is
+              snapshotted, so behavior is explainable from day one.</p>
+          </div>
+          <div class="step reveal">
+            <div class="n">3</div>
+            <h4>Ship &amp; self-improve</h4>
+            <p>Run safe A/B tests on live data, gate changes behind regressions, and let agents
+              refine themselves — with rollback always one click away.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta-band" id="get-started">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <h2>Weave your data and AI into one fabric</h2>
+          <p>Start free, connect your first source in minutes, and ship a trusted agent the
+            same day. Talk to us when you're ready to scale.</p>
+          <div class="hero-cta">
+            <a href="#" class="btn btn-primary btn-lg">Start building free
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#" class="btn btn-ghost btn-lg">Book a demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="#top">
+            <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#0bb3c9"/>
+              <path d="M9 9h14M9 16h14M9 23h14" stroke="#032128" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="12" cy="9" r="2.4" fill="#032128"/><circle cx="20" cy="16" r="2.4" fill="#032128"/><circle cx="14" cy="23" r="2.4" fill="#032128"/>
+            </svg>
+            Omni<b>Fabric</b>
+          </a>
+          <p>The unified intelligence fabric for data and AI. Control your data, trust your
+            agents, and turn AI strategy into real business ROI.</p>
+        </div>
+        <div>
+          <h5>Platform</h5>
+          <ul>
+            <li><a href="#platform">Intelligence flywheel</a></li>
+            <li><a href="#capabilities">OmniFabric Core</a></li>
+            <li><a href="#capabilities">Intelligence</a></li>
+            <li><a href="#capabilities">Agent &amp; Memory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Solutions</h5>
+          <ul>
+            <li><a href="#solutions">Document intelligence</a></li>
+            <li><a href="#solutions">Customer copilots</a></li>
+            <li><a href="#solutions">Real-time analytics</a></li>
+            <li><a href="#solutions">Enterprise search</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#get-started">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 OmniFabric. All rights reserved.</span>
+        <div class="social">
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 6.8 9.8.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.5-1.1-4.5-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.5 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.4 6.8-5.3 6.8-9.8C22 6.6 17.5 2 12 2Z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2h3.3l-7.2 8.3L23 22h-6.6l-5.2-6.8L5.2 22H1.9l7.7-8.8L1 2h6.8l4.7 6.2L18.2 2Zm-1.2 18h1.8L7.1 3.9H5.2L17 20Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.2 8.2h4.6V24H.2V8.2Zm7.5 0h4.4v2.2h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 6.9V24h-4.6v-7.1c0-1.7 0-3.9-2.4-3.9s-2.7 1.8-2.7 3.7V24H7.7V8.2Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
