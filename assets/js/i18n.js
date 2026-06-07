@@ -218,7 +218,6 @@
       "case6.results": "Risk-clause review went from over two weeks to about a minute.",
 
       /* ---- testimonials ---- */
-      "tst.eyebrow": "Customer stories",
       "cases.title": "From pilot to production across industries",
       "case1.tag": "Computer Vision",
       "case1.metric": "+40%",
@@ -653,7 +652,6 @@
       "case6.results": "风险条款审查从两周多缩短到约一分钟。",
 
       /* ---- testimonials ---- */
-      "tst.eyebrow": "客户故事",
       "cases.title": "跨行业,从试点走到生产",
       "case1.tag": "计算机视觉",
       "case1.metric": "+40%",
