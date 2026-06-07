@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docs &amp; Resources — OmniFabric</title>
+  <meta name="description" content="Guides, API references, and resources to build on OmniFabric — from your first hybrid query to production agents with memory." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230bb3c9'/%3E%3Cstop offset='1' stop-color='%2367e3f2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M9 9h14M9 16h14M9 23h14' stroke='%23032128' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='9' r='2.4' fill='%23032128'/%3E%3Ccircle cx='20' cy='16' r='2.4' fill='%23032128'/%3E%3Ccircle cx='14' cy='23' r='2.4' fill='%23032128'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav" id="nav">
+        <a class="brand" href="index.html" aria-label="OmniFabric home">
+          <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#0bb3c9"/><stop offset="1" stop-color="#67e3f2"/>
+            </linearGradient></defs>
+            <rect width="32" height="32" rx="8" fill="url(#lg)"/>
+            <path d="M9 9h14M9 16h14M9 23h14" stroke="#032128" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="12" cy="9" r="2.4" fill="#032128"/>
+            <circle cx="20" cy="16" r="2.4" fill="#032128"/>
+            <circle cx="14" cy="23" r="2.4" fill="#032128"/>
+          </svg>
+          Omni<b>Fabric</b>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html#platform" data-i18n="nav.platform">Platform</a></li>
+          <li><a href="index.html#capabilities" data-i18n="nav.capabilities">Capabilities</a></li>
+          <li><a href="index.html#solutions" data-i18n="nav.solutions">Solutions</a></li>
+          <li><a href="index.html#customers" data-i18n="nav.customers">Customers</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="docs.html" data-i18n="nav.docs">Docs</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="lang-toggle" data-lang-toggle aria-label="切换语言">中文</button>
+          <a href="#" class="signin" data-i18n="nav.signin">Sign in</a>
+          <a href="#" class="btn btn-primary"><span data-i18n="nav.cta">Start building</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ SUB HERO ============ -->
+    <section class="subhero">
+      <div class="container">
+        <span class="eyebrow center" style="display:inline-flex;" data-i18n="dc.eyebrow">Docs &amp; Resources</span>
+        <h1 data-i18n="dc.title">Everything you need to build on OmniFabric</h1>
+        <p data-i18n="dc.desc">Guides, references, and examples to take you from your first query to production agents.</p>
+        <div class="docs-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="search" data-i18n-ph="dc.search" placeholder="Search the docs…" aria-label="Search the docs" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUICKSTART ============ -->
+    <section class="section--tight">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow" data-i18n="dc.qs.eyebrow">Quickstart</span>
+          <h2 data-i18n="dc.qs.title">Up and running in minutes</h2>
+        </div>
+        <div class="sol-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+            <h4 data-i18n="dc.qs1.title">Create a workspace</h4>
+            <p data-i18n="dc.qs1.desc">Spin up a fabric workspace and load your first dataset.</p>
+            <a href="#" class="link-arrow"><span data-i18n="dc.qs1.link">Start guide</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 9l3 3-3 3M13 15h3"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg></div>
+            <h4 data-i18n="dc.qs2.title">Run a hybrid query</h4>
+            <p data-i18n="dc.qs2.desc">Combine relational filters with native vector search in one SQL statement.</p>
+            <a href="#" class="link-arrow"><span data-i18n="dc.qs2.link">View tutorial</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+            <h4 data-i18n="dc.qs3.title">Ship your first agent</h4>
+            <p data-i18n="dc.qs3.desc">Wire a model into an agent with memory and decision lineage.</p>
+            <a href="#" class="link-arrow"><span data-i18n="dc.qs3.link">Build an agent</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GUIDES BY TOPIC ============ -->
+    <section class="section" style="background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow" data-i18n="dc.guides.eyebrow">Documentation</span>
+          <h2 data-i18n="dc.guides.title">Browse by topic</h2>
+        </div>
+        <div class="guide-grid">
+          <article class="guide reveal">
+            <div class="guide-head">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+              <h3 data-i18n="dc.g1.title">Data Platform</h3>
+            </div>
+            <p data-i18n="dc.g1.desc">Schema design, HTAP, storage/compute scaling, zero-copy clone &amp; time travel.</p>
+            <div class="guide-links">
+              <a href="#" data-i18n="dc.g1.l1">Tables, indexes &amp; vectors</a>
+              <a href="#" data-i18n="dc.g1.l2">Scaling compute pools</a>
+              <a href="#" data-i18n="dc.g1.l3">Clone &amp; time travel</a>
+            </div>
+          </article>
+          <article class="guide reveal">
+            <div class="guide-head">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.6 7.6 11 16M16.4 7.6 13 16"/></svg></div>
+              <h3 data-i18n="dc.g2.title">Intelligence</h3>
+            </div>
+            <p data-i18n="dc.g2.desc">Ingest and process multimodal data into a queryable knowledge base.</p>
+            <div class="guide-links">
+              <a href="#" data-i18n="dc.g2.l1">Connectors &amp; ingestion</a>
+              <a href="#" data-i18n="dc.g2.l2">Document parsing</a>
+              <a href="#" data-i18n="dc.g2.l3">Building knowledge graphs</a>
+            </div>
+          </article>
+          <article class="guide reveal">
+            <div class="guide-head">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+              <h3 data-i18n="dc.g3.title">Agents</h3>
+            </div>
+            <p data-i18n="dc.g3.desc">Compose agents, capture decision lineage, run safe A/B tests.</p>
+            <div class="guide-links">
+              <a href="#" data-i18n="dc.g3.l1">Agent runtime basics</a>
+              <a href="#" data-i18n="dc.g3.l2">Decision lineage</a>
+              <a href="#" data-i18n="dc.g3.l3">A/B testing &amp; gating</a>
+            </div>
+          </article>
+          <article class="guide reveal">
+            <div class="guide-head">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 5 2 7h10c0-2 2-4 2-7a7 7 0 0 0-7-7Z"/><path d="M9 21h6"/></svg></div>
+              <h3 data-i18n="dc.g4.title">Memory</h3>
+            </div>
+            <p data-i18n="dc.g4.desc">Give agents long-term, governed memory with rollback.</p>
+            <div class="guide-links">
+              <a href="#" data-i18n="dc.g4.l1">Storing &amp; recalling</a>
+              <a href="#" data-i18n="dc.g4.l2">Point-in-time views</a>
+              <a href="#" data-i18n="dc.g4.l3">Access control</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ API REFERENCE ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="api-panel reveal">
+          <div>
+            <span class="eyebrow" data-i18n="dc.api.eyebrow">API Reference</span>
+            <h2 data-i18n="dc.api.title">One API for data, models &amp; agents</h2>
+            <p data-i18n="dc.api.desc">REST and SDK references for every capability, with copy-paste examples in
+              Python, TypeScript, and SQL.</p>
+            <div class="api-btns">
+              <a href="#" class="btn btn-primary" data-i18n="dc.api.b1">REST API reference</a>
+              <a href="#" class="btn btn-ghost" data-i18n="dc.api.b2">Python SDK</a>
+              <a href="#" class="btn btn-ghost" data-i18n="dc.api.b3">TypeScript SDK</a>
+            </div>
+          </div>
+          <div class="api-code">
+<pre class="code"><span class="k">from</span> omnifabric <span class="k">import</span> Client
+
+of = Client(api_key=<span class="s">"of_live_..."</span>)
+
+<span class="c"># hybrid search + an agent call, one SDK</span>
+docs = of.<span class="p">search</span>(
+    query=<span class="s">"refund policy"</span>,
+    top_k=<span class="m">8</span>, hybrid=<span class="k">True</span>,
+)
+answer = of.<span class="p">agent</span>(<span class="s">"support"</span>).<span class="p">run</span>(
+    input=question, context=docs,
+)  <span class="c"># lineage captured automatically</span></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESOURCES ============ -->
+    <section class="section" style="background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow" data-i18n="dc.res.eyebrow">Resources</span>
+          <h2 data-i18n="dc.res.title">Go deeper</h2>
+        </div>
+        <div class="sol-grid">
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg></div>
+            <h4 data-i18n="dc.r1.title">Tutorials</h4>
+            <p data-i18n="dc.r1.desc">Step-by-step walkthroughs for common use cases.</p>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg></div>
+            <h4 data-i18n="dc.r2.title">Architecture guides</h4>
+            <p data-i18n="dc.r2.desc">Reference designs for production deployments.</p>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+            <h4 data-i18n="dc.r3.title">Blog</h4>
+            <p data-i18n="dc.r3.desc">Engineering deep-dives and product updates.</p>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h4 data-i18n="dc.r4.title">Community</h4>
+            <p data-i18n="dc.r4.desc">Join the discussion and get help from the team.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <h2 data-i18n="dc.cta.title">Ready to start building?</h2>
+          <p data-i18n="dc.cta.desc">Create a free workspace and run your first hybrid query in minutes.</p>
+          <div class="hero-cta">
+            <a href="#" class="btn btn-primary btn-lg"><span data-i18n="dc.cta.b1">Start building free</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#" class="btn btn-ghost btn-lg" data-i18n="dc.cta.b2">Talk to an engineer</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html">
+            <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#0bb3c9"/>
+              <path d="M9 9h14M9 16h14M9 23h14" stroke="#032128" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="12" cy="9" r="2.4" fill="#032128"/><circle cx="20" cy="16" r="2.4" fill="#032128"/><circle cx="14" cy="23" r="2.4" fill="#032128"/>
+            </svg>
+            Omni<b>Fabric</b>
+          </a>
+          <p data-i18n="footer.about">The unified intelligence fabric for data and AI. Control your data, trust your
+            agents, and turn AI strategy into real business ROI.</p>
+        </div>
+        <div>
+          <h5 data-i18n="footer.platform">Platform</h5>
+          <ul>
+            <li><a href="index.html#platform" data-i18n="footer.pf1">Intelligence flywheel</a></li>
+            <li><a href="index.html#capabilities" data-i18n="footer.pf2">OmniFabric Core</a></li>
+            <li><a href="index.html#capabilities" data-i18n="footer.pf3">Intelligence</a></li>
+            <li><a href="index.html#capabilities" data-i18n="footer.pf4">Agent &amp; Memory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 data-i18n="footer.solutions">Solutions</h5>
+          <ul>
+            <li><a href="index.html#solutions" data-i18n="footer.sf1">Document intelligence</a></li>
+            <li><a href="index.html#solutions" data-i18n="footer.sf2">Customer copilots</a></li>
+            <li><a href="index.html#solutions" data-i18n="footer.sf3">Real-time analytics</a></li>
+            <li><a href="index.html#solutions" data-i18n="footer.sf4">Enterprise search</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 data-i18n="footer.company">Company</h5>
+          <ul>
+            <li><a href="#" data-i18n="footer.cf1">About</a></li>
+            <li><a href="docs.html" data-i18n="footer.cf2">Documentation</a></li>
+            <li><a href="#" data-i18n="footer.cf3">Security</a></li>
+            <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copyright">© 2026 OmniFabric. All rights reserved.</span>
+        <div class="social">
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 6.8 9.8.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.5-1.1-4.5-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.5 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.4 6.8-5.3 6.8-9.8C22 6.6 17.5 2 12 2Z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2h3.3l-7.2 8.3L23 22h-6.6l-5.2-6.8L5.2 22H1.9l7.7-8.8L1 2h6.8l4.7 6.2L18.2 2Zm-1.2 18h1.8L7.1 3.9H5.2L17 20Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.2 8.2h4.6V24H.2V8.2Zm7.5 0h4.4v2.2h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 6.9V24h-4.6v-7.1c0-1.7 0-3.9-2.4-3.9s-2.7 1.8-2.7 3.7V24H7.7V8.2Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

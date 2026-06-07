@@ -32,16 +32,18 @@
         </a>
 
         <ul class="nav-links">
-          <li><a href="index.html#platform">Platform</a></li>
-          <li><a href="index.html#capabilities">Capabilities</a></li>
-          <li><a href="index.html#solutions">Solutions</a></li>
-          <li><a href="index.html#customers">Customers</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="index.html#platform" data-i18n="nav.platform">Platform</a></li>
+          <li><a href="index.html#capabilities" data-i18n="nav.capabilities">Capabilities</a></li>
+          <li><a href="index.html#solutions" data-i18n="nav.solutions">Solutions</a></li>
+          <li><a href="index.html#customers" data-i18n="nav.customers">Customers</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="docs.html" data-i18n="nav.docs">Docs</a></li>
         </ul>
 
         <div class="nav-actions">
-          <a href="#" class="signin">Sign in</a>
-          <a href="#" class="btn btn-primary">Start building
+          <button class="lang-toggle" data-lang-toggle aria-label="切换语言">中文</button>
+          <a href="#" class="signin" data-i18n="nav.signin">Sign in</a>
+          <a href="#" class="btn btn-primary"><span data-i18n="nav.cta">Start building</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -56,9 +58,9 @@
     <!-- ============ SUB HERO ============ -->
     <section class="subhero">
       <div class="container">
-        <span class="eyebrow center" style="display:inline-flex;">Pricing</span>
-        <h1>Start free. Scale when you're ready.</h1>
-        <p>One fabric, transparent pricing. Pay for what you use across data, models,
+        <span class="eyebrow center" style="display:inline-flex;" data-i18n="pr.eyebrow">Pricing</span>
+        <h1 data-i18n="pr.title">Start free. Scale when you're ready.</h1>
+        <p data-i18n="pr.desc">One fabric, transparent pricing. Pay for what you use across data, models,
           and agents — with no surprise line items.</p>
       </div>
     </section>
@@ -70,65 +72,65 @@
 
           <!-- Developer -->
           <div class="price reveal">
-            <div class="price-name">Developer</div>
-            <p class="price-desc">For prototypes and side projects exploring the fabric.</p>
-            <div class="price-amt">$0 <small>/ month</small></div>
-            <a href="#" class="btn btn-outline">Start free</a>
+            <div class="price-name" data-i18n="pr.dev.name">Developer</div>
+            <p class="price-desc" data-i18n="pr.dev.desc">For prototypes and side projects exploring the fabric.</p>
+            <div class="price-amt">$0 <small data-i18n="pr.dev.unit">/ month</small></div>
+            <a href="#" class="btn btn-outline" data-i18n="pr.dev.cta">Start free</a>
             <ul class="price-list">
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>1 fabric workspace</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>5 GB storage &amp; native vectors</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Access to all models via 1 API</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>1 production agent</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Community support</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.dev.f1">1 fabric workspace</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.dev.f2">5 GB storage &amp; native vectors</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.dev.f3">Access to all models via 1 API</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.dev.f4">1 production agent</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.dev.f5">Community support</span></li>
             </ul>
           </div>
 
           <!-- Team (featured) -->
           <div class="price featured reveal">
-            <span class="badge">Most popular</span>
-            <div class="price-name">Team</div>
-            <p class="price-desc">For teams shipping AI applications to production.</p>
-            <div class="price-amt"><span class="from">from</span>$499 <small>/ month</small></div>
-            <a href="#" class="btn btn-primary">Start 14-day trial</a>
+            <span class="badge" data-i18n="pr.team.badge">Most popular</span>
+            <div class="price-name" data-i18n="pr.team.name">Team</div>
+            <p class="price-desc" data-i18n="pr.team.desc">For teams shipping AI applications to production.</p>
+            <div class="price-amt"><span class="from" data-i18n="pr.team.from">from</span>$499 <small data-i18n="pr.team.unit">/ month</small></div>
+            <a href="#" class="btn btn-primary" data-i18n="pr.team.cta">Start 14-day trial</a>
             <ul class="price-list">
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Everything in Developer, plus:</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Decoupled storage &amp; elastic compute</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Multimodal ingestion &amp; knowledge base</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Unlimited agents with memory</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Decision lineage &amp; A/B testing</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Priority email &amp; chat support</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.team.f1">Everything in Developer, plus:</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.team.f2">Decoupled storage &amp; elastic compute</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.team.f3">Multimodal ingestion &amp; knowledge base</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.team.f4">Unlimited agents with memory</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.team.f5">Decision lineage &amp; A/B testing</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.team.f6">Priority email &amp; chat support</span></li>
             </ul>
           </div>
 
           <!-- Enterprise -->
           <div class="price reveal">
-            <div class="price-name">Enterprise</div>
-            <p class="price-desc">For regulated, mission-critical deployments at scale.</p>
-            <div class="price-amt">Custom</div>
-            <a href="#" class="btn btn-outline">Contact sales</a>
+            <div class="price-name" data-i18n="pr.ent.name">Enterprise</div>
+            <p class="price-desc" data-i18n="pr.ent.desc">For regulated, mission-critical deployments at scale.</p>
+            <div class="price-amt" data-i18n="pr.ent.amt">Custom</div>
+            <a href="#" class="btn btn-outline" data-i18n="pr.ent.cta">Contact sales</a>
             <ul class="price-list">
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Everything in Team, plus:</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Single-tenant or self-hosted</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>99.99% SLA &amp; multi-region residency</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Fine-grained access control &amp; SSO</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Full audit trails &amp; compliance review</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Dedicated solutions architect</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.ent.f1">Everything in Team, plus:</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.ent.f2">Single-tenant or self-hosted</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.ent.f3">99.99% SLA &amp; multi-region residency</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.ent.f4">Fine-grained access control &amp; SSO</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.ent.f5">Full audit trails &amp; compliance review</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.ent.f6">Dedicated solutions architect</span></li>
             </ul>
           </div>
 
         </div>
-        <p class="price-note">All plans include native vector search, HTAP queries, and the unified Agent · Model · Data fabric. Usage-based billing is fully auditable.</p>
+        <p class="price-note" data-i18n="pr.note">All plans include native vector search, HTAP queries, and the unified Agent · Model · Data fabric. Usage-based billing is fully auditable.</p>
       </div>
     </section>
 
-    <!-- ============ COMPARE / VALUE STRIP ============ -->
+    <!-- ============ VALUE STRIP ============ -->
     <section class="stats section--tight">
       <div class="container">
         <div class="stats-grid">
-          <div class="stat reveal"><div class="num">1</div><div class="lbl">Bill — not five separate vendors</div></div>
-          <div class="stat reveal"><div class="num">0</div><div class="lbl">Egress fees between layers</div></div>
-          <div class="stat reveal"><div class="num">14d</div><div class="lbl">Free trial on the Team plan</div></div>
-          <div class="stat reveal"><div class="num">∞</div><div class="lbl">Agents &amp; memory on paid plans</div></div>
+          <div class="stat reveal"><div class="num">1</div><div class="lbl" data-i18n="pr.s1.lbl">Bill — not five separate vendors</div></div>
+          <div class="stat reveal"><div class="num">0</div><div class="lbl" data-i18n="pr.s2.lbl">Egress fees between layers</div></div>
+          <div class="stat reveal"><div class="num">14d</div><div class="lbl" data-i18n="pr.s3.lbl">Free trial on the Team plan</div></div>
+          <div class="stat reveal"><div class="num">∞</div><div class="lbl" data-i18n="pr.s4.lbl">Agents &amp; memory on paid plans</div></div>
         </div>
       </div>
     </section>
@@ -137,39 +139,39 @@
     <section class="section">
       <div class="container">
         <div class="section-head center reveal">
-          <span class="eyebrow">FAQ</span>
-          <h2>Questions, answered</h2>
+          <span class="eyebrow" data-i18n="pr.faq.eyebrow">FAQ</span>
+          <h2 data-i18n="pr.faq.title">Questions, answered</h2>
         </div>
         <div class="faq reveal">
           <div class="faq-item">
-            <button class="faq-q">Do I still need a separate vector database?
+            <button class="faq-q"><span data-i18n="pr.faq.q1">Do I still need a separate vector database?</span>
               <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button>
-            <div class="faq-a"><p>No. Vector search is native to OmniFabric — embeddings live next to your relational data, so you run hybrid keyword + vector queries in a single statement, with no extra system to operate or pay for.</p></div>
+            <div class="faq-a"><p data-i18n="pr.faq.a1">No. Vector search is native to OmniFabric — embeddings live next to your relational data, so you run hybrid keyword + vector queries in a single statement, with no extra system to operate or pay for.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">How does usage-based billing work?
+            <button class="faq-q"><span data-i18n="pr.faq.q2">How does usage-based billing work?</span>
               <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button>
-            <div class="faq-a"><p>You pay for storage, compute, and model calls you actually consume. Every charge maps to auditable usage records, so finance and engineering see exactly what drove the bill.</p></div>
+            <div class="faq-a"><p data-i18n="pr.faq.a2">You pay for storage, compute, and model calls you actually consume. Every charge maps to auditable usage records, so finance and engineering see exactly what drove the bill.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">Can I bring my own models?
+            <button class="faq-q"><span data-i18n="pr.faq.q3">Can I bring my own models?</span>
               <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button>
-            <div class="faq-a"><p>Yes. Route to any hosted LLM or embedding model through one API, or connect your own private endpoints. There's no lock-in — every call is wrapped in the same lineage and governance.</p></div>
+            <div class="faq-a"><p data-i18n="pr.faq.a3">Yes. Route to any hosted LLM or embedding model through one API, or connect your own private endpoints. There's no lock-in — every call is wrapped in the same lineage and governance.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">Is OmniFabric available self-hosted?
+            <button class="faq-q"><span data-i18n="pr.faq.q4">Is OmniFabric available self-hosted?</span>
               <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button>
-            <div class="faq-a"><p>Enterprise plans support single-tenant cloud and fully self-hosted deployments, with multi-region data residency, SSO, and a dedicated solutions architect.</p></div>
+            <div class="faq-a"><p data-i18n="pr.faq.a4">Enterprise plans support single-tenant cloud and fully self-hosted deployments, with multi-region data residency, SSO, and a dedicated solutions architect.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">What happens to my agents' memory if I roll back?
+            <button class="faq-q"><span data-i18n="pr.faq.q5">What happens to my agents' memory if I roll back?</span>
               <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button>
-            <div class="faq-a"><p>Memory is versioned and fully audited. You can view memory as of any point in time and roll back safely — every write is traceable and reversible.</p></div>
+            <div class="faq-a"><p data-i18n="pr.faq.a5">Memory is versioned and fully audited. You can view memory as of any point in time and roll back safely — every write is traceable and reversible.</p></div>
           </div>
         </div>
       </div>
@@ -179,13 +181,13 @@
     <section class="cta-band">
       <div class="container">
         <div class="cta-inner reveal">
-          <h2>Ready to weave data and AI together?</h2>
-          <p>Spin up a free workspace, connect your first source, and ship a trusted agent today.</p>
+          <h2 data-i18n="pr.cta.title">Ready to weave data and AI together?</h2>
+          <p data-i18n="pr.cta.desc">Spin up a free workspace, connect your first source, and ship a trusted agent today.</p>
           <div class="hero-cta">
-            <a href="#" class="btn btn-primary btn-lg">Start building free
+            <a href="#" class="btn btn-primary btn-lg"><span data-i18n="pr.cta.b1">Start building free</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a href="#" class="btn btn-ghost btn-lg">Talk to sales</a>
+            <a href="#" class="btn btn-ghost btn-lg" data-i18n="pr.cta.b2">Talk to sales</a>
           </div>
         </div>
       </div>
@@ -205,39 +207,39 @@
             </svg>
             Omni<b>Fabric</b>
           </a>
-          <p>The unified intelligence fabric for data and AI. Control your data, trust your
+          <p data-i18n="footer.about">The unified intelligence fabric for data and AI. Control your data, trust your
             agents, and turn AI strategy into real business ROI.</p>
         </div>
         <div>
-          <h5>Platform</h5>
+          <h5 data-i18n="footer.platform">Platform</h5>
           <ul>
-            <li><a href="index.html#platform">Intelligence flywheel</a></li>
-            <li><a href="index.html#capabilities">OmniFabric Core</a></li>
-            <li><a href="index.html#capabilities">Intelligence</a></li>
-            <li><a href="index.html#capabilities">Agent &amp; Memory</a></li>
+            <li><a href="index.html#platform" data-i18n="footer.pf1">Intelligence flywheel</a></li>
+            <li><a href="index.html#capabilities" data-i18n="footer.pf2">OmniFabric Core</a></li>
+            <li><a href="index.html#capabilities" data-i18n="footer.pf3">Intelligence</a></li>
+            <li><a href="index.html#capabilities" data-i18n="footer.pf4">Agent &amp; Memory</a></li>
           </ul>
         </div>
         <div>
-          <h5>Solutions</h5>
+          <h5 data-i18n="footer.solutions">Solutions</h5>
           <ul>
-            <li><a href="index.html#solutions">Document intelligence</a></li>
-            <li><a href="index.html#solutions">Customer copilots</a></li>
-            <li><a href="index.html#solutions">Real-time analytics</a></li>
-            <li><a href="index.html#solutions">Enterprise search</a></li>
+            <li><a href="index.html#solutions" data-i18n="footer.sf1">Document intelligence</a></li>
+            <li><a href="index.html#solutions" data-i18n="footer.sf2">Customer copilots</a></li>
+            <li><a href="index.html#solutions" data-i18n="footer.sf3">Real-time analytics</a></li>
+            <li><a href="index.html#solutions" data-i18n="footer.sf4">Enterprise search</a></li>
           </ul>
         </div>
         <div>
-          <h5>Company</h5>
+          <h5 data-i18n="footer.company">Company</h5>
           <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">Security</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="#" data-i18n="footer.cf1">About</a></li>
+            <li><a href="docs.html" data-i18n="footer.cf2">Documentation</a></li>
+            <li><a href="#" data-i18n="footer.cf3">Security</a></li>
+            <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 OmniFabric. All rights reserved.</span>
+        <span data-i18n="footer.copyright">© 2026 OmniFabric. All rights reserved.</span>
         <div class="social">
           <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 6.8 9.8.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.5-1.1-4.5-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.5 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.4 6.8-5.3 6.8-9.8C22 6.6 17.5 2 12 2Z"/></svg></a>
           <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2h3.3l-7.2 8.3L23 22h-6.6l-5.2-6.8L5.2 22H1.9l7.7-8.8L1 2h6.8l4.7 6.2L18.2 2Zm-1.2 18h1.8L7.1 3.9H5.2L17 20Z"/></svg></a>
@@ -247,6 +249,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
