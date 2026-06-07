@@ -609,6 +609,21 @@ html[dir="rtl"] .lang-menu button { text-align: right; }
   .api-panel { grid-template-columns: 1fr; gap: 28px; padding: 36px 26px; }
 }
 
+/* ---------- About page ---------- */
+.fb-sub { color: var(--teal-700); font-weight: 700; font-size: 1.08rem; margin-bottom: 16px; }
+.fb-text h3 .biglogo { font-size: 1.9rem; }
+.facts-card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: 8px 10px; position: relative; overflow: hidden;
+}
+.facts-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--grad-teal); }
+.fact-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 17px 18px; border-bottom: 1px solid var(--line); }
+.fact-row:last-child { border-bottom: none; }
+.fact-row .k { color: var(--muted); font-size: .9rem; font-weight: 600; }
+.fact-row .v { color: var(--ink); font-weight: 700; font-size: 1rem; text-align: right; }
+html[dir="rtl"] .fact-row .v { text-align: left; }
+html[dir="rtl"] .facts-card::before { inset: 0 0 0 auto; width: 4px; }
+
 /* ---------- Reveal animation ---------- */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.in { opacity: 1; transform: none; }
