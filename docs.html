@@ -35,13 +35,26 @@
           <li><a href="index.html#platform" data-i18n="nav.platform">Platform</a></li>
           <li><a href="index.html#capabilities" data-i18n="nav.capabilities">Capabilities</a></li>
           <li><a href="index.html#solutions" data-i18n="nav.solutions">Solutions</a></li>
-          <li><a href="index.html#customers" data-i18n="nav.customers">Customers</a></li>
+          <li><a href="customers.html" data-i18n="nav.customers">Customers</a></li>
           <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
           <li><a href="docs.html" data-i18n="nav.docs">Docs</a></li>
         </ul>
 
         <div class="nav-actions">
-          <button class="lang-toggle" data-lang-toggle aria-label="切换语言">中文</button>
+          <div class="lang-select">
+            <button class="lang-btn" data-lang-btn aria-haspopup="true" aria-expanded="false" aria-label="Language">
+              <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+              <span data-lang-current>EN</span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <ul class="lang-menu" data-lang-menu>
+              <li><button data-set-lang="en">English</button></li>
+              <li><button data-set-lang="zh">中文</button></li>
+              <li><button data-set-lang="fr">Français</button></li>
+              <li><button data-set-lang="es">Español</button></li>
+              <li><button data-set-lang="ar">العربية</button></li>
+            </ul>
+          </div>
           <a href="#" class="signin" data-i18n="nav.signin">Sign in</a>
           <a href="#" class="btn btn-primary"><span data-i18n="nav.cta">Start building</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

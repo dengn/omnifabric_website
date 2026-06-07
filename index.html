@@ -45,7 +45,20 @@
         </ul>
 
         <div class="nav-actions">
-          <button class="lang-toggle" data-lang-toggle aria-label="切换语言">中文</button>
+          <div class="lang-select">
+            <button class="lang-btn" data-lang-btn aria-haspopup="true" aria-expanded="false" aria-label="Language">
+              <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+              <span data-lang-current>EN</span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <ul class="lang-menu" data-lang-menu>
+              <li><button data-set-lang="en">English</button></li>
+              <li><button data-set-lang="zh">中文</button></li>
+              <li><button data-set-lang="fr">Français</button></li>
+              <li><button data-set-lang="es">Español</button></li>
+              <li><button data-set-lang="ar">العربية</button></li>
+            </ul>
+          </div>
           <a href="#" class="signin" data-i18n="nav.signin">Sign in</a>
           <a href="#get-started" class="btn btn-primary"><span data-i18n="nav.cta">Start building</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -401,6 +414,36 @@ memory.<span class="p">as_of</span>(<span class="s">"2026-05-01"</span>).<span c
                 <td><span class="cmp-ic"><span class="mid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><span data-i18n="cmp.r5.cloud">Weeks to months</span></span></td>
                 <td><span class="cmp-ic"><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span><span data-i18n="cmp.r5.legacy">Months</span></span></td>
               </tr>
+              <tr>
+                <td data-i18n="cmp.r6.cap">Native vector &amp; hybrid search</td>
+                <td class="own-col"><span class="cmp-ic"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="cmp.r6.own">Built-in · 4ms p99</span></span></td>
+                <td><span class="cmp-ic"><span class="mid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><span data-i18n="cmp.r6.cloud">Separate vector service</span></span></td>
+                <td><span class="cmp-ic"><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span><span data-i18n="cmp.r6.legacy">Add-on or none</span></span></td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp.r7.cap">Multimodal data — PDF, image, video</td>
+                <td class="own-col"><span class="cmp-ic"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="cmp.r7.own">Native ingestion</span></span></td>
+                <td><span class="cmp-ic"><span class="mid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><span data-i18n="cmp.r7.cloud">Multiple stitched services</span></span></td>
+                <td><span class="cmp-ic"><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span><span data-i18n="cmp.r7.legacy">Not supported</span></span></td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp.r8.cap">Real-time HTAP on fresh data</td>
+                <td class="own-col"><span class="cmp-ic"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="cmp.r8.own">One engine</span></span></td>
+                <td><span class="cmp-ic"><span class="mid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><span data-i18n="cmp.r8.cloud">Separate OLTP + OLAP</span></span></td>
+                <td><span class="cmp-ic"><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span><span data-i18n="cmp.r8.legacy">Batch ETL lag</span></span></td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp.r9.cap">Open standards, no lock-in</td>
+                <td class="own-col"><span class="cmp-ic"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="cmp.r9.own">SQL + open APIs</span></span></td>
+                <td><span class="cmp-ic"><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span><span data-i18n="cmp.r9.cloud">Proprietary services</span></span></td>
+                <td><span class="cmp-ic"><span class="mid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><span data-i18n="cmp.r9.legacy">Partial</span></span></td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp.r10.cap">Security &amp; compliance audit</td>
+                <td class="own-col"><span class="cmp-ic"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="cmp.r10.own">Lineage + full audit trails</span></span></td>
+                <td><span class="cmp-ic"><span class="mid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><span data-i18n="cmp.r10.cloud">Per-service config</span></span></td>
+                <td><span class="cmp-ic"><span class="mid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg></span><span data-i18n="cmp.r10.legacy">Database-level only</span></span></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -435,52 +478,58 @@ memory.<span class="p">as_of</span>(<span class="s">"2026-05-01"</span>).<span c
         </div>
         <div class="case-grid">
           <article class="case reveal">
-            <span class="tag" data-i18n="case1.tag">Computer Vision</span>
+            <div class="case-top"><span class="clogo" data-i18n="case1.logo">VisionAI</span><span class="tag" data-i18n="case1.tag">Computer Vision</span></div>
             <div class="metric" data-i18n="case1.metric">+40%</div>
             <div class="metric" style="font-size:.9rem;-webkit-text-fill-color:var(--muted);color:var(--muted);font-weight:600;margin-bottom:12px;" data-i18n="case1.sub">feature reuse</div>
             <h4 data-i18n="case1.title">A shared multimodal feature platform</h4>
             <p data-i18n="case1.desc">Teams stopped rebuilding the same models — cross-department reuse rose 40% and model dev cycles shrank 30%.</p>
             <div class="who" data-i18n="case1.who">AI vision platform</div>
+            <a href="customers.html" class="link-arrow case-link"><span data-i18n="cases.more">Read case study</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
           <article class="case reveal">
-            <span class="tag" data-i18n="case2.tag">Government</span>
+            <div class="case-top"><span class="clogo" data-i18n="case2.logo">CivicOS</span><span class="tag" data-i18n="case2.tag">Government</span></div>
             <div class="metric" data-i18n="case2.metric">5×</div>
             <div class="metric" style="font-size:.9rem;-webkit-text-fill-color:var(--muted);color:var(--muted);font-weight:600;margin-bottom:12px;" data-i18n="case2.sub">faster automation</div>
             <h4 data-i18n="case2.title">A unified urban data corpus</h4>
             <p data-i18n="case2.desc">Consolidated complex multimodal city data into one governed corpus powering smart-city applications.</p>
             <div class="who" data-i18n="case2.who">Smart-city platform</div>
+            <a href="customers.html" class="link-arrow case-link"><span data-i18n="cases.more">Read case study</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
           <article class="case reveal">
-            <span class="tag" data-i18n="case3.tag">Retail &amp; CPG</span>
+            <div class="case-top"><span class="clogo" data-i18n="case3.logo">Vitalis</span><span class="tag" data-i18n="case3.tag">Retail &amp; CPG</span></div>
             <div class="metric" data-i18n="case3.metric">+50%</div>
             <div class="metric" style="font-size:.9rem;-webkit-text-fill-color:var(--muted);color:var(--muted);font-weight:600;margin-bottom:12px;" data-i18n="case3.sub">marketing efficiency</div>
             <h4 data-i18n="case3.title">An AI marketing copilot</h4>
             <p data-i18n="case3.desc">A copilot built on a unified agent data foundation lifted campaign output by more than half.</p>
             <div class="who" data-i18n="case3.who">Global wellness brand</div>
+            <a href="customers.html" class="link-arrow case-link"><span data-i18n="cases.more">Read case study</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
           <article class="case reveal">
-            <span class="tag" data-i18n="case4.tag">Manufacturing</span>
+            <div class="case-top"><span class="clogo" data-i18n="case4.logo">ForgeWorks</span><span class="tag" data-i18n="case4.tag">Manufacturing</span></div>
             <div class="metric" data-i18n="case4.metric">+40%</div>
             <div class="metric" style="font-size:.9rem;-webkit-text-fill-color:var(--muted);color:var(--muted);font-weight:600;margin-bottom:12px;" data-i18n="case4.sub">bidding efficiency</div>
             <h4 data-i18n="case4.title">Knowledge graphs for bidding</h4>
             <p data-i18n="case4.desc">Correlating data across many sources sped up complex, high-stakes bidding decisions.</p>
             <div class="who" data-i18n="case4.who">Industrial manufacturer</div>
+            <a href="customers.html" class="link-arrow case-link"><span data-i18n="cases.more">Read case study</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
           <article class="case reveal">
-            <span class="tag" data-i18n="case5.tag">Finance</span>
+            <div class="case-top"><span class="clogo" data-i18n="case5.logo">Stonecastle</span><span class="tag" data-i18n="case5.tag">Finance</span></div>
             <div class="metric" data-i18n="case5.metric">80%</div>
             <div class="metric" style="font-size:.9rem;-webkit-text-fill-color:var(--muted);color:var(--muted);font-weight:600;margin-bottom:12px;" data-i18n="case5.sub">analyst time freed</div>
             <h4 data-i18n="case5.title">Automated investment research</h4>
             <p data-i18n="case5.desc">Research automated across 60+ data sources freed analysts to focus on strategy, not gathering.</p>
             <div class="who" data-i18n="case5.who">Investment firm</div>
+            <a href="customers.html" class="link-arrow case-link"><span data-i18n="cases.more">Read case study</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
           <article class="case reveal">
-            <span class="tag" data-i18n="case6.tag">Legal</span>
+            <div class="case-top"><span class="clogo" data-i18n="case6.logo">Lexstone</span><span class="tag" data-i18n="case6.tag">Legal</span></div>
             <div class="metric" data-i18n="case6.metric">16d → 1m</div>
             <div class="metric" style="font-size:.9rem;-webkit-text-fill-color:var(--muted);color:var(--muted);font-weight:600;margin-bottom:12px;" data-i18n="case6.sub">contract review</div>
             <h4 data-i18n="case6.title">Instant contract risk review</h4>
             <p data-i18n="case6.desc">Risk-clause review collapsed from over two weeks to about a minute, and the knowledge base stays current.</p>
             <div class="who" data-i18n="case6.who">Enterprise legal team</div>
+            <a href="customers.html" class="link-arrow case-link"><span data-i18n="cases.more">Read case study</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
         </div>
       </div>

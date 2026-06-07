@@ -141,20 +141,37 @@ section { position: relative; }
 .nav-actions { display: flex; align-items: center; gap: 14px; }
 .nav-actions .signin { font-weight: 600; font-size: .96rem; color: var(--ink); }
 .nav-actions .signin:hover { color: var(--teal-600); }
-.lang-toggle {
-  display: inline-flex; align-items: center; gap: 5px; cursor: pointer;
+/* language dropdown */
+.lang-select { position: relative; }
+.lang-btn {
+  display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
   font-family: inherit; font-weight: 600; font-size: .88rem; color: var(--slate);
   background: #fff; border: 1px solid var(--line); border-radius: 999px;
-  padding: 7px 13px; transition: color .2s ease, border-color .2s ease, transform .15s ease;
+  padding: 7px 12px; transition: color .2s ease, border-color .2s ease, transform .15s ease;
 }
-.lang-toggle::before {
-  content: ""; width: 14px; height: 14px; flex: none;
-  background: var(--teal-600);
-  -webkit-mask: no-repeat center / contain; mask: no-repeat center / contain;
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20'/%3E%3C/svg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20'/%3E%3C/svg%3E");
+.lang-btn:hover { color: var(--teal-600); border-color: var(--teal-300); transform: translateY(-1px); }
+.lang-btn .globe { width: 15px; height: 15px; flex: none; }
+.lang-btn .chev { width: 12px; height: 12px; flex: none; transition: transform .2s ease; opacity: .7; }
+.lang-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+.lang-menu {
+  position: absolute; top: calc(100% + 8px); right: 0; min-width: 150px; z-index: 120;
+  background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow-md);
+  padding: 6px; list-style: none; margin: 0;
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
 }
-.lang-toggle:hover { color: var(--teal-600); border-color: var(--teal-300); transform: translateY(-1px); }
+html[dir="rtl"] .lang-menu { right: auto; left: 0; }
+.lang-menu.open { opacity: 1; visibility: visible; transform: none; }
+.lang-menu li { margin: 0; }
+.lang-menu button {
+  width: 100%; text-align: left; font-family: inherit; font-size: .92rem; font-weight: 500;
+  color: var(--slate); background: none; border: none; cursor: pointer;
+  padding: 9px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+html[dir="rtl"] .lang-menu button { text-align: right; }
+.lang-menu button:hover { background: var(--surface-2); color: var(--teal-600); }
+.lang-menu button[aria-current="true"] { color: var(--teal-600); font-weight: 700; }
+.lang-menu button[aria-current="true"]::after { content: "✓"; color: var(--teal-500); }
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: var(--ink); }
 .nav-toggle svg { width: 26px; height: 26px; }
 
@@ -624,3 +641,42 @@ section { position: relative; }
   .node.n2 { left: -2%; } .node.n3 { right: -2%; }
   .float-card.fc1 { right: 0; } .float-card.fc2 { left: 0; }
 }
+
+/* ---------- Case-card logo + link ---------- */
+.case-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 16px; }
+.case .clogo { font-weight: 800; letter-spacing: -.02em; font-size: 1.02rem; color: var(--deep-800);
+  display: inline-flex; align-items: center; gap: 8px; }
+.case .clogo::before { content: ""; width: 22px; height: 22px; border-radius: 6px; background: var(--grad-teal); flex: none; }
+.case-top .tag { margin-bottom: 0; }
+.case .case-link { margin-top: 16px; }
+
+/* ---------- RTL (Arabic) ---------- */
+html[dir="rtl"] .link-arrow svg,
+html[dir="rtl"] .btn svg { transform: scaleX(-1); }
+html[dir="rtl"] .link-arrow:hover svg { transform: scaleX(-1) translateX(4px); }
+html[dir="rtl"] .compare th,
+html[dir="rtl"] .compare td { text-align: right; }
+html[dir="rtl"] .hero-trust .dots span { margin-left: 0; margin-right: -8px; }
+html[dir="rtl"] .farrow { transform: none; }
+html[dir="rtl"] .case .clogo::before { }
+
+/* ---------- Customer detail page ---------- */
+.cd-list { display: grid; gap: 24px; }
+.cd { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg);
+  padding: 34px; box-shadow: var(--shadow-sm); transition: box-shadow .25s ease, transform .25s ease; }
+.cd:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.cd-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; }
+.cd-head .clogo { font-weight: 800; font-size: 1.12rem; color: var(--deep-800); display: inline-flex; align-items: center; gap: 9px; letter-spacing: -.02em; }
+.cd-head .clogo::before { content: ""; width: 26px; height: 26px; border-radius: 8px; background: var(--grad-teal); flex: none; }
+.cd-head .tag { font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--teal-700); background: var(--teal-50); padding: 5px 11px; border-radius: 999px; }
+.cd h3 { font-size: 1.45rem; letter-spacing: -.02em; margin-bottom: 12px; }
+.cd-metric { margin-bottom: 24px; display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap; }
+.cd-metric .metric { font-size: 2rem; font-weight: 800; letter-spacing: -.02em;
+  background: var(--grad-teal); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cd-metric .ms { color: var(--muted); font-weight: 600; }
+.cd-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.cd-block h5 { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--teal-600); margin-bottom: 8px; }
+.cd-block p { color: var(--slate); font-size: .95rem; }
+.cd-who { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-weight: 600; font-size: .9rem; }
+@media (max-width: 780px) { .cd-grid { grid-template-columns: 1fr; gap: 16px; } .cd { padding: 26px; } }

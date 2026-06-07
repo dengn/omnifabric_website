@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Stories — OmniFabric</title>
+  <meta name="description" content="How teams across industries build on OmniFabric — the challenge, the solution, and the measurable results." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230bb3c9'/%3E%3Cstop offset='1' stop-color='%2367e3f2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M9 9h14M9 16h14M9 23h14' stroke='%23032128' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='9' r='2.4' fill='%23032128'/%3E%3Ccircle cx='20' cy='16' r='2.4' fill='%23032128'/%3E%3Ccircle cx='14' cy='23' r='2.4' fill='%23032128'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav" id="nav">
+        <a class="brand" href="index.html" aria-label="OmniFabric home">
+          <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#0bb3c9"/><stop offset="1" stop-color="#67e3f2"/>
+            </linearGradient></defs>
+            <rect width="32" height="32" rx="8" fill="url(#lg)"/>
+            <path d="M9 9h14M9 16h14M9 23h14" stroke="#032128" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="12" cy="9" r="2.4" fill="#032128"/>
+            <circle cx="20" cy="16" r="2.4" fill="#032128"/>
+            <circle cx="14" cy="23" r="2.4" fill="#032128"/>
+          </svg>
+          Omni<b>Fabric</b>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html#platform" data-i18n="nav.platform">Platform</a></li>
+          <li><a href="index.html#capabilities" data-i18n="nav.capabilities">Capabilities</a></li>
+          <li><a href="index.html#solutions" data-i18n="nav.solutions">Solutions</a></li>
+          <li><a href="index.html#why" data-i18n="nav.why">Why us</a></li>
+          <li><a href="customers.html" data-i18n="nav.customers">Customers</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="docs.html" data-i18n="nav.docs">Docs</a></li>
+        </ul>
+        <div class="nav-actions">
+          <div class="lang-select">
+            <button class="lang-btn" data-lang-btn aria-haspopup="true" aria-expanded="false" aria-label="Language">
+              <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+              <span data-lang-current>EN</span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <ul class="lang-menu" data-lang-menu>
+              <li><button data-set-lang="en">English</button></li>
+              <li><button data-set-lang="zh">中文</button></li>
+              <li><button data-set-lang="fr">Français</button></li>
+              <li><button data-set-lang="es">Español</button></li>
+              <li><button data-set-lang="ar">العربية</button></li>
+            </ul>
+          </div>
+          <a href="#" class="signin" data-i18n="nav.signin">Sign in</a>
+          <a href="#" class="btn btn-primary"><span data-i18n="nav.cta">Start building</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="subhero">
+      <div class="container">
+        <span class="eyebrow center" style="display:inline-flex;" data-i18n="cust.eyebrow">Customer stories</span>
+        <h1 data-i18n="cust.title">How teams build on OmniFabric</h1>
+        <p data-i18n="cust.desc">Real deployments across industries — the challenge, the solution, and the measurable results.</p>
+      </div>
+    </section>
+
+    <section class="section--tight">
+      <div class="container">
+        <div class="cd-list">
+          <article class="cd reveal">
+            <div class="cd-head">
+              <span class="clogo" data-i18n="case1.logo">VisionAI</span>
+              <span class="tag" data-i18n="case1.tag">Computer Vision</span>
+            </div>
+            <h3 data-i18n="case1.title">A shared multimodal feature platform</h3>
+            <div class="cd-metric"><span class="metric" data-i18n="case1.metric">+40%</span><span class="ms" data-i18n="case1.sub">feature reuse</span></div>
+            <div class="cd-grid">
+              <div class="cd-block"><h5 data-i18n="cust.challenge">Challenge</h5><p data-i18n="case1.challenge">Models and features were rebuilt in silos, slowing every new project and bloating compute spend.</p></div>
+              <div class="cd-block"><h5 data-i18n="cust.solution">Solution</h5><p data-i18n="case1.solution">A multimodal feature platform on OmniFabric let teams publish, discover, and reuse features and embeddings from one governed store.</p></div>
+              <div class="cd-block"><h5 data-i18n="cust.results">Results</h5><p data-i18n="case1.results">Cross-department feature reuse rose 40% and model development cycles shrank 30%.</p></div>
+            </div>
+            <div class="cd-who" data-i18n="case1.who">AI vision platform</div>
+          </article>
+          <article class="cd reveal">
+            <div class="cd-head">
+              <span class="clogo" data-i18n="case2.logo">CivicOS</span>
+              <span class="tag" data-i18n="case2.tag">Government</span>
+            </div>
+            <h3 data-i18n="case2.title">A unified urban data corpus</h3>
+            <div class="cd-metric"><span class="metric" data-i18n="case2.metric">5×</span><span class="ms" data-i18n="case2.sub">faster automation</span></div>
+            <div class="cd-grid">
+              <div class="cd-block"><h5 data-i18n="cust.challenge">Challenge</h5><p data-i18n="case2.challenge">Urban data spanned dozens of incompatible formats and systems, blocking smart-city automation.</p></div>
+              <div class="cd-block"><h5 data-i18n="cust.solution">Solution</h5><p data-i18n="case2.solution">OmniFabric Intelligence ingested and correlated multimodal city data into one queryable, governed corpus.</p></div>
+              <div class="cd-block"><h5 data-i18n="cust.results">Results</h5><p data-i18n="case2.results">A unified corpus powered new smart-city applications with roughly 5× faster automation.</p></div>
+            </div>
+            <div class="cd-who" data-i18n="case2.who">Smart-city platform</div>
+          </article>
+          <article class="cd reveal">
+            <div class="cd-head">
+              <span class="clogo" data-i18n="case3.logo">Vitalis</span>
+              <span class="tag" data-i18n="case3.tag">Retail &amp; CPG</span>
+            </div>
+            <h3 data-i18n="case3.title">An AI marketing copilot</h3>
+            <div class="cd-metric"><span class="metric" data-i18n="case3.metric">+50%</span><span class="ms" data-i18n="case3.sub">marketing efficiency</span></div>
+            <div class="cd-grid">
+              <div class="cd-block"><h5 data-i18n="cust.challenge">Challenge</h5><p data-i18n="case3.challenge">Marketing teams spent more time assembling data than running campaigns.</p></div>
+              <div class="cd-block"><h5 data-i18n="cust.solution">Solution</h5><p data-i18n="case3.solution">A marketing copilot grounded in a unified agent data foundation, with memory across every campaign.</p></div>
+              <div class="cd-block"><h5 data-i18n="cust.results">Results</h5><p data-i18n="case3.results">Marketing efficiency improved by more than 50%.</p></div>
+            </div>
+            <div class="cd-who" data-i18n="case3.who">Global wellness brand</div>
+          </article>
+          <article class="cd reveal">
+            <div class="cd-head">
+              <span class="clogo" data-i18n="case4.logo">ForgeWorks</span>
+              <span class="tag" data-i18n="case4.tag">Manufacturing</span>
+            </div>
+            <h3 data-i18n="case4.title">Knowledge graphs for bidding</h3>
+            <div class="cd-metric"><span class="metric" data-i18n="case4.metric">+40%</span><span class="ms" data-i18n="case4.sub">bidding efficiency</span></div>
+            <div class="cd-grid">
+              <div class="cd-block"><h5 data-i18n="cust.challenge">Challenge</h5><p data-i18n="case4.challenge">High-stakes bids required reconciling data from many disconnected sources under tight deadlines.</p></div>
+              <div class="cd-block"><h5 data-i18n="cust.solution">Solution</h5><p data-i18n="case4.solution">Knowledge graphs over OmniFabric correlated bid data and surfaced decisions with full lineage.</p></div>
+              <div class="cd-block"><h5 data-i18n="cust.results">Results</h5><p data-i18n="case4.results">Bidding decision efficiency improved by 40%.</p></div>
+            </div>
+            <div class="cd-who" data-i18n="case4.who">Industrial manufacturer</div>
+          </article>
+          <article class="cd reveal">
+            <div class="cd-head">
+              <span class="clogo" data-i18n="case5.logo">Stonecastle</span>
+              <span class="tag" data-i18n="case5.tag">Finance</span>
+            </div>
+            <h3 data-i18n="case5.title">Automated investment research</h3>
+            <div class="cd-metric"><span class="metric" data-i18n="case5.metric">80%</span><span class="ms" data-i18n="case5.sub">analyst time freed</span></div>
+            <div class="cd-grid">
+              <div class="cd-block"><h5 data-i18n="cust.challenge">Challenge</h5><p data-i18n="case5.challenge">Analysts spent most of their time gathering data across 60+ sources instead of forming a view.</p></div>
+              <div class="cd-block"><h5 data-i18n="cust.solution">Solution</h5><p data-i18n="case5.solution">An automated research system on OmniFabric unified those sources and drafted analyses with citations.</p></div>
+              <div class="cd-block"><h5 data-i18n="cust.results">Results</h5><p data-i18n="case5.results">Around 80% of analyst time was freed for strategic work.</p></div>
+            </div>
+            <div class="cd-who" data-i18n="case5.who">Investment firm</div>
+          </article>
+          <article class="cd reveal">
+            <div class="cd-head">
+              <span class="clogo" data-i18n="case6.logo">Lexstone</span>
+              <span class="tag" data-i18n="case6.tag">Legal</span>
+            </div>
+            <h3 data-i18n="case6.title">Instant contract risk review</h3>
+            <div class="cd-metric"><span class="metric" data-i18n="case6.metric">16d → 1m</span><span class="ms" data-i18n="case6.sub">contract review</span></div>
+            <div class="cd-grid">
+              <div class="cd-block"><h5 data-i18n="cust.challenge">Challenge</h5><p data-i18n="case6.challenge">Contract review was manual and slow, with risk clauses easy to miss.</p></div>
+              <div class="cd-block"><h5 data-i18n="cust.solution">Solution</h5><p data-i18n="case6.solution">Document intelligence parsed contracts into a self-updating knowledge base with cited answers.</p></div>
+              <div class="cd-block"><h5 data-i18n="cust.results">Results</h5><p data-i18n="case6.results">Risk-clause review went from over two weeks to about a minute.</p></div>
+            </div>
+            <div class="cd-who" data-i18n="case6.who">Enterprise legal team</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <h2 data-i18n="cust.cta.title">Become the next success story</h2>
+          <p data-i18n="cust.cta.desc">Start free, or talk to our team about your use case.</p>
+          <div class="hero-cta">
+            <a href="#" class="btn btn-primary btn-lg"><span data-i18n="cta.b1">Start building free</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#" class="btn btn-ghost btn-lg" data-i18n="pr.cta.b2">Talk to sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html">
+            <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#0bb3c9"/>
+              <path d="M9 9h14M9 16h14M9 23h14" stroke="#032128" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="12" cy="9" r="2.4" fill="#032128"/><circle cx="20" cy="16" r="2.4" fill="#032128"/><circle cx="14" cy="23" r="2.4" fill="#032128"/>
+            </svg>
+            Omni<b>Fabric</b>
+          </a>
+          <p data-i18n="footer.about">The unified intelligence fabric for data and AI.</p>
+        </div>
+        <div>
+          <h5 data-i18n="footer.platform">Platform</h5>
+          <ul>
+            <li><a href="index.html#platform" data-i18n="footer.pf1">Intelligence flywheel</a></li>
+            <li><a href="index.html#capabilities" data-i18n="footer.pf2">OmniFabric Core</a></li>
+            <li><a href="index.html#capabilities" data-i18n="footer.pf3">Intelligence</a></li>
+            <li><a href="index.html#capabilities" data-i18n="footer.pf4">Agent &amp; Memory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 data-i18n="footer.solutions">Solutions</h5>
+          <ul>
+            <li><a href="index.html#solutions" data-i18n="footer.sf1">Document intelligence</a></li>
+            <li><a href="index.html#solutions" data-i18n="footer.sf2">Customer copilots</a></li>
+            <li><a href="index.html#solutions" data-i18n="footer.sf3">Real-time analytics</a></li>
+            <li><a href="index.html#solutions" data-i18n="footer.sf4">Enterprise search</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 data-i18n="footer.company">Company</h5>
+          <ul>
+            <li><a href="#" data-i18n="footer.cf1">About</a></li>
+            <li><a href="docs.html" data-i18n="footer.cf2">Documentation</a></li>
+            <li><a href="customers.html" data-i18n="nav.customers">Customers</a></li>
+            <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copyright">© 2026 OmniFabric. All rights reserved.</span>
+        <div class="social">
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 6.8 9.8.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.5-1.1-4.5-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.5 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.4 6.8-5.3 6.8-9.8C22 6.6 17.5 2 12 2Z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2h3.3l-7.2 8.3L23 22h-6.6l-5.2-6.8L5.2 22H1.9l7.7-8.8L1 2h6.8l4.7 6.2L18.2 2Zm-1.2 18h1.8L7.1 3.9H5.2L17 20Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.2 8.2h4.6V24H.2V8.2Zm7.5 0h4.4v2.2h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 6.9V24h-4.6v-7.1c0-1.7 0-3.9-2.4-3.9s-2.7 1.8-2.7 3.7V24H7.7V8.2Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
