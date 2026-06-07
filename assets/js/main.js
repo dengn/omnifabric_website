@@ -42,6 +42,22 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
+  // FAQ accordion
+  document.querySelectorAll(".faq-item").forEach(function (item) {
+    var q = item.querySelector(".faq-q");
+    var a = item.querySelector(".faq-a");
+    if (!q || !a) return;
+    q.addEventListener("click", function () {
+      var isOpen = item.classList.contains("open");
+      // close siblings for a clean single-open accordion
+      item.parentElement.querySelectorAll(".faq-item.open").forEach(function (other) {
+        if (other !== item) { other.classList.remove("open"); other.querySelector(".faq-a").style.maxHeight = null; }
+      });
+      if (isOpen) { item.classList.remove("open"); a.style.maxHeight = null; }
+      else { item.classList.add("open"); a.style.maxHeight = a.scrollHeight + "px"; }
+    });
+  });
+
   // Stagger items that share a parent grid
   document.querySelectorAll(".pillars-grid, .outcomes-grid, .sol-grid, .steps, .stats-grid")
     .forEach(function (grid) {
