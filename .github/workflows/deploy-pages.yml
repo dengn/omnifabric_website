@@ -32,7 +32,7 @@ jobs:
       - name: Stage site files
         run: |
           mkdir -p _site
-          cp index.html pricing.html _site/
+          cp *.html _site/
           cp -r assets _site/
           # SPA-style 404 fallback so deep links still render
           cp index.html _site/404.html
