@@ -168,8 +168,9 @@ Environment variables:
 
 ### Deployment topology
 
-Production should route only `/auth/cloudsigma/*` to this broker. Static assets
-and HTML can continue to be served by the existing static hosting path.
+Production should run `server/node-server.js` in a Node.js runtime and route only
+`/auth/cloudsigma/*` to that service. Static assets and HTML can continue to be
+served by the existing static hosting path.
 
 Example topology:
 
@@ -229,8 +230,11 @@ before loading `assets/js/auth.js`:
 - The broker does not accept arbitrary non-HTTPS redirect URLs. Only redirects
   matching the MOI app origin are forwarded to MOI as internal paths.
 
-For production, put this broker behind the same host as the website or port the
-`server/cloudsigma-broker.js` `handleRequest()` function to your edge runtime.
+For production, put this Node broker behind the same host as the website or run
+it on a separate origin and configure `window.OMNIFABRIC_AUTH_CONFIG`
+accordingly. Edge runtimes need a separate adapter that replaces the current
+Node-only `node:crypto`, `Buffer`, and CommonJS module dependencies with Web
+Crypto and runtime-native module exports.
 
 ## Sections
 
