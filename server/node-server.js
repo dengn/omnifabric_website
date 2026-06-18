@@ -10,8 +10,9 @@ const server = http.createServer(async (req, res) => {
     await writeNodeResponse(res, response);
   } catch (error) {
     const detail = error instanceof Error ? error.message : String(error);
+    console.error(`CloudSigma broker request failed: ${detail}`);
     res.writeHead(500, { "content-type": "text/plain; charset=utf-8" });
-    res.end(`broker error: ${detail}`);
+    res.end("broker error");
   }
 });
 
