@@ -22,7 +22,7 @@ server.listen(port, () => {
 
 function toWebRequest(req) {
   const host = req.headers.host || `127.0.0.1:${port}`;
-  const proto = req.headers["x-forwarded-proto"] || "http";
+  const proto = req.headers["x-forwarded-proto"] || defaultProtoForHost(host);
   return new Request(`${proto}://${host}${req.url}`, {
     method: req.method,
     headers: toWebHeaders(req.headers),
@@ -48,4 +48,20 @@ function toWebHeaders(nodeHeaders) {
     }
   });
   return headers;
+}
+
+function defaultProtoForHost(host) {
+  const hostname = hostnameFromHostHeader(host);
+  if (hostname === "localhost" || hostname === "127.0.0.1" || hostname === "[::1]" || hostname === "::1") {
+    return "http";
+  }
+  return "https";
+}
+
+function hostnameFromHostHeader(host) {
+  const value = String(host).toLowerCase();
+  if (value.startsWith("[")) {
+    return value.slice(0, value.indexOf("]") + 1);
+  }
+  return value.split(":")[0];
 }
