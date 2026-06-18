@@ -2,6 +2,10 @@
 (function () {
   "use strict";
 
+  if (window.OmniFabricAuth) {
+    window.OmniFabricAuth.wireAuthLinks(window);
+  }
+
   // Sticky header shadow on scroll
   var header = document.getElementById("header");
   var onScroll = function () {
