@@ -22,7 +22,7 @@ server.listen(port, () => {
 
 function toWebRequest(req) {
   const host = req.headers.host || `127.0.0.1:${port}`;
-  const proto = req.headers["x-forwarded-proto"] || defaultProtoForHost(host);
+  const proto = forwardedProtoForHost(req.headers["x-forwarded-proto"], host);
   return new Request(`${proto}://${host}${req.url}`, {
     method: req.method,
     headers: toWebHeaders(req.headers),
@@ -56,6 +56,19 @@ function defaultProtoForHost(host) {
     return "http";
   }
   return "https";
+}
+
+function forwardedProtoForHost(value, host) {
+  const raw = Array.isArray(value) ? value[0] : value;
+  if (!raw) {
+    return defaultProtoForHost(host);
+  }
+
+  const proto = String(raw).split(",")[0].trim().toLowerCase();
+  if (proto === "http" || proto === "https") {
+    return proto;
+  }
+  return defaultProtoForHost(host);
 }
 
 function hostnameFromHostHeader(host) {
