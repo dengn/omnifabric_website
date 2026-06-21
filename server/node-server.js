@@ -1,6 +1,8 @@
 const http = require("node:http");
 const { handleRequest } = require("./cloudsigma-broker");
+const { loadEnvFiles } = require("./env-loader");
 
+loadEnvFiles();
 const port = Number(process.env.PORT || 8787);
 
 const server = http.createServer(async (req, res) => {

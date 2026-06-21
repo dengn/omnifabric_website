@@ -1,2 +1,6 @@
-# Local Claude Code tooling (preview server config, etc.) — not part of the site
+.env
+.env.local
+.env.*.local
+
+# Local Claude Code tooling (preview server config, etc.) - not part of the site
 .claude/

@@ -136,15 +136,19 @@ MOI.
 
 ### Configuration
 
+Create a local runtime env file from the template:
+
+```bash
+cp .env.example .env.local
+```
+
+Then fill in the secret values. `MOI_INTERNAL_TOKEN` must be the same value as
+the `cs-component:moi-cloudsigma-internal-token` Pulumi secret used by the MOI
+deployment.
+
 Run the broker locally:
 
 ```bash
-AUTH_COOKIE_SECRET=<random-cookie-secret> \
-CLOUDSIGMA_ISSUER=https://oauth-stg.cloudsigma.com/realms/cloudsigma \
-CLOUDSIGMA_CLIENT_ID=cloudsigma \
-CLOUDSIGMA_CLIENT_SECRET=<cloudsigma-client-secret> \
-OMNIFABRIC_MOI_APP_URL=https://genai.next.cloudsigma.com/ \
-MOI_INTERNAL_TOKEN=<same value as cs-component:moi-cloudsigma-internal-token> \
 node server/node-server.js
 ```
 
@@ -171,6 +175,15 @@ Environment variables:
 Production should run `server/node-server.js` in a Node.js runtime and route only
 `/auth/cloudsigma/*` to that service. Static assets and HTML can continue to be
 served by the existing static hosting path.
+
+The `deploy/` directory contains production-ready starting points:
+
+- `deploy/cloudsigma-broker.env.example` -> copy to
+  `/etc/omnifabric/cloudsigma-broker.env` and fill in real secrets.
+- `deploy/omnifabric-cloudsigma-broker.service` -> install as
+  `/etc/systemd/system/omnifabric-cloudsigma-broker.service`.
+- `deploy/nginx-cloudsigma-broker-location.conf` -> include inside the
+  `omnifabric.cloudsigma.com` HTTP and HTTPS Nginx server blocks.
 
 Example topology:
 
