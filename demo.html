@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demos — CloudSigma OmniFabric</title>
+  <meta name="description" content="See OmniFabric in action — ten common Data + AI use cases, animated end to end: analytics dashboards, predictive maintenance, natural-language insights, copilots, contract review, sourcing, bidding, document intelligence and smart ops." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=10" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300a94f'/%3E%3Cstop offset='1' stop-color='%232fb265'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 6.5L24.2 11L24.2 21L16 25.5L7.8 21L7.8 11Z' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linejoin='round'/%3E%3Cpath d='M16 16L16 9.2M16 16L10 19.4M16 16L22 19.4' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='2.3' fill='%2306250f'/%3E%3Ccircle cx='16' cy='9.2' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='10' cy='19.4' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='22' cy='19.4' r='1.9' fill='%2306250f'/%3E%3C/svg%3E" />
+  <style>
+  .demo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+  @media(max-width:820px){.demo-grid{grid-template-columns:1fr}}
+  .demo-card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:var(--shadow-sm);transition:transform .2s ease,box-shadow .2s ease}
+  .demo-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+  .demo-screen{position:relative;height:226px;background:linear-gradient(160deg,#f4fbf7,#e9f6ef);overflow:hidden}
+  .demo-tb{display:flex;gap:6px;align-items:center;padding:10px 14px;border-bottom:1px solid rgba(6,37,15,.07);background:rgba(255,255,255,.55)}
+  .demo-tb i{width:9px;height:9px;border-radius:50%;background:#cbe5d6}
+  .demo-tb span{margin-left:8px;font-size:.66rem;color:var(--muted);font-weight:600;letter-spacing:.04em}
+  .demo-stage{position:absolute;inset:38px 0 0;padding:16px 18px;font-size:.72rem;color:var(--ink)}
+  .demo-meta{padding:17px 22px 20px}
+  .demo-meta .num{font-size:.72rem;font-weight:800;color:var(--teal-600);letter-spacing:.1em}
+  .demo-meta h3{font-size:1.08rem;margin:.25rem 0 .35rem;letter-spacing:-.01em}
+  .demo-meta p{font-size:.92rem;color:var(--slate);line-height:1.55;margin:0}
+  .chip{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 9px;font-weight:600;font-size:.66rem;color:var(--ink);box-shadow:0 2px 6px rgba(6,37,15,.06)}
+  .chip.ok{color:#127a3a;border-color:#bfe6cb;background:#effbf2}
+  .chip.warn{color:#b25c00;border-color:#f4d8a8;background:#fff7e9}
+  .ck-s{width:13px;height:13px;flex:none}
+  /* D1 dashboard */
+  .d1-kpis{display:flex;gap:8px;margin-bottom:12px}
+  .d1-kpi{flex:1;background:#fff;border:1px solid var(--line);border-radius:9px;padding:7px 9px}
+  .d1-kpi b{display:block;font-size:.92rem;color:var(--ink)}
+  .d1-kpi span{font-size:.6rem;color:var(--muted)}
+  .d1-chart{display:flex;align-items:flex-end;gap:7px;height:96px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:10px}
+  .d1-chart i{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#2fb265,var(--teal-600));transform-origin:bottom;animation:d1bar 2.4s ease-in-out infinite alternate}
+  .d1-chart i:nth-child(1){height:42%;animation-delay:0s}.d1-chart i:nth-child(2){height:66%;animation-delay:.2s}.d1-chart i:nth-child(3){height:50%;animation-delay:.4s}.d1-chart i:nth-child(4){height:88%;animation-delay:.6s}.d1-chart i:nth-child(5){height:60%;animation-delay:.8s}.d1-chart i:nth-child(6){height:78%;animation-delay:1s}.d1-chart i:nth-child(7){height:54%;animation-delay:1.2s}
+  @keyframes d1bar{from{transform:scaleY(.4)}to{transform:scaleY(1)}}
+  /* D2 predictive maintenance */
+  .d2-wrap{position:relative;height:150px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .d2-thr{position:absolute;left:0;right:0;top:38px;border-top:1.5px dashed #f0b35a}
+  .d2-thr span{position:absolute;right:6px;top:-14px;font-size:.58rem;color:#b25c00;font-weight:600}
+  .d2-line{stroke:var(--teal-600);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-dasharray:240;stroke-dashoffset:240;animation:d2draw 5s ease-in-out infinite}
+  @keyframes d2draw{0%{stroke-dashoffset:240}55%,100%{stroke-dashoffset:0}}
+  .d2-dot{fill:#e85d4e;animation:d2pulse 5s ease-in-out infinite}
+  @keyframes d2pulse{0%,55%{opacity:0;r:2}65%{opacity:1;r:4.5}80%{r:3}100%{opacity:1}}
+  .d2-chip{position:absolute;bottom:8px;left:8px;opacity:0;animation:d2chip 5s ease-in-out infinite}
+  @keyframes d2chip{0%,62%{opacity:0;transform:translateY(6px)}72%,100%{opacity:1;transform:none}}
+  /* D3 NL insights */
+  .d3-q{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 10px}
+  .d3-q .mag{width:13px;height:13px;flex:none;color:var(--teal-600)}
+  .d3-typed{white-space:nowrap;overflow:hidden;border-right:2px solid var(--teal-600);width:0;animation:d3type 5s steps(28) infinite}
+  @keyframes d3type{0%{width:0}45%{width:14.5em}55%,100%{width:14.5em}}
+  .d3-res{margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px;opacity:0;animation:d3res 5s ease infinite}
+  @keyframes d3res{0%,52%{opacity:0;transform:translateY(6px)}62%,100%{opacity:1;transform:none}}
+  .d3-res b{color:var(--teal-600)}
+  .d3-spark{display:block;margin-top:6px}
+  /* D4 + D5 chat */
+  .bub{max-width:80%;padding:7px 10px;border-radius:12px;margin-bottom:8px;line-height:1.35;opacity:0;animation:bubIn 6.5s ease infinite}
+  .bub.u{margin-left:auto;background:var(--teal-600);color:#eafff2;border-bottom-right-radius:3px}
+  .bub.b{background:#fff;border:1px solid var(--line);border-bottom-left-radius:3px}
+  .bub.s{font-size:.62rem;color:var(--muted);padding:2px 0;animation:bubIn 6.5s ease infinite}
+  @keyframes bubIn{0%{opacity:0;transform:translateY(8px)}6%{opacity:1;transform:none}94%{opacity:1}100%{opacity:0}}
+  .b1{animation-delay:.1s}.b2{animation-delay:1.3s}.b3{animation-delay:2.6s}.b4{animation-delay:3.6s}
+  .dots i{display:inline-block;width:5px;height:5px;border-radius:50%;background:#9bbfa9;margin-right:3px;animation:d4dot 1s infinite}
+  .dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+  @keyframes d4dot{0%,60%{opacity:.3}30%{opacity:1}}
+  /* D5 meter */
+  .d5-meter{height:8px;border-radius:5px;background:#e3efe7;margin-top:4px;overflow:hidden}
+  .d5-meter b{display:block;height:100%;width:0;border-radius:5px;background:linear-gradient(90deg,#2fb265,var(--teal-600));animation:d5fill 6.5s ease infinite}
+  @keyframes d5fill{0%,40%{width:8%}70%,100%{width:86%}}
+  /* D6 contract */
+  .doc-lines i{display:block;height:6px;border-radius:3px;background:#dfe8e2;margin-bottom:7px}
+  .doc-lines i:nth-child(odd){width:92%}.doc-lines i:nth-child(even){width:78%}
+  .doc-lines i.risk{position:relative;background:#fde8c8;animation:d6hl 5s ease infinite}
+  .doc-lines i.r2{animation-delay:.8s}
+  @keyframes d6hl{0%,15%{background:#dfe8e2}25%,100%{background:#fbdca6}}
+  .d6-foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+  /* D7 sourcing */
+  .src-row{display:grid;grid-template-columns:64px 1fr 46px;align-items:center;gap:8px;margin-bottom:9px;font-size:.66rem}
+  .src-row .bar{height:7px;border-radius:4px;background:#e3efe7;overflow:hidden}
+  .src-row .bar b{display:block;height:100%;background:#bcd9c6;border-radius:4px;width:0;animation:d7bar 4.5s ease infinite}
+  .src-row.best .bar b{background:linear-gradient(90deg,#2fb265,var(--teal-600))}
+  .src-row:nth-child(1) .bar b{animation-delay:.1s;--w:92%}.src-row:nth-child(2) .bar b{animation-delay:.25s;--w:70%}.src-row:nth-child(3) .bar b{animation-delay:.4s;--w:84%}.src-row:nth-child(4) .bar b{animation-delay:.55s;--w:55%}
+  @keyframes d7bar{0%{width:0}40%,100%{width:var(--w,70%)}}
+  .src-row.best{font-weight:700;color:#127a3a}
+  .src-row .best-tag{opacity:0;animation:d7best 4.5s ease infinite}
+  @keyframes d7best{0%,55%{opacity:0}68%,100%{opacity:1}}
+  /* D8 bidding checklist + progress */
+  .chk{display:flex;align-items:center;gap:7px;margin-bottom:8px;opacity:.45}
+  .chk .bx{width:15px;height:15px;border-radius:4px;border:1.5px solid #bcd2c4;display:flex;align-items:center;justify-content:center;color:#fff;flex:none}
+  .chk.on{opacity:1;animation:d8on 5.5s ease infinite}
+  .chk .bx svg{opacity:0}
+  .chk.on .bx{background:var(--teal-600);border-color:var(--teal-600)}
+  .chk.on .bx svg{opacity:1}
+  .c1{animation-delay:.3s}.c2{animation-delay:1s}.c3{animation-delay:1.7s}
+  @keyframes d8on{0%,8%{opacity:.45}18%,100%{opacity:1}}
+  .d8-prog{height:8px;border-radius:5px;background:#e3efe7;margin-top:6px;overflow:hidden}
+  .d8-prog b{display:block;height:100%;width:0;background:linear-gradient(90deg,#2fb265,var(--teal-600));animation:d8p 5.5s ease infinite}
+  @keyframes d8p{0%{width:6%}60%,100%{width:100%}}
+  /* D9 doc intelligence */
+  .d9{display:grid;grid-template-columns:1fr 14px 1fr;align-items:center;gap:6px}
+  .d9-doc{background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px}
+  .d9-doc i{display:block;height:5px;border-radius:3px;background:#e1eae4;margin-bottom:5px}
+  .d9-doc i:nth-child(2){width:70%}.d9-doc i:nth-child(4){width:60%}
+  .d9-tbl{background:#fff;border:1px solid var(--line);border-radius:8px;padding:7px 9px}
+  .d9-tbl .kv{display:flex;justify-content:space-between;gap:6px;font-size:.62rem;padding:3px 0;border-bottom:1px dashed #eef3f0;opacity:0;animation:d9row 5s ease infinite}
+  .d9-tbl .kv:last-child{border-bottom:none}
+  .d9-tbl .kv b{color:var(--teal-700,#0f7a44)}
+  .d9-tbl .kv:nth-child(1){animation-delay:.4s}.d9-tbl .kv:nth-child(2){animation-delay:1s}.d9-tbl .kv:nth-child(3){animation-delay:1.6s}.d9-tbl .kv:nth-child(4){animation-delay:2.2s}
+  @keyframes d9row{0%,5%{opacity:0;transform:translateX(8px)}14%,100%{opacity:1;transform:none}}
+  .d9-arrow{color:var(--teal-600);text-align:center;font-weight:800}
+  /* D10 ops terminal */
+  .term{background:#0a2417;border-radius:10px;padding:10px 12px;font-family:Consolas,monospace;font-size:.64rem;color:#bfeacb;height:138px;overflow:hidden}
+  .term p{margin:0 0 5px;opacity:0;animation:d10ln 5.5s ease infinite;white-space:nowrap}
+  .term .pre{color:#2fb265}
+  .term .warn{color:#ffb567}.term .ok{color:#7af0a5}
+  .term p:nth-child(1){animation-delay:.2s}.term p:nth-child(2){animation-delay:.8s}.term p:nth-child(3){animation-delay:1.5s}.term p:nth-child(4){animation-delay:2.6s}.term p:nth-child(5){animation-delay:3.4s}
+  @keyframes d10ln{0%,4%{opacity:0}10%,100%{opacity:1}}
+
+  /* ===== demo player ===== */
+  .demo-screen{cursor:pointer}
+  .dv-play-btn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(6,32,26,0);border:none;cursor:pointer;transition:background .2s;z-index:4}
+  .demo-screen:hover .dv-play-btn{background:rgba(6,32,26,.16)}
+  .dv-play-btn .pc{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.94);box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center;color:var(--teal-600);opacity:0;transform:scale(.82);transition:.2s}
+  .demo-screen:hover .dv-play-btn .pc{opacity:1;transform:scale(1)}
+  .dv-play-btn .pc svg{width:22px;height:22px;margin-left:3px}
+  .dv-watch{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:.84rem;font-weight:600;color:var(--teal-600);cursor:pointer}
+  .dv-watch svg{width:15px;height:15px}
+  .dv-overlay{position:fixed;inset:0;z-index:300;background:rgba(6,28,20,.62);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+  .dv-overlay.open{opacity:1;visibility:visible}
+  .dv-modal{width:100%;max-width:820px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);transform:translateY(12px) scale(.985);transition:transform .25s}
+  .dv-overlay.open .dv-modal{transform:none}
+  .dv-mhead{display:flex;align-items:center;gap:12px;padding:17px 22px;border-bottom:1px solid var(--line)}
+  .dv-mhead .num{font-size:.72rem;font-weight:800;color:var(--teal-600);letter-spacing:.1em}
+  .dv-mhead h3{font-size:1.1rem;font-weight:800;letter-spacing:-.01em;flex:1;margin:0}
+  .dv-x{background:none;border:none;cursor:pointer;color:var(--muted);padding:6px;border-radius:8px;display:flex}
+  .dv-x:hover{background:var(--surface-2);color:var(--ink)}.dv-x svg{width:20px;height:20px}
+  .dv-frame{margin:20px 22px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:linear-gradient(160deg,#f4fbf7,#e9f6ef)}
+  .dv-fbar{display:flex;gap:6px;align-items:center;padding:11px 16px;border-bottom:1px solid rgba(6,37,15,.07);background:rgba(255,255,255,.6)}
+  .dv-fbar i{width:10px;height:10px;border-radius:50%;background:#cbe5d6}
+  .dv-fbar span{margin-left:10px;font-size:.72rem;color:var(--muted);font-weight:600}
+  .dv-screen{position:relative;height:332px;overflow:hidden}
+  .dv-play-area{position:absolute;inset:0;padding:26px 32px;zoom:1.5;font-size:.72rem;color:var(--ink)}
+  .dv-prog{height:4px;background:var(--surface-3)}
+  .dv-prog b{display:block;height:100%;width:0;background:var(--grad-teal)}
+  .dv-prog.run b{animation:dvProg 13s linear forwards}
+  @keyframes dvProg{to{width:100%}}
+  .dv-caps{position:relative;height:30px;margin:16px 24px 0}
+  .dv-caps .cap{position:absolute;inset:0;display:flex;align-items:center;gap:10px;font-size:.96rem;color:var(--ink);font-weight:500;opacity:0}
+  .dv-caps .cap .st{flex:none;width:23px;height:23px;border-radius:50%;background:var(--teal-50);color:var(--teal-600);font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .dv-caps.run .cap{animation:dvCap 3.25s ease forwards}
+  .dv-caps.run .cap:nth-child(2){animation-delay:3.25s}
+  .dv-caps.run .cap:nth-child(3){animation-delay:6.5s}
+  .dv-caps.run .cap:nth-child(4){animation-delay:9.75s;animation-name:dvCapLast}
+  @keyframes dvCap{0%{opacity:0;transform:translateY(6px)}14%{opacity:1;transform:none}86%{opacity:1}100%{opacity:0;transform:translateY(-6px)}}
+  @keyframes dvCapLast{0%{opacity:0;transform:translateY(6px)}14%,100%{opacity:1;transform:none}}
+  .dv-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px 22px}
+  .dv-foot .btn{padding:11px 20px;font-size:.92rem}
+  @media(max-width:560px){.dv-play-area{zoom:1;padding:16px}.dv-screen{height:250px}.dv-caps .cap{font-size:.86rem}}
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav" id="nav">
+        <a class="brand" href="index.html" aria-label="CloudSigma OmniFabric home">
+          <img class="cs-logo" src="assets/img/cloudsigma-logo.svg?v=10" alt="CloudSigma" width="90" height="27" />
+          <span class="brand-div" aria-hidden="true"></span>
+          <span class="wordmark">OmniFabric</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="product.html" data-i18n="nav.product">Product</a></li>
+          <li><a href="solutions.html" data-i18n="nav.solutions">Solutions</a></li>
+          <li><a href="demo.html" data-i18n="nav.demo">Demos</a></li>
+          <li><a href="customers.html" data-i18n="nav.customers">Case Studies</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="docs.html" data-i18n="nav.docs">Docs</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="lang-select">
+            <button class="lang-btn" data-lang-btn aria-haspopup="true" aria-expanded="false" aria-label="Language">
+              <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+              <span data-lang-current>EN</span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <ul class="lang-menu" data-lang-menu>
+              <li><button data-set-lang="en">English</button></li>
+              <li><button data-set-lang="zh">中文</button></li>
+              <li><button data-set-lang="fr">Français</button></li>
+              <li><button data-set-lang="es">Español</button></li>
+              <li><button data-set-lang="ar">العربية</button></li>
+              <li><button data-set-lang="id">Bahasa Indonesia</button></li>
+            </ul>
+          </div>
+          <a href="auth.html" class="signin" data-i18n="nav.signin">Sign in</a>
+          <a href="auth.html" class="btn btn-primary"><span data-i18n="nav.cta">Start building</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ SUB HERO ============ -->
+    <section class="subhero">
+      <div class="container">
+        <span class="eyebrow center" style="display:inline-flex;" data-i18n="demo.eb">Live demos</span>
+        <h1 data-i18n="demo.h">See OmniFabric in action</h1>
+        <p data-i18n="demo.p">Ten of the most common Data + AI use cases — each one animated end to end, all powered by the same fabric.</p>
+      </div>
+    </section>
+
+    <!-- ============ DEMO GRID ============ -->
+    <section class="section" style="padding-top:24px;">
+      <div class="container">
+        <div class="demo-grid">
+
+          <!-- 1 Analytics dashboard -->
+          <article class="demo-card reveal" data-demo="dash">
+            <div class="demo-screen"><button class="dv-play-btn" aria-label="Play demo" data-demo="dash"><span class="pc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="demo-tb"><i></i><i></i><i></i><span>analytics.omnifabric.app</span></div>
+              <div class="demo-stage">
+                <div class="d1-kpis"><div class="d1-kpi"><b>$2.4M</b><span>Revenue</span></div><div class="d1-kpi"><b>+18%</b><span>Growth</span></div><div class="d1-kpi"><b>4.9★</b><span>CSAT</span></div></div>
+                <div class="d1-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </div></div>
+            <div class="demo-meta"><div class="num">01</div><h3 data-i18n="demo.c1.t">Analytics dashboard</h3><p data-i18n="demo.c1.d">Live KPIs and charts that refresh the moment new data lands.</p></div>
+          </article>
+
+          <!-- 2 Predictive maintenance -->
+          <article class="demo-card reveal" data-demo="maint">
+            <div class="demo-screen"><button class="dv-play-btn" aria-label="Play demo" data-demo="maint"><span class="pc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="demo-tb"><i></i><i></i><i></i><span>maintenance · line A-12</span></div>
+              <div class="demo-stage">
+                <div class="d2-wrap">
+                  <div class="d2-thr"><span>threshold</span></div>
+                  <svg viewBox="0 0 240 150" width="100%" height="150" preserveAspectRatio="none">
+                    <polyline class="d2-line" points="6,120 40,112 74,108 108,96 140,82 168,60 196,40 222,26"/>
+                    <circle class="d2-dot" cx="222" cy="26" r="3"/>
+                  </svg>
+                  <span class="d2-chip chip warn"><svg class="ck-s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg> Bearing wear · work order raised</span>
+                </div>
+              </div></div>
+            <div class="demo-meta"><div class="num">02</div><h3 data-i18n="demo.c2.t">Predictive maintenance</h3><p data-i18n="demo.c2.d">Sensor trends flag failures early and auto-raise a work order.</p></div>
+          </article>
+
+          <!-- 3 NL insights -->
+          <article class="demo-card reveal" data-demo="nlq">
+            <div class="demo-screen"><button class="dv-play-btn" aria-label="Play demo" data-demo="nlq"><span class="pc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="demo-tb"><i></i><i></i><i></i><span>ask the data</span></div>
+              <div class="demo-stage">
+                <div class="d3-q"><svg class="mag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><span class="d3-typed">Why did Q3 revenue dip in EMEA?</span></div>
+                <div class="d3-res">EMEA dipped <b>-7%</b> — driven by a delayed renewal cohort. <svg class="d3-spark" width="170" height="34" viewBox="0 0 170 34"><polyline points="0,10 30,8 60,22 90,26 120,18 150,8 168,4" fill="none" stroke="#00a94f" stroke-width="2.2" stroke-linecap="round"/></svg></div>
+              </div></div>
+            <div class="demo-meta"><div class="num">03</div><h3 data-i18n="demo.c3.t">Natural-language insights</h3><p data-i18n="demo.c3.d">Ask a question in plain language, get the chart and the answer.</p></div>
+          </article>
+
+          <!-- 4 Product manual chatbot -->
+          <article class="demo-card reveal" data-demo="chat">
+            <div class="demo-screen"><button class="dv-play-btn" aria-label="Play demo" data-demo="chat"><span class="pc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="demo-tb"><i></i><i></i><i></i><span>support copilot</span></div>
+              <div class="demo-stage">
+                <div class="bub u b1">How do I reset the X200 controller?</div>
+                <div class="bub b b2"><span class="dots"><i></i><i></i><i></i></span></div>
+                <div class="bub b b3">Hold <b>Power</b> for 10s until the LED blinks twice, then release.</div>
+                <div class="bub s b4">▸ source: X200-manual.pdf · p.42</div>
+              </div></div>
+            <div class="demo-meta"><div class="num">04</div><h3 data-i18n="demo.c4.t">Product-manual chatbot</h3><p data-i18n="demo.c4.d">Grounded answers from your manuals, with the source cited.</p></div>
+          </article>
+
+          <!-- 5 Sales training agent -->
+          <article class="demo-card reveal" data-demo="train">
+            <div class="demo-screen"><button class="dv-play-btn" aria-label="Play demo" data-demo="train"><span class="pc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="demo-tb"><i></i><i></i><i></i><span>sales roleplay</span></div>
+              <div class="demo-stage">
+                <div class="bub u b1">"It's too expensive for us right now."</div>
+                <div class="bub b b3">Good redirect to value. Try anchoring on ROI before price.</div>
+                <div style="margin-top:4px"><div style="display:flex;justify-content:space-between;font-size:.64rem;color:var(--muted)"><span>Objection handling</span><b style="color:var(--teal-600)">86</b></div><div class="d5-meter"><b></b></div></div>
+              </div></div>
+            <div class="demo-meta"><div class="num">05</div><h3 data-i18n="demo.c5.t">Sales training agent</h3><p data-i18n="demo.c5.d">Role-play sales calls and get scored, actionable coaching.</p></div>
+          </article>
+
+          <!-- 6 Smart contract review -->
+          <article class="demo-card reveal" data-demo="contract">
+            <div class="demo-screen"><button class="dv-play-btn" aria-label="Play demo" data-demo="contract"><span class="pc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="demo-tb"><i></i><i></i><i></i><span>contract-review.pdf</span></div>
+              <div class="demo-stage">
+                <div class="doc-lines"><i></i><i class="risk"></i><i></i><i></i><i class="risk r2"></i><i></i></div>
+                <div class="d6-foot"><span class="chip warn">2 risk clauses</span><span class="chip ok"><svg class="ck-s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> reviewed in 4s</span></div>
+              </div></div>
+            <div class="demo-meta"><div class="num">06</div><h3 data-i18n="demo.c6.t">Smart contract review</h3><p data-i18n="demo.c6.d">Risk clauses highlighted and scored in seconds, not weeks.</p></div>
+          </article>
+
+          <!-- 7 Sourcing & price comparison -->
+          <article class="demo-card reveal" data-demo="source">
+            <div class="demo-screen"><button class="dv-play-btn" aria-label="Play demo" data-demo="source"><span class="pc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="demo-tb"><i></i><i></i><i></i><span>sourcing agent</span></div>
+              <div class="demo-stage">
+                <div class="src-row best"><span>Vega&nbsp;Co <span class="best-tag chip ok" style="padding:1px 6px">best</span></span><span class="bar"><b></b></span><span>$8.20</span></div>
+                <div class="src-row"><span>Atlas&nbsp;Ltd</span><span class="bar"><b></b></span><span>$9.10</span></div>
+                <div class="src-row"><span>Nori&nbsp;Inc</span><span class="bar"><b></b></span><span>$8.75</span></div>
+                <div class="src-row"><span>Orbit</span><span class="bar"><b></b></span><span>$9.60</span></div>
+              </div></div>
+            <div class="demo-meta"><div class="num">07</div><h3 data-i18n="demo.c7.t">Sourcing &amp; price comparison</h3><p data-i18n="demo.c7.d">Compare suppliers across internal and market data instantly.</p></div>
+          </article>
+
+          <!-- 8 Bidding agent -->
+          <article class="demo-card reveal" data-demo="bid">
+            <div class="demo-screen"><button class="dv-play-btn" aria-label="Play demo" data-demo="bid"><span class="pc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="demo-tb"><i></i><i></i><i></i><span>bid drafting</span></div>
+              <div class="demo-stage">
+                <div class="chk on c1"><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Extract RFP requirements (24)</span></div>
+                <div class="chk on c2"><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Match historical win data</span></div>
+                <div class="chk on c3"><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Generate compliant first draft</span></div>
+                <div class="d8-prog"><b></b></div>
+              </div></div>
+            <div class="demo-meta"><div class="num">08</div><h3 data-i18n="demo.c8.t">Bidding agent</h3><p data-i18n="demo.c8.d">Extract RFP requirements and draft a compliant bid automatically.</p></div>
+          </article>
+
+          <!-- 9 Document intelligence -->
+          <article class="demo-card reveal" data-demo="docai">
+            <div class="demo-screen"><button class="dv-play-btn" aria-label="Play demo" data-demo="docai"><span class="pc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="demo-tb"><i></i><i></i><i></i><span>doc → structured</span></div>
+              <div class="demo-stage">
+                <div class="d9">
+                  <div class="d9-doc"><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="d9-arrow">→</div>
+                  <div class="d9-tbl"><div class="kv"><span>Invoice #</span><b>INV-7741</b></div><div class="kv"><span>Date</span><b>2026-05-30</b></div><div class="kv"><span>Amount</span><b>$12,480</b></div><div class="kv"><span>Vendor</span><b>Vega Co</b></div></div>
+                </div>
+                <div style="text-align:center;margin-top:10px"><span class="chip ok">written to SQL · &lt; 5s</span></div>
+              </div></div>
+            <div class="demo-meta"><div class="num">09</div><h3 data-i18n="demo.c9.t">Document intelligence</h3><p data-i18n="demo.c9.d">Turn messy documents into structured records, written straight to SQL.</p></div>
+          </article>
+
+          <!-- 10 Smart ops assistant -->
+          <article class="demo-card reveal" data-demo="ops">
+            <div class="demo-screen"><button class="dv-play-btn" aria-label="Play demo" data-demo="ops"><span class="pc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="demo-tb"><i></i><i></i><i></i><span>ops copilot</span></div>
+              <div class="demo-stage">
+                <div class="term">
+                  <p><span class="pre">$</span> watch cluster-prod</p>
+                  <p>api-gateway … <span class="ok">ok</span></p>
+                  <p class="warn">⚠ cpu spike on node-7 (96%)</p>
+                  <p>↳ agent: scaling out +2 replicas…</p>
+                  <p class="ok">✓ resolved · latency back to 42ms</p>
+                </div>
+              </div></div>
+            <div class="demo-meta"><div class="num">10</div><h3 data-i18n="demo.c10.t">Smart ops assistant</h3><p data-i18n="demo.c10.d">Detects anomalies in logs and auto-remediates with one click.</p></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta-band" id="get-started">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <h2 data-i18n="demo.cta.t">Want one of these on your data?</h2>
+          <p data-i18n="demo.cta.d">Start free and connect your first source in minutes, or book a live walkthrough with our team.</p>
+          <div class="hero-cta">
+            <a href="auth.html" class="btn btn-primary btn-lg"><span data-i18n="cta.b1">Start building free</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="https://calendly.com/tan-dovan/30min" target="_blank" rel="noopener" class="btn btn-ghost btn-lg" data-i18n="cta.b2">Book a demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ DEMO PLAYER ============ -->
+  <div class="dv-overlay" id="dvOverlay" role="dialog" aria-modal="true">
+    <div class="dv-modal">
+      <div class="dv-mhead"><span class="num" id="dvNum">01</span><h3 id="dvTitle">Demo</h3>
+        <button class="dv-x" id="dvClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+      <div class="dv-frame">
+        <div class="dv-fbar"><i></i><i></i><i></i><span id="dvUrl">omnifabric.app</span></div>
+        <div class="dv-screen"><div class="dv-play-area" id="dvPlay"></div></div>
+        <div class="dv-prog" id="dvProg"><b></b></div>
+      </div>
+      <div class="dv-caps" id="dvCaps"></div>
+      <div class="dv-foot">
+        <button class="btn btn-outline" id="dvReplay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg> <span data-i18n="dv.replay">Replay</span></button>
+        <a href="auth.html" class="btn btn-primary"><span data-i18n="p.hero.cta1">Try it free</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html">
+            <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#00a94f"/>
+              <path d="M16 6.5L24.2 11L24.2 21L16 25.5L7.8 21L7.8 11Z" fill="none" stroke="#06250f" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/><path d="M16 16L16 9.2M16 16L10 19.4M16 16L22 19.4" fill="none" stroke="#06250f" stroke-width="2.1" stroke-linecap="round"/><circle cx="16" cy="16" r="2.3" fill="#06250f"/><circle cx="16" cy="9.2" r="1.9" fill="#06250f"/><circle cx="10" cy="19.4" r="1.9" fill="#06250f"/><circle cx="22" cy="19.4" r="1.9" fill="#06250f"/>
+            </svg>
+            <span class="wordmark">CloudSigma OmniFabric</span>
+          </a>
+          <p data-i18n="footer.about">The unified intelligence fabric for data and AI. Control your data, trust your
+            agents, and turn AI strategy into real business ROI.</p>
+        </div>
+        <div>
+          <h5 data-i18n="nav.product">Product</h5>
+          <ul>
+            <li><a href="product.html#architecture" data-i18n="footer.pf1">Platform architecture</a></li>
+            <li><a href="product.html#sovereignty" data-i18n="sov.h.eb">Data sovereignty</a></li>
+            <li><a href="product.html#regions" data-i18n="nav.regions">Regions</a></li>
+            <li><a href="demo.html" data-i18n="nav.demo">Demos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 data-i18n="footer.solutions">Solutions</h5>
+          <ul>
+            <li><a href="solutions.html#capabilities" data-i18n="footer.sf1">Document intelligence</a></li>
+            <li><a href="solutions.html#capabilities" data-i18n="footer.sf2">Agentic RAG</a></li>
+            <li><a href="solutions.html#capabilities" data-i18n="footer.sf3">Multimodal data ETL</a></li>
+            <li><a href="solutions.html#capabilities" data-i18n="footer.sf4">AI data foundation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 data-i18n="footer.company">Company</h5>
+          <ul>
+            <li><a href="about.html" data-i18n="footer.cf1">About</a></li>
+            <li><a href="customers.html" data-i18n="nav.customers">Case Studies</a></li>
+            <li><a href="docs.html" data-i18n="footer.cf2">Documentation</a></li>
+            <li><a href="https://calendly.com/tan-dovan/30min" target="_blank" rel="noopener" data-i18n="footer.cf4">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copyright">© 2026 OmniFabric. All rights reserved.</span>
+        <div class="social">
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 6.8 9.8.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.5-1.1-4.5-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.5 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.4 6.8-5.3 6.8-9.8C22 6.6 17.5 2 12 2Z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2h3.3l-7.2 8.3L23 22h-6.6l-5.2-6.8L5.2 22H1.9l7.7-8.8L1 2h6.8l4.7 6.2L18.2 2Zm-1.2 18h1.8L7.1 3.9H5.2L17 20Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.2 8.2h4.6V24H.2V8.2Zm7.5 0h4.4v2.2h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 6.9V24h-4.6v-7.1c0-1.7 0-3.9-2.4-3.9s-2.7 1.8-2.7 3.7V24H7.7V8.2Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js?v=10"></script>
+  <script src="assets/js/main.js?v=10"></script>
+  <script>
+  (function(){
+    var KEYS=['dash','maint','nlq','chat','train','contract','source','bid','docai','ops'];
+    var CAPS={
+      dash:['dv.dash.1','dv.dash.2','dv.dash.3','dv.dash.4'],
+      maint:['dv.maint.1','dv.maint.2','dv.maint.3','dv.maint.4'],
+      nlq:['dv.nlq.1','dv.nlq.2','dv.nlq.3','dv.nlq.4'],
+      chat:['dv.chat.1','dv.chat.2','dv.chat.3','dv.chat.4'],
+      train:['dv.train.1','dv.train.2','dv.train.3','dv.train.4'],
+      contract:['dv.contract.1','dv.contract.2','dv.contract.3','dv.contract.4'],
+      source:['dv.source.1','dv.source.2','dv.source.3','dv.source.4'],
+      bid:['dv.bid.1','dv.bid.2','dv.bid.3','dv.bid.4'],
+      docai:['dv.docai.1','dv.docai.2','dv.docai.3','dv.docai.4'],
+      ops:['dv.ops.1','dv.ops.2','dv.ops.3','dv.ops.4']
+    };
+    var ov=document.getElementById('dvOverlay'), play=document.getElementById('dvPlay'),
+        caps=document.getElementById('dvCaps'), prog=document.getElementById('dvProg'),
+        titleEl=document.getElementById('dvTitle'), numEl=document.getElementById('dvNum'), urlEl=document.getElementById('dvUrl');
+    function t(k){ return (window.ofT?window.ofT(k):k); }
+    function pad(n){ n=String(n); return n.length<2?'0'+n:n; }
+    function build(key){
+      var card=document.querySelector('.demo-card[data-demo="'+key+'"]'); if(!card) return;
+      ov.dataset.cur=key;
+      numEl.textContent=pad(KEYS.indexOf(key)+1);
+      var h=card.querySelector('h3'); titleEl.textContent=h?h.textContent:'Demo';
+      var u=card.querySelector('.demo-tb span'); urlEl.textContent=u?u.textContent:'omnifabric.app';
+      var stage=card.querySelector('.demo-stage'); play.innerHTML=stage?stage.innerHTML:'';
+      caps.innerHTML='';
+      (CAPS[key]||[]).forEach(function(k,i){
+        var c=document.createElement('div'); c.className='cap';
+        var st=document.createElement('span'); st.className='st'; st.textContent=i+1;
+        var tx=document.createElement('span'); tx.textContent=t(k);
+        c.appendChild(st); c.appendChild(tx); caps.appendChild(c);
+      });
+      prog.classList.remove('run'); caps.classList.remove('run'); void caps.offsetWidth;
+      prog.classList.add('run'); caps.classList.add('run');
+    }
+    function open(key){ build(key); ov.classList.add('open'); document.body.style.overflow='hidden'; }
+    function close(){ ov.classList.remove('open'); document.body.style.overflow=''; setTimeout(function(){play.innerHTML='';},250); }
+    document.querySelectorAll('.dv-play-btn').forEach(function(b){ b.addEventListener('click',function(e){ e.preventDefault(); open(b.dataset.demo); }); });
+    document.getElementById('dvClose').addEventListener('click',close);
+    document.getElementById('dvReplay').addEventListener('click',function(){ build(ov.dataset.cur); });
+    ov.addEventListener('click',function(e){ if(e.target===ov) close(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape' && ov.classList.contains('open')) close(); });
+    // deep link: #play=KEY
+    function fromHash(){ var m=(location.hash||'').match(/play=([a-z]+)/); if(m && CAPS[m[1]]) open(m[1]); }
+    window.addEventListener('load',fromHash); window.addEventListener('hashchange',fromHash);
+  })();
+  </script>
+</body>
+</html>

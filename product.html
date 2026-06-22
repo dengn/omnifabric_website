@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product — CloudSigma OmniFabric Intelligence</title>
+  <meta name="description" content="OmniFabric Intelligence is a one-stop Data + AI platform — from multi-source data ingestion to production intelligent applications. Unified governance of databases, documents, images, audio and video, with built-in integration, vectorization and agent orchestration." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=10" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300a94f'/%3E%3Cstop offset='1' stop-color='%232fb265'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 6.5L24.2 11L24.2 21L16 25.5L7.8 21L7.8 11Z' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linejoin='round'/%3E%3Cpath d='M16 16L16 9.2M16 16L10 19.4M16 16L22 19.4' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='2.3' fill='%2306250f'/%3E%3Ccircle cx='16' cy='9.2' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='10' cy='19.4' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='22' cy='19.4' r='1.9' fill='%2306250f'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav" id="nav">
+        <a class="brand" href="index.html" aria-label="CloudSigma OmniFabric home">
+          <img class="cs-logo" src="assets/img/cloudsigma-logo.svg?v=10" alt="CloudSigma" width="90" height="27" />
+          <span class="brand-div" aria-hidden="true"></span>
+          <span class="wordmark">OmniFabric</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="product.html" data-i18n="nav.product">Product</a></li>
+          <li><a href="solutions.html" data-i18n="nav.solutions">Solutions</a></li>
+          <li><a href="demo.html" data-i18n="nav.demo">Demos</a></li>
+          <li><a href="customers.html" data-i18n="nav.customers">Case Studies</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="docs.html" data-i18n="nav.docs">Docs</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="lang-select">
+            <button class="lang-btn" data-lang-btn aria-haspopup="true" aria-expanded="false" aria-label="Language">
+              <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+              <span data-lang-current>EN</span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <ul class="lang-menu" data-lang-menu>
+              <li><button data-set-lang="en">English</button></li>
+              <li><button data-set-lang="zh">中文</button></li>
+              <li><button data-set-lang="fr">Français</button></li>
+              <li><button data-set-lang="es">Español</button></li>
+              <li><button data-set-lang="ar">العربية</button></li>
+              <li><button data-set-lang="id">Bahasa Indonesia</button></li>
+            </ul>
+          </div>
+          <a href="auth.html" class="signin" data-i18n="nav.signin">Sign in</a>
+          <a href="auth.html" class="btn btn-primary"><span data-i18n="nav.cta">Start building</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ SUB HERO ============ -->
+    <section class="subhero">
+      <div class="container">
+        <span class="eyebrow center" style="display:inline-flex;">OmniFabric Intelligence</span>
+        <h1 data-i18n="p.hero.h">Data to intelligence, intelligence to action</h1>
+        <p data-i18n="p.hero.p">A one-stop Data + AI platform — from multi-source data ingestion to production
+          intelligent applications, covering the full pipeline on one foundation.</p>
+        <div class="hero-cta" style="justify-content:center;">
+          <a data-i18n="p.hero.cta1" href="#get-started" class="btn btn-primary btn-lg">Try it free
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a data-i18n="p.hero.cta2" href="docs.html" class="btn btn-outline btn-lg">Read the docs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OVERVIEW ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span data-i18n="p.ov.eb" class="eyebrow">One-stop Data + AI platform</span>
+          <h2 data-i18n="p.ov.h">One platform, from raw data to intelligent applications</h2>
+          <p data-i18n="p.ov.p">OmniFabric Intelligence delivers end-to-end capabilities from multi-source data ingestion
+            to intelligent applications — unified governance and processing of databases, structured data,
+            documents, images, audio and video. Built-in integration, cleansing, vectorization and task
+            orchestration turn raw data into assets ready for BI analytics, Agentic RAG, model fine-tuning
+            and multimodal search.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DATA SOVEREIGNTY ============ -->
+    <section class="section" id="sovereignty" style="background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow" data-i18n="sov.h.eb">Data sovereignty</span>
+          <h2 data-i18n="sov.p.h">Sovereign by design — deploy anywhere, govern everything</h2>
+          <p data-i18n="sov.p.p">Mission-critical AI demands sovereignty and strict governance. OmniFabric keeps your data in your region and on infrastructure you control, with full auditability over every model call and agent decision.</p>
+        </div>
+        <div class="pillars-grid">
+          <article class="pillar reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6-1.5A4 4 0 0 0 6 19z"/></svg></div>
+            <h3 data-i18n="sov.p.m1t">Local cloud</h3>
+            <p data-i18n="sov.p.m1d">Deploy into a sovereign region of your chosen cloud — your data never crosses borders.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg></div>
+            <h3 data-i18n="sov.p.m2t">On-premises</h3>
+            <p data-i18n="sov.p.m2d">Run entirely inside your own data center, fully air-gappable for the most sensitive workloads.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+            <h3 data-i18n="sov.p.m3t">Hybrid edge</h3>
+            <p data-i18n="sov.p.m3d">Keep sensitive data on-prem while bursting compute to the cloud — one platform, one control plane.</p>
+          </article>
+        </div>
+        <div class="reveal" style="max-width:940px;margin:40px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px 32px;">
+          <div style="display:flex;align-items:flex-start;gap:10px;"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="sov.p.g1">In-region data residency</span></div>
+          <div style="display:flex;align-items:flex-start;gap:10px;"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="sov.p.g2">RBAC &amp; multi-tenant isolation</span></div>
+          <div style="display:flex;align-items:flex-start;gap:10px;"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="sov.p.g3">Full lineage &amp; audit trails</span></div>
+          <div style="display:flex;align-items:flex-start;gap:10px;"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="sov.p.g4">Point-in-time snapshots &amp; replay</span></div>
+          <div style="display:flex;align-items:flex-start;gap:10px;"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="sov.p.g5">PII protection &amp; data masking</span></div>
+          <div style="display:flex;align-items:flex-start;gap:10px;"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="sov.p.g6">Reproducible, auditable outputs</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ARCHITECTURE ============ -->
+    <section class="section" id="architecture" style="background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span data-i18n="p.arch.eb" class="eyebrow">Platform architecture</span>
+          <h2 data-i18n="p.arch.h">From data sources to AI-ready outcomes</h2>
+          <p data-i18n="p.arch.p">Nine source types flow up through three layers of intelligence and out to production AI applications.</p>
+        </div>
+
+        <p data-i18n="p.arch.src" class="arch-cap reveal" style="text-align:center;font-weight:600;color:var(--slate);margin-bottom:14px;">Data sources</p>
+        <div class="logos-row reveal" style="margin-bottom:36px;flex-wrap:wrap;gap:14px 28px;">
+          <span data-i18n="p.src1" class="lg">SQL Database</span>
+          <span data-i18n="p.src2" class="lg">Structured Data</span>
+          <span data-i18n="p.src3" class="lg">Object Storage</span>
+          <span data-i18n="p.src4" class="lg">Documents</span>
+          <span data-i18n="p.src5" class="lg">Images</span>
+          <span data-i18n="p.src6" class="lg">Audio</span>
+          <span data-i18n="p.src7" class="lg">Video</span>
+          <span data-i18n="p.src8" class="lg">SaaS Apps</span>
+        </div>
+
+        <div class="pillars-grid">
+          <article class="pillar reveal">
+            <h3 data-i18n="p.l1.t">Data Intelligence Layer</h3>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.l1.i1">Intent recognition &amp; planning</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.l1.i2">Smart workflow</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.l1.i3">Multimodal search</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.l1.i4">Chat2BI &amp; feedback optimization</span></li>
+            </ul>
+          </article>
+          <article class="pillar reveal">
+            <h3 data-i18n="p.l2.t">Data Integration &amp; Governance</h3>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.l2.i1">Ingestion</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.l2.i2">Cleansing &amp; preprocessing</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.l2.i3">Chunking &amp; vectorization</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.l2.i4">Service &amp; governance</span></li>
+            </ul>
+          </article>
+          <article class="pillar reveal">
+            <h3 data-i18n="p.l3.t">Database &amp; AI Service Layer</h3>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.l3.i1">Hyper-converged, multi-model storage</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.l3.i2">HTAP · vector · full-text search</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.l3.i3">LLM &amp; embedding models</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.l3.i4">Vision &amp; speech models</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <p data-i18n="p.arch.out" class="arch-cap reveal" style="text-align:center;font-weight:600;color:var(--slate);margin:36px 0 14px;">AI-ready outputs</p>
+        <div class="logos-row reveal" style="flex-wrap:wrap;gap:14px 28px;">
+          <span data-i18n="p.out1" class="lg">Smart Search Agent</span>
+          <span data-i18n="p.out2" class="lg">Intelligent Doc Apps</span>
+          <span data-i18n="p.out3" class="lg">Smart Data Analytics</span>
+          <span data-i18n="p.out4" class="lg">AI Model Training</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ENGINES ============ -->
+    <section class="section" id="capabilities">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span data-i18n="p.eng.eb" class="eyebrow">Under the hood</span>
+          <h2 data-i18n="p.eng.h">Four engines powering the fabric</h2>
+          <p data-i18n="p.eng.p">Four engines work together as one platform — a unified, enterprise-grade multimodal data intelligence foundation.</p>
+        </div>
+        <div class="sol-grid">
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+            <h4 data-i18n="p.eng1.s">Hyper-converged cloud-native database</h4>
+            <p data-i18n="p.eng1.d">Unifies OLTP and OLAP, vector and search, lakehouse, structured and unstructured data — powering an enterprise-grade multimodal data foundation.</p>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+            <h4 data-i18n="p.eng2.s">AI model service repository</h4>
+            <p data-i18n="p.eng2.d">Centralized management of multi-type, multi-spec AI models — simplifying model onboarding and maintenance to drive agile intelligent applications.</p>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></div>
+            <h4 data-i18n="p.eng3.s">Multimodal data ETL pipeline</h4>
+            <p data-i18n="p.eng3.d">Purpose-built connectors for unified multimodal ingestion and transformation, with visual end-to-end orchestration for efficient streaming processing.</p>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+            <h4 data-i18n="p.eng4.s">Data intelligence agent</h4>
+            <p data-i18n="p.eng4.d">Data search and data engineering agents for heterogeneous data — letting users unlock data value through natural language.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CORE MODULES ============ -->
+    <section class="section" style="background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span data-i18n="p.cm.eb" class="eyebrow">Four core modules</span>
+          <h2 data-i18n="p.cm.h">The full pipeline, end to end</h2>
+          <p data-i18n="p.cm.p">From ingestion to retrieval agents — building the next-generation multimodal data intelligence platform.</p>
+        </div>
+        <div class="sol-grid">
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></svg></div>
+            <h4 data-i18n="p.cm1.t">Unified ingestion, storage &amp; indexing</h4>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.cm1.f1"><b>Data source integration</b> — multi-source connectors for structured, semi-structured and unstructured data.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.cm1.f2"><b>Automated ingestion</b> — historical and incremental loads with completeness and real-time freshness.</span></li>
+            </ul>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg></div>
+            <h4 data-i18n="p.cm2.t">Multimodal parsing &amp; extraction</h4>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.cm2.f1"><b>Complex document parsing</b> — extract structured information with multiple parsing, chunking and vectorization strategies.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.cm2.f2"><b>Multimedia parsing</b> — images, audio and video with swappable model support.</span></li>
+            </ul>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.6 7.6 11 16M16.4 7.6 13 16"/></svg></div>
+            <h4 data-i18n="p.cm3.t">Flexible data processing workflows</h4>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.cm3.f1"><b>Built-in operators</b> — pre-built parsing, cleansing and augmentation nodes, plus custom node support.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.cm3.f2"><b>Visual orchestration</b> — DAG-based workflow configuration for rapid pipeline setup.</span></li>
+            </ul>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+            <h4 data-i18n="p.cm4.t">Data retrieval &amp; analytics agents</h4>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.cm4.f1"><b>Data Q&amp;A agent</b> — natural-language queries across structured and unstructured data, with aggregation and drill-down.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="p.cm4.f2"><b>Full-chain traceability</b> — answers include complete lineage of sources, reasoning and execution steps.</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECURITY ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span data-i18n="p.sec.eb" class="eyebrow">Enterprise-grade</span>
+          <h2 data-i18n="p.sec.h">Security &amp; access control, built in</h2>
+        </div>
+        <div class="sol-grid">
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h4 data-i18n="p.sec1.t">RBAC access control</h4>
+            <p data-i18n="p.sec1.d">Fine-grained management of users, roles, feature permissions and data access — down to the column.</p>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+            <h4 data-i18n="p.sec2.t">Multi-tenant isolation</h4>
+            <p data-i18n="p.sec2.d">Isolated workspace tenants with dedicated storage and compute, so teams and data never bleed across boundaries.</p>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+            <h4 data-i18n="p.sec3.t">Lineage &amp; audit trails</h4>
+            <p data-i18n="p.sec3.d">Every transformation and agent decision is traceable end-to-end — audit-ready for GDPR, SOC 2 and your own policies.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REGIONS (folded in) ============ -->
+    <section class="section" id="regions" style="background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow" data-i18n="rg.eyebrow">Global infrastructure</span>
+          <h2 data-i18n="rg.title">Activate OmniFabric in the region you choose</h2>
+          <p data-i18n="rg.desc">Pick a location and provision a sovereign OmniFabric region in minutes — your data and models stay in-region, under your control.</p>
+        </div>
+
+        <div class="region-banner" id="regionBanner" data-active="false" style="margin:0 auto 28px;">
+          <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span data-i18n="rg.active.label">Active region</span>:&nbsp;<b id="rgActiveVal" data-i18n="rg.active.none">Not selected</b>
+        </div>
+
+        <div class="region-stats">
+          <div class="stat reveal"><div class="num">7</div><div class="lbl" data-i18n="rg.stat1.l">Regions available now</div></div>
+          <div class="stat reveal"><div class="num">6</div><div class="lbl" data-i18n="rg.stat2.l">More coming soon</div></div>
+          <div class="stat reveal"><div class="num">100%</div><div class="lbl" data-i18n="rg.stat3.l">In-region data residency</div></div>
+        </div>
+
+        <div class="region-grid">
+          <article class="region reveal" data-region="Singapore" data-country="Singapore" data-code="sin" data-flag="🇸🇬" data-status="available">
+            <div class="region-top"><span class="flag">🇸🇬</span><div class="rt-name"><b>Singapore</b><span>Singapore</span></div><span class="region-status ok" data-i18n="rg.status.available">Available</span></div>
+            <p class="region-sub" data-i18n="rg.card.sub">In-region data residency</p>
+            <button class="btn btn-outline region-activate" data-i18n="rg.btn.activate">Activate region</button>
+          </article>
+          <article class="region reveal" data-region="Johor Bahru" data-country="Malaysia" data-code="jhb" data-flag="🇲🇾" data-status="available">
+            <div class="region-top"><span class="flag">🇲🇾</span><div class="rt-name"><b>Johor Bahru</b><span>Malaysia</span></div><span class="region-status ok" data-i18n="rg.status.available">Available</span></div>
+            <p class="region-sub" data-i18n="rg.card.sub">In-region data residency</p>
+            <button class="btn btn-outline region-activate" data-i18n="rg.btn.activate">Activate region</button>
+          </article>
+          <article class="region reveal" data-region="Riyadh" data-country="Saudi Arabia" data-code="ruh" data-flag="🇸🇦" data-status="available">
+            <div class="region-top"><span class="flag">🇸🇦</span><div class="rt-name"><b>Riyadh</b><span>Saudi Arabia</span></div><span class="region-status ok" data-i18n="rg.status.available">Available</span></div>
+            <p class="region-sub" data-i18n="rg.card.sub">In-region data residency</p>
+            <button class="btn btn-outline region-activate" data-i18n="rg.btn.activate">Activate region</button>
+          </article>
+          <article class="region reveal" data-region="Jeddah" data-country="Saudi Arabia" data-code="jed" data-flag="🇸🇦" data-status="available">
+            <div class="region-top"><span class="flag">🇸🇦</span><div class="rt-name"><b>Jeddah</b><span>Saudi Arabia</span></div><span class="region-status ok" data-i18n="rg.status.available">Available</span></div>
+            <p class="region-sub" data-i18n="rg.card.sub">In-region data residency</p>
+            <button class="btn btn-outline region-activate" data-i18n="rg.btn.activate">Activate region</button>
+          </article>
+          <article class="region reveal" data-region="Sofia" data-country="Bulgaria" data-code="sof" data-flag="🇧🇬" data-status="available">
+            <div class="region-top"><span class="flag">🇧🇬</span><div class="rt-name"><b>Sofia</b><span>Bulgaria</span></div><span class="region-status ok" data-i18n="rg.status.available">Available</span></div>
+            <p class="region-sub" data-i18n="rg.card.sub">In-region data residency</p>
+            <button class="btn btn-outline region-activate" data-i18n="rg.btn.activate">Activate region</button>
+          </article>
+          <article class="region reveal" data-region="Monterrey" data-country="Mexico" data-code="mty" data-flag="🇲🇽" data-status="available">
+            <div class="region-top"><span class="flag">🇲🇽</span><div class="rt-name"><b>Monterrey</b><span>Mexico</span></div><span class="region-status ok" data-i18n="rg.status.available">Available</span></div>
+            <p class="region-sub" data-i18n="rg.card.sub">In-region data residency</p>
+            <button class="btn btn-outline region-activate" data-i18n="rg.btn.activate">Activate region</button>
+          </article>
+          <article class="region reveal" data-region="Manila" data-country="Philippines" data-code="mnl" data-flag="🇵🇭" data-status="available">
+            <div class="region-top"><span class="flag">🇵🇭</span><div class="rt-name"><b>Manila</b><span>Philippines</span></div><span class="region-status ok" data-i18n="rg.status.available">Available</span></div>
+            <p class="region-sub" data-i18n="rg.card.sub">In-region data residency</p>
+            <button class="btn btn-outline region-activate" data-i18n="rg.btn.activate">Activate region</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta-band" id="get-started">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <h2 data-i18n="cta.title">Weave your data and AI into one fabric</h2>
+          <p data-i18n="cta.desc">Start free, connect your first source in minutes, and ship a trusted agent the
+            same day. Talk to us when you're ready to scale.</p>
+          <div class="hero-cta">
+            <a href="auth.html" class="btn btn-primary btn-lg"><span data-i18n="cta.b1">Start building free</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="https://calendly.com/tan-dovan/30min" target="_blank" rel="noopener" class="btn btn-ghost btn-lg" data-i18n="cta.b2">Book a demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ PROVISIONING MODAL ============ -->
+  <div class="modal-overlay" id="provModal" role="dialog" aria-modal="true" aria-label="Region activation">
+    <div class="modal">
+      <div class="prov-body">
+        <div class="modal-region" data-modal-region>
+          <span class="flag">🇸🇬</span><div><b>Singapore</b><span>Singapore</span></div>
+        </div>
+        <h3 data-i18n="rg.prov.title">Activating your region</h3>
+        <div class="prov-steps">
+          <div class="prov-step"><span class="dot"><span class="spin"></span><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="rg.prov.s1">Reserving capacity</span></div>
+          <div class="prov-step"><span class="dot"><span class="spin"></span><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="rg.prov.s2">Configuring fabric — database, vectors &amp; models</span></div>
+          <div class="prov-step"><span class="dot"><span class="spin"></span><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="rg.prov.s3">Provisioning private endpoints</span></div>
+          <div class="prov-step"><span class="dot"><span class="spin"></span><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="rg.prov.s4">Applying data-residency policy</span></div>
+        </div>
+      </div>
+      <div class="prov-done">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3 data-i18n="rg.prov.done.title">Region active</h3>
+        <p data-i18n="rg.prov.done.desc">Your OmniFabric region is ready. Connect at your in-region endpoint:</p>
+        <div class="prov-endpoint" data-endpoint>https://sin.omnifabric.cloud</div>
+        <div class="prov-actions">
+          <a href="#" class="btn btn-primary" data-close data-i18n="rg.prov.cta">Go to console</a>
+          <button class="btn btn-outline" data-close data-i18n="rg.prov.close">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html">
+            <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#00a94f"/>
+              <path d="M16 6.5L24.2 11L24.2 21L16 25.5L7.8 21L7.8 11Z" fill="none" stroke="#06250f" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/><path d="M16 16L16 9.2M16 16L10 19.4M16 16L22 19.4" fill="none" stroke="#06250f" stroke-width="2.1" stroke-linecap="round"/><circle cx="16" cy="16" r="2.3" fill="#06250f"/><circle cx="16" cy="9.2" r="1.9" fill="#06250f"/><circle cx="10" cy="19.4" r="1.9" fill="#06250f"/><circle cx="22" cy="19.4" r="1.9" fill="#06250f"/>
+            </svg>
+            <span class="wordmark">CloudSigma OmniFabric</span>
+          </a>
+          <p data-i18n="footer.about">The unified intelligence fabric for data and AI. Control your data, trust your
+            agents, and turn AI strategy into real business ROI.</p>
+        </div>
+        <div>
+          <h5 data-i18n="nav.product">Product</h5>
+          <ul>
+            <li><a href="product.html#sovereignty" data-i18n="sov.h.eb">Data sovereignty</a></li>
+            <li><a href="product.html#architecture" data-i18n="footer.pf1">Platform architecture</a></li>
+            <li><a href="product.html#capabilities" data-i18n="footer.pf2">Engines</a></li>
+            <li><a href="product.html#regions" data-i18n="nav.regions">Regions</a></li>
+            <li><a href="docs.html" data-i18n="footer.cf2">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 data-i18n="footer.solutions">Solutions</h5>
+          <ul>
+            <li><a href="solutions.html" data-i18n="footer.sf1">Document intelligence</a></li>
+            <li><a href="solutions.html" data-i18n="footer.sf2">Agentic RAG</a></li>
+            <li><a href="solutions.html" data-i18n="footer.sf3">Multimodal data ETL</a></li>
+            <li><a href="solutions.html" data-i18n="footer.sf4">AI data foundation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 data-i18n="footer.company">Company</h5>
+          <ul>
+            <li><a href="about.html" data-i18n="footer.cf1">About</a></li>
+            <li><a href="customers.html" data-i18n="nav.customers">Case Studies</a></li>
+            <li><a href="docs.html" data-i18n="footer.cf2">Documentation</a></li>
+            <li><a href="https://calendly.com/tan-dovan/30min" target="_blank" rel="noopener" data-i18n="footer.cf4">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copyright">© 2026 OmniFabric. All rights reserved.</span>
+        <div class="social">
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 6.8 9.8.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.5-1.1-4.5-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.5 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.4 6.8-5.3 6.8-9.8C22 6.6 17.5 2 12 2Z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2h3.3l-7.2 8.3L23 22h-6.6l-5.2-6.8L5.2 22H1.9l7.7-8.8L1 2h6.8l4.7 6.2L18.2 2Zm-1.2 18h1.8L7.1 3.9H5.2L17 20Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.2 8.2h4.6V24H.2V8.2Zm7.5 0h4.4v2.2h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 6.9V24h-4.6v-7.1c0-1.7 0-3.9-2.4-3.9s-2.7 1.8-2.7 3.7V24H7.7V8.2Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js?v=10"></script>
+  <script src="assets/js/main.js?v=10"></script>
+  <script src="assets/js/regions.js?v=10"></script>
+</body>
+</html>

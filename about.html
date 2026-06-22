@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — OmniFabric</title>
+  <title>About — CloudSigma OmniFabric</title>
   <meta name="description" content="OmniFabric unites a heritage of sovereign cloud infrastructure (CloudSigma) and an AI-native data platform (MatrixOrigin) into one fabric for data and AI." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2321a948'/%3E%3Cstop offset='1' stop-color='%2374dc86'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M9 9h14M9 16h14M9 23h14' stroke='%2306250f' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='9' r='2.4' fill='%2306250f'/%3E%3Ccircle cx='20' cy='16' r='2.4' fill='%2306250f'/%3E%3Ccircle cx='14' cy='23' r='2.4' fill='%2306250f'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=10" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300a94f'/%3E%3Cstop offset='1' stop-color='%232fb265'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 6.5L24.2 11L24.2 21L16 25.5L7.8 21L7.8 11Z' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linejoin='round'/%3E%3Cpath d='M16 16L16 9.2M16 16L10 19.4M16 16L22 19.4' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='2.3' fill='%2306250f'/%3E%3Ccircle cx='16' cy='9.2' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='10' cy='19.4' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='22' cy='19.4' r='1.9' fill='%2306250f'/%3E%3C/svg%3E" />
 </head>
 <body>
 
@@ -17,26 +17,17 @@
   <header class="header" id="header">
     <div class="container">
       <nav class="nav" id="nav">
-        <a class="brand" href="index.html" aria-label="OmniFabric home">
-          <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
-            <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#21a948"/><stop offset="1" stop-color="#74dc86"/>
-            </linearGradient></defs>
-            <rect width="32" height="32" rx="8" fill="url(#lg)"/>
-            <path d="M9 9h14M9 16h14M9 23h14" stroke="#06250f" stroke-width="2.4" stroke-linecap="round"/>
-            <circle cx="12" cy="9" r="2.4" fill="#06250f"/>
-            <circle cx="20" cy="16" r="2.4" fill="#06250f"/>
-            <circle cx="14" cy="23" r="2.4" fill="#06250f"/>
-          </svg>
+        <a class="brand" href="index.html" aria-label="CloudSigma OmniFabric home">
+          <img class="cs-logo" src="assets/img/cloudsigma-logo.svg?v=10" alt="CloudSigma" width="90" height="27" />
+          <span class="brand-div" aria-hidden="true"></span>
           <span class="wordmark">OmniFabric</span>
         </a>
 
-        <ul class="nav-links">
-          <li><a href="index.html#platform" data-i18n="nav.platform">Platform</a></li>
-          <li><a href="index.html#capabilities" data-i18n="nav.capabilities">Capabilities</a></li>
-          <li><a href="index.html#solutions" data-i18n="nav.solutions">Solutions</a></li>
-          <li><a href="customers.html" data-i18n="nav.customers">Customers</a></li>
-          <li><a href="regions.html" data-i18n="nav.regions">Regions</a></li>
+                <ul class="nav-links">
+          <li><a href="product.html" data-i18n="nav.product">Product</a></li>
+          <li><a href="solutions.html" data-i18n="nav.solutions">Solutions</a></li>
+          <li><a href="demo.html" data-i18n="nav.demo">Demos</a></li>
+          <li><a href="customers.html" data-i18n="nav.customers">Case Studies</a></li>
           <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
           <li><a href="docs.html" data-i18n="nav.docs">Docs</a></li>
           <li><a href="about.html" data-i18n="nav.about">About</a></li>
@@ -55,9 +46,10 @@
               <li><button data-set-lang="fr">Français</button></li>
               <li><button data-set-lang="es">Español</button></li>
               <li><button data-set-lang="ar">العربية</button></li>
+              <li><button data-set-lang="id">Bahasa Indonesia</button></li>
             </ul>
           </div>
-          <a href="#" class="signin" data-i18n="nav.signin">Sign in</a>
+          <a href="auth.html" class="signin" data-i18n="nav.signin">Sign in</a>
           <a href="#" class="btn btn-primary"><span data-i18n="nav.cta">Start building</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
@@ -175,10 +167,10 @@
           <h2 data-i18n="ab.cta.title">See what one fabric can do</h2>
           <p data-i18n="ab.cta.desc">Explore the platform, or talk to our team about bringing sovereign data and AI together.</p>
           <div class="hero-cta">
-            <a href="index.html#platform" class="btn btn-primary btn-lg"><span data-i18n="ab.cta.b1">Explore the platform</span>
+            <a href="product.html#architecture" class="btn btn-primary btn-lg"><span data-i18n="ab.cta.b1">Explore the platform</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a href="#" class="btn btn-ghost btn-lg" data-i18n="ab.cta.b2">Talk to us</a>
+            <a href="https://calendly.com/tan-dovan/30min" target="_blank" rel="noopener" class="btn btn-ghost btn-lg" data-i18n="ab.cta.b2">Talk to us</a>
           </div>
         </div>
       </div>
@@ -192,41 +184,40 @@
         <div class="footer-about">
           <a class="brand" href="index.html">
             <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
-              <rect width="32" height="32" rx="8" fill="#21a948"/>
-              <path d="M9 9h14M9 16h14M9 23h14" stroke="#06250f" stroke-width="2.4" stroke-linecap="round"/>
-              <circle cx="12" cy="9" r="2.4" fill="#06250f"/><circle cx="20" cy="16" r="2.4" fill="#06250f"/><circle cx="14" cy="23" r="2.4" fill="#06250f"/>
+              <rect width="32" height="32" rx="8" fill="#00a94f"/>
+              <path d="M16 6.5L24.2 11L24.2 21L16 25.5L7.8 21L7.8 11Z" fill="none" stroke="#06250f" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/><path d="M16 16L16 9.2M16 16L10 19.4M16 16L22 19.4" fill="none" stroke="#06250f" stroke-width="2.1" stroke-linecap="round"/><circle cx="16" cy="16" r="2.3" fill="#06250f"/><circle cx="16" cy="9.2" r="1.9" fill="#06250f"/><circle cx="10" cy="19.4" r="1.9" fill="#06250f"/><circle cx="22" cy="19.4" r="1.9" fill="#06250f"/>
             </svg>
-            <span class="wordmark">OmniFabric</span>
+            <span class="wordmark">CloudSigma OmniFabric</span>
           </a>
           <p data-i18n="footer.about">The unified intelligence fabric for data and AI. Control your data, trust your
             agents, and turn AI strategy into real business ROI.</p>
         </div>
         <div>
-          <h5 data-i18n="footer.platform">Platform</h5>
+          <h5 data-i18n="nav.product">Product</h5>
           <ul>
-            <li><a href="index.html#platform" data-i18n="footer.pf1">Intelligence flywheel</a></li>
-            <li><a href="index.html#capabilities" data-i18n="footer.pf2">OmniFabric Core</a></li>
-            <li><a href="index.html#capabilities" data-i18n="footer.pf3">Intelligence</a></li>
-            <li><a href="index.html#capabilities" data-i18n="footer.pf4">Agent &amp; Memory</a></li>
+            <li><a href="product.html#sovereignty" data-i18n="sov.h.eb">Data sovereignty</a></li>
+            <li><a href="product.html#architecture" data-i18n="footer.pf1">Intelligence flywheel</a></li>
+            <li><a href="product.html#capabilities" data-i18n="footer.pf2">OmniFabric Core</a></li>
+            <li><a href="product.html#capabilities" data-i18n="footer.pf3">Intelligence</a></li>
+            <li><a href="product.html#capabilities" data-i18n="footer.pf4">Agent &amp; Memory</a></li>
           </ul>
         </div>
         <div>
           <h5 data-i18n="footer.solutions">Solutions</h5>
           <ul>
-            <li><a href="index.html#solutions" data-i18n="footer.sf1">Document intelligence</a></li>
-            <li><a href="index.html#solutions" data-i18n="footer.sf2">Customer copilots</a></li>
-            <li><a href="index.html#solutions" data-i18n="footer.sf3">Real-time analytics</a></li>
-            <li><a href="index.html#solutions" data-i18n="footer.sf4">Enterprise search</a></li>
+            <li><a href="solutions.html" data-i18n="footer.sf1">Document intelligence</a></li>
+            <li><a href="solutions.html" data-i18n="footer.sf2">Customer copilots</a></li>
+            <li><a href="solutions.html" data-i18n="footer.sf3">Real-time analytics</a></li>
+            <li><a href="solutions.html" data-i18n="footer.sf4">Enterprise search</a></li>
           </ul>
         </div>
         <div>
           <h5 data-i18n="footer.company">Company</h5>
           <ul>
             <li><a href="about.html" data-i18n="footer.cf1">About</a></li>
-            <li><a href="regions.html" data-i18n="nav.regions">Regions</a></li>
+            <li><a href="product.html#regions" data-i18n="nav.regions">Regions</a></li>
             <li><a href="docs.html" data-i18n="footer.cf2">Documentation</a></li>
             <li><a href="#" data-i18n="footer.cf3">Security</a></li>
-            <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
           </ul>
         </div>
       </div>
@@ -241,7 +232,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/i18n.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/i18n.js?v=10"></script>
+  <script src="assets/js/main.js?v=10"></script>
 </body>
 </html>

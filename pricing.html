@@ -3,13 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pricing — OmniFabric</title>
-  <meta name="description" content="Simple, transparent pricing for OmniFabric — the unified intelligence fabric for data and AI. Start free, scale to enterprise." />
+  <title>Pricing — CloudSigma OmniFabric</title>
+  <meta name="description" content="Transparent OmniFabric pricing — buy compute nodes by the hour or by the month, plus usage-based AI (per million tokens), storage (per GB-month) and egress. Available in every region." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2321a948'/%3E%3Cstop offset='1' stop-color='%2374dc86'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M9 9h14M9 16h14M9 23h14' stroke='%2306250f' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='9' r='2.4' fill='%2306250f'/%3E%3Ccircle cx='20' cy='16' r='2.4' fill='%2306250f'/%3E%3Ccircle cx='14' cy='23' r='2.4' fill='%2306250f'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=10" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300a94f'/%3E%3Cstop offset='1' stop-color='%232fb265'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 6.5L24.2 11L24.2 21L16 25.5L7.8 21L7.8 11Z' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linejoin='round'/%3E%3Cpath d='M16 16L16 9.2M16 16L10 19.4M16 16L22 19.4' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='2.3' fill='%2306250f'/%3E%3Ccircle cx='16' cy='9.2' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='10' cy='19.4' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='22' cy='19.4' r='1.9' fill='%2306250f'/%3E%3C/svg%3E" />
+  <style>
+  /* ===== region band ===== */
+  .rg-chips{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;margin-top:6px}
+  .rg-chip{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:#fff;border-radius:14px;
+    padding:10px 16px;font-weight:700;font-size:.92rem;color:var(--ink);cursor:pointer;transition:.18s;box-shadow:var(--shadow-sm);text-align:left}
+  .rg-chip:hover{border-color:var(--teal-300);transform:translateY(-2px)}
+  .rg-chip.on{border-color:var(--teal-500);background:var(--surface-2);box-shadow:0 0 0 3px rgba(0,169,79,.13)}
+  .rg-chip .fl{font-size:1.32rem;line-height:1}
+  .rg-chip small{display:block;font-weight:500;font-size:.72rem;color:var(--muted);margin-top:1px}
+  .rg-sel{text-align:center;color:var(--slate);font-size:.92rem;margin-top:20px}
+  .rg-sel b{color:var(--teal-600)}
+
+  /* ===== billing toggle ===== */
+  .pp-toggle{display:inline-flex;align-items:center;gap:4px;background:var(--surface-2);border:1px solid var(--line);
+    border-radius:999px;padding:5px;margin:0 auto}
+  .pp-toggle button{border:none;background:none;cursor:pointer;font-family:inherit;font-weight:700;font-size:.92rem;
+    color:var(--slate);padding:10px 22px;border-radius:999px;transition:.18s;display:inline-flex;align-items:center;gap:9px;white-space:nowrap}
+  .pp-toggle button.on{background:#fff;color:var(--ink);box-shadow:var(--shadow-sm)}
+  .pp-toggle .save{font-size:.64rem;font-weight:800;color:#0e7c39;background:#e7f8ee;border:1px solid #bfe6cb;border-radius:999px;padding:2px 8px;letter-spacing:.02em}
+
+  /* ===== compute node cards ===== */
+  .node-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:32px}
+  @media(max-width:1080px){.node-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:540px){.node-grid{grid-template-columns:1fr}}
+  .node{position:relative;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:var(--shadow-sm);
+    padding:24px 22px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+  .node:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .node.feat{border-color:var(--teal-400);box-shadow:0 0 0 1px var(--teal-400),0 22px 46px -26px rgba(0,169,79,.55)}
+  .node .badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--grad-teal);color:#fff;
+    font-size:.64rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px;white-space:nowrap}
+  .node .code{font-size:.7rem;font-weight:800;color:var(--teal-600);letter-spacing:.12em}
+  .node .nm{font-weight:800;font-size:1.12rem;letter-spacing:-.01em;margin:.1rem 0 16px}
+  .node .specs{display:flex;flex-direction:column;gap:9px;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .node .specs div{display:flex;align-items:center;gap:10px;font-size:.86rem;color:var(--slate);font-weight:500}
+  .node .specs b{color:var(--ink);font-weight:700}
+  .node .specs svg{width:16px;height:16px;color:var(--teal-600);flex:none}
+  .node .price{display:flex;align-items:baseline;gap:3px;font-size:2rem;font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1}
+  .node .price .cur{font-size:1.15rem;font-weight:700;align-self:flex-start;margin-top:.18em}
+  .node .price small{font-size:.82rem;font-weight:600;color:var(--muted);letter-spacing:0}
+  .node .alt{font-size:.76rem;color:var(--muted);margin:6px 0 18px;min-height:1.1em}
+  .node .btn{margin-top:auto;width:100%;justify-content:center}
+  .cn-note{display:flex;align-items:flex-start;gap:10px;max-width:760px;margin:26px auto 0;color:var(--slate);
+    font-size:.86rem;line-height:1.6;text-align:left}
+  .cn-note svg{width:17px;height:17px;color:var(--teal-600);flex:none;margin-top:2px}
+
+  /* ===== usage cards ===== */
+  .use-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+  @media(max-width:880px){.use-grid{grid-template-columns:1fr}}
+  .use{border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:var(--shadow-sm);padding:28px 26px;display:flex;flex-direction:column}
+  .use .ic{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    background:var(--surface-2);color:var(--teal-600);margin-bottom:16px}
+  .use .ic svg{width:22px;height:22px}
+  .use h3{font-size:1.16rem;margin-bottom:7px;letter-spacing:-.01em}
+  .use p{font-size:.9rem;color:var(--slate);line-height:1.55;margin-bottom:18px}
+  .use .rates{margin-top:auto;border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:12px}
+  .use .rate{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+  .use .rate .lab{font-size:.84rem;color:var(--slate);font-weight:600}
+  .use .rate .amt{font-size:1.42rem;font-weight:800;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+  .use .rate .amt .from{font-size:.7rem;font-weight:600;color:var(--muted);margin-right:4px;letter-spacing:0}
+  .use .rate .amt small{font-size:.74rem;font-weight:600;color:var(--muted)}
+  .use .free{margin-top:12px;font-size:.76rem;font-weight:700;color:#0e7c39;background:#eefaf2;border:1px solid #c8e9d3;border-radius:9px;padding:7px 11px;display:inline-flex;align-items:center;gap:7px}
+  .use .free svg{width:13px;height:13px;flex:none}
+
+  /* ===== included strip ===== */
+  .inc-strip{display:flex;align-items:flex-start;gap:14px;max-width:880px;margin:0 auto;background:var(--surface-2);
+    border:1px solid var(--line);border-radius:16px;padding:22px 26px}
+  .inc-strip .ic{width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;color:var(--teal-600);flex:none}
+  .inc-strip .ic svg{width:20px;height:20px}
+  .inc-strip p{font-size:.94rem;color:var(--slate);line-height:1.6;margin:0}
+  .inc-strip b{color:var(--ink)}
+  .price-foot{text-align:center;color:var(--muted);font-size:.8rem;margin-top:18px}
+  </style>
 </head>
 <body>
 
@@ -17,27 +90,18 @@
   <header class="header" id="header">
     <div class="container">
       <nav class="nav" id="nav">
-        <a class="brand" href="index.html" aria-label="OmniFabric home">
-          <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
-            <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#21a948"/><stop offset="1" stop-color="#74dc86"/>
-            </linearGradient></defs>
-            <rect width="32" height="32" rx="8" fill="url(#lg)"/>
-            <path d="M9 9h14M9 16h14M9 23h14" stroke="#06250f" stroke-width="2.4" stroke-linecap="round"/>
-            <circle cx="12" cy="9" r="2.4" fill="#06250f"/>
-            <circle cx="20" cy="16" r="2.4" fill="#06250f"/>
-            <circle cx="14" cy="23" r="2.4" fill="#06250f"/>
-          </svg>
+        <a class="brand" href="index.html" aria-label="CloudSigma OmniFabric home">
+          <img class="cs-logo" src="assets/img/cloudsigma-logo.svg?v=10" alt="CloudSigma" width="90" height="27" />
+          <span class="brand-div" aria-hidden="true"></span>
           <span class="wordmark">OmniFabric</span>
         </a>
 
         <ul class="nav-links">
-          <li><a href="index.html#platform" data-i18n="nav.platform">Platform</a></li>
-          <li><a href="index.html#capabilities" data-i18n="nav.capabilities">Capabilities</a></li>
-          <li><a href="index.html#solutions" data-i18n="nav.solutions">Solutions</a></li>
-          <li><a href="customers.html" data-i18n="nav.customers">Customers</a></li>
-          <li><a href="regions.html" data-i18n="nav.regions">Regions</a></li>
-          <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="product.html" data-i18n="nav.product">Product</a></li>
+          <li><a href="solutions.html" data-i18n="nav.solutions">Solutions</a></li>
+          <li><a href="demo.html" data-i18n="nav.demo">Demos</a></li>
+          <li><a href="customers.html" data-i18n="nav.customers">Case Studies</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing" aria-current="page">Pricing</a></li>
           <li><a href="docs.html" data-i18n="nav.docs">Docs</a></li>
           <li><a href="about.html" data-i18n="nav.about">About</a></li>
         </ul>
@@ -55,10 +119,11 @@
               <li><button data-set-lang="fr">Français</button></li>
               <li><button data-set-lang="es">Español</button></li>
               <li><button data-set-lang="ar">العربية</button></li>
+              <li><button data-set-lang="id">Bahasa Indonesia</button></li>
             </ul>
           </div>
-          <a href="#" class="signin" data-i18n="nav.signin">Sign in</a>
-          <a href="#" class="btn btn-primary"><span data-i18n="nav.cta">Start building</span>
+          <a href="auth.html" class="signin" data-i18n="nav.signin">Sign in</a>
+          <a href="auth.html" class="btn btn-primary"><span data-i18n="nav.cta">Start building</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -73,80 +138,169 @@
     <!-- ============ SUB HERO ============ -->
     <section class="subhero">
       <div class="container">
-        <span class="eyebrow center" style="display:inline-flex;" data-i18n="pr.eyebrow">Pricing</span>
-        <h1 data-i18n="pr.title">Start free. Scale when you're ready.</h1>
-        <p data-i18n="pr.desc">One fabric, transparent pricing. Pay for what you use across data, models,
-          and agents — with no surprise line items.</p>
+        <span class="eyebrow center" style="display:inline-flex;" data-i18n="px.eyebrow">Pricing</span>
+        <h1 data-i18n="px.title">Pay for what you run — by the hour or the month</h1>
+        <p data-i18n="px.desc">Buy compute nodes hourly as pay-as-you-go or reserve them monthly, then add usage-based AI, storage and egress. Transparent, itemised on one bill, and available in every OmniFabric region.</p>
       </div>
     </section>
 
-    <!-- ============ PRICING TIERS ============ -->
+    <!-- ============ REGIONS ============ -->
     <section class="section--tight">
       <div class="container">
-        <div class="price-grid">
-
-          <!-- Developer -->
-          <div class="price reveal">
-            <div class="price-name" data-i18n="pr.dev.name">Developer</div>
-            <p class="price-desc" data-i18n="pr.dev.desc">For prototypes and side projects exploring the fabric.</p>
-            <div class="price-amt">$0 <small data-i18n="pr.dev.unit">/ month</small></div>
-            <a href="#" class="btn btn-outline" data-i18n="pr.dev.cta">Start free</a>
-            <ul class="price-list">
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.dev.f1">1 fabric workspace</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.dev.f2">5 GB storage &amp; native vectors</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.dev.f3">Access to all models via 1 API</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.dev.f4">1 production agent</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.dev.f5">Community support</span></li>
-            </ul>
-          </div>
-
-          <!-- Team (featured) -->
-          <div class="price featured reveal">
-            <span class="badge" data-i18n="pr.team.badge">Most popular</span>
-            <div class="price-name" data-i18n="pr.team.name">Team</div>
-            <p class="price-desc" data-i18n="pr.team.desc">For teams shipping AI applications to production.</p>
-            <div class="price-amt"><span class="from" data-i18n="pr.team.from">from</span>$499 <small data-i18n="pr.team.unit">/ month</small></div>
-            <a href="#" class="btn btn-primary" data-i18n="pr.team.cta">Start 14-day trial</a>
-            <ul class="price-list">
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.team.f1">Everything in Developer, plus:</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.team.f2">Decoupled storage &amp; elastic compute</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.team.f3">Multimodal ingestion &amp; knowledge base</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.team.f4">Unlimited agents with memory</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.team.f5">Decision lineage &amp; A/B testing</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.team.f6">Priority email &amp; chat support</span></li>
-            </ul>
-          </div>
-
-          <!-- Enterprise -->
-          <div class="price reveal">
-            <div class="price-name" data-i18n="pr.ent.name">Enterprise</div>
-            <p class="price-desc" data-i18n="pr.ent.desc">For regulated, mission-critical deployments at scale.</p>
-            <div class="price-amt" data-i18n="pr.ent.amt">Custom</div>
-            <a href="#" class="btn btn-outline" data-i18n="pr.ent.cta">Contact sales</a>
-            <ul class="price-list">
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.ent.f1">Everything in Team, plus:</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.ent.f2">Single-tenant or self-hosted</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.ent.f3">99.99% SLA &amp; multi-region residency</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.ent.f4">Fine-grained access control &amp; SSO</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.ent.f5">Full audit trails &amp; compliance review</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pr.ent.f6">Dedicated solutions architect</span></li>
-            </ul>
-          </div>
-
+        <div class="section-head center reveal">
+          <span class="eyebrow" data-i18n="px.reg.eb">Regions</span>
+          <h2 data-i18n="px.reg.h">Available in every region</h2>
+          <p data-i18n="px.reg.p">Spin up OmniFabric close to your users and your regulators. Your data is processed and stored only in the region you choose. List pricing is consistent across regions — talk to sales for committed-use and volume quotes.</p>
         </div>
-        <p class="price-note" data-i18n="pr.note">All plans include native vector search, HTAP queries, and the unified Agent · Model · Data fabric. Usage-based billing is fully auditable.</p>
+
+        <div class="rg-chips reveal">
+          <button class="rg-chip on" aria-pressed="true" data-name="Singapore"><span class="fl">🇸🇬</span><span>Singapore<small>Singapore</small></span></button>
+          <button class="rg-chip" aria-pressed="false" data-name="Johor Bahru"><span class="fl">🇲🇾</span><span>Johor Bahru<small>Malaysia</small></span></button>
+          <button class="rg-chip" aria-pressed="false" data-name="Riyadh"><span class="fl">🇸🇦</span><span>Riyadh<small>Saudi Arabia</small></span></button>
+          <button class="rg-chip" aria-pressed="false" data-name="Jeddah"><span class="fl">🇸🇦</span><span>Jeddah<small>Saudi Arabia</small></span></button>
+          <button class="rg-chip" aria-pressed="false" data-name="Sofia"><span class="fl">🇧🇬</span><span>Sofia<small>Bulgaria</small></span></button>
+          <button class="rg-chip" aria-pressed="false" data-name="Monterrey"><span class="fl">🇲🇽</span><span>Monterrey<small>Mexico</small></span></button>
+          <button class="rg-chip" aria-pressed="false" data-name="Manila"><span class="fl">🇵🇭</span><span>Manila<small>Philippines</small></span></button>
+        </div>
+        <p class="rg-sel reveal"><span data-i18n="px.reg.in">Provisioning in</span> <b id="rgName">Singapore</b> — <span data-i18n="px.reg.stay">your data stays in-region</span></p>
       </div>
     </section>
 
-    <!-- ============ VALUE STRIP ============ -->
-    <section class="stats section--tight">
+    <!-- ============ COMPUTE NODES ============ -->
+    <section class="section">
       <div class="container">
-        <div class="stats-grid">
-          <div class="stat reveal"><div class="num">1</div><div class="lbl" data-i18n="pr.s1.lbl">Bill — not five separate vendors</div></div>
-          <div class="stat reveal"><div class="num">0</div><div class="lbl" data-i18n="pr.s2.lbl">Egress fees between layers</div></div>
-          <div class="stat reveal"><div class="num">14d</div><div class="lbl" data-i18n="pr.s3.lbl">Free trial on the Team plan</div></div>
-          <div class="stat reveal"><div class="num">∞</div><div class="lbl" data-i18n="pr.s4.lbl">Agents &amp; memory on paid plans</div></div>
+        <div class="section-head center reveal">
+          <span class="eyebrow" data-i18n="px.cn.eb">Compute nodes</span>
+          <h2 data-i18n="px.cn.h">Buy compute by the hour or by the month</h2>
+          <p data-i18n="px.cn.p">Sell-by-the-node compute that powers the whole fabric — data, models and agents. Burst with pay-as-you-go, or reserve monthly nodes and save.</p>
         </div>
+
+        <div style="display:flex;justify-content:center;margin-top:6px;" class="reveal">
+          <div class="pp-toggle" role="tablist" aria-label="Billing period">
+            <button data-bill="mo" class="on" role="tab"><span data-i18n="px.t.mo">Monthly · reserved</span><span class="save" data-i18n="px.save">Save ~20%</span></button>
+            <button data-bill="hr" role="tab"><span data-i18n="px.t.hr">Hourly · pay as you go</span></button>
+          </div>
+        </div>
+
+        <div class="node-grid">
+          <!-- Starter -->
+          <div class="node reveal" data-hr="0.10" data-mo="59">
+            <div class="code">OF·S</div>
+            <div class="nm" data-i18n="px.n1">Starter</div>
+            <div class="specs">
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2" stroke-linecap="round"/></svg><span><b>4</b> vCPU</span></div>
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="10" rx="1.5"/><path d="M7 7v10M12 7v10M17 7v10" stroke-linecap="round"/></svg><span><b>16</b> GB RAM</span></div>
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg><span data-i18n="px.spec.ssd">NVMe SSD-backed</span></div>
+            </div>
+            <div class="price"><span class="cur">$</span><span class="pv">59</span> <small class="pu">/ mo</small></div>
+            <div class="alt"></div>
+            <a href="auth.html" class="btn btn-outline" data-i18n="px.cn.cta">Get started</a>
+          </div>
+
+          <!-- Standard (featured) -->
+          <div class="node feat reveal" data-hr="0.20" data-mo="119">
+            <span class="badge" data-i18n="px.feat">Most popular</span>
+            <div class="code">OF·M</div>
+            <div class="nm" data-i18n="px.n2">Standard</div>
+            <div class="specs">
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2" stroke-linecap="round"/></svg><span><b>8</b> vCPU</span></div>
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="10" rx="1.5"/><path d="M7 7v10M12 7v10M17 7v10" stroke-linecap="round"/></svg><span><b>32</b> GB RAM</span></div>
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg><span data-i18n="px.spec.ssd">NVMe SSD-backed</span></div>
+            </div>
+            <div class="price"><span class="cur">$</span><span class="pv">119</span> <small class="pu">/ mo</small></div>
+            <div class="alt"></div>
+            <a href="auth.html" class="btn btn-primary" data-i18n="px.cn.cta">Get started</a>
+          </div>
+
+          <!-- Performance -->
+          <div class="node reveal" data-hr="0.40" data-mo="239">
+            <div class="code">OF·L</div>
+            <div class="nm" data-i18n="px.n3">Performance</div>
+            <div class="specs">
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2" stroke-linecap="round"/></svg><span><b>16</b> vCPU</span></div>
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="10" rx="1.5"/><path d="M7 7v10M12 7v10M17 7v10" stroke-linecap="round"/></svg><span><b>64</b> GB RAM</span></div>
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg><span data-i18n="px.spec.ssd">NVMe SSD-backed</span></div>
+            </div>
+            <div class="price"><span class="cur">$</span><span class="pv">239</span> <small class="pu">/ mo</small></div>
+            <div class="alt"></div>
+            <a href="auth.html" class="btn btn-outline" data-i18n="px.cn.cta">Get started</a>
+          </div>
+
+          <!-- GPU -->
+          <div class="node reveal" data-hr="1.80" data-mo="1090">
+            <div class="code">OF·G</div>
+            <div class="nm" data-i18n="px.n4">GPU</div>
+            <div class="specs">
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2" stroke-linecap="round"/></svg><span><b>16</b> vCPU</span></div>
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="10" rx="1.5"/><path d="M7 7v10M12 7v10M17 7v10" stroke-linecap="round"/></svg><span><b>96</b> GB RAM</span></div>
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3.4"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.4 5.4l2 2M16.6 16.6l2 2M18.6 5.4l-2 2M7.4 16.6l-2 2" stroke-linecap="round"/></svg><span data-i18n="px.spec.gpu">1× GPU accelerator</span></div>
+            </div>
+            <div class="price"><span class="cur">$</span><span class="pv">1,090</span> <small class="pu">/ mo</small></div>
+            <div class="alt"></div>
+            <a href="auth.html" class="btn btn-outline" data-i18n="px.cn.cta">Get started</a>
+          </div>
+        </div>
+
+        <p class="cn-note reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <span data-i18n="px.cn.note">Hourly nodes are billed per second with no commitment — ideal for bursts, batch jobs and dev. Monthly nodes are a flat reservation and run about 20% cheaper. Storage and data are decoupled from compute, so you can scale nodes up or down at any time without losing state.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ USAGE-BASED ============ -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow" data-i18n="px.use.eb">Usage-based</span>
+          <h2 data-i18n="px.use.h">Only pay for what you use</h2>
+          <p data-i18n="px.use.p">On top of compute, three metered services — each billed purely on consumption and itemised on the same invoice.</p>
+        </div>
+
+        <div class="use-grid">
+          <!-- AI services -->
+          <div class="use reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0-2 5.2A3 3 0 0 0 9 16v1a3 3 0 0 0 6 0v-1a3 3 0 0 0 2-5.8A3 3 0 0 0 15 5a3 3 0 0 0-3-3Z"/><path d="M9 5h6M7.2 10.2h9.6M9 16h6"/></svg></div>
+            <h3 data-i18n="px.ai.t">AI services</h3>
+            <p data-i18n="px.ai.p">Route to 100+ hosted models — chat, embeddings and rerankers — through one API. Billed per million tokens; bring your own provider keys to pass through at cost.</p>
+            <div class="rates">
+              <div class="rate"><span class="lab" data-i18n="px.ai.in">Input tokens</span><span class="amt"><span class="from" data-i18n="px.from">from</span>$0.50 <small data-i18n="px.ai.u">/ 1M tokens</small></span></div>
+              <div class="rate"><span class="lab" data-i18n="px.ai.out">Output tokens</span><span class="amt"><span class="from" data-i18n="px.from">from</span>$1.50 <small data-i18n="px.ai.u">/ 1M tokens</small></span></div>
+            </div>
+          </div>
+
+          <!-- Storage -->
+          <div class="use reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
+            <h3 data-i18n="px.st.t">Storage</h3>
+            <p data-i18n="px.st.p">One unified store for relational, vector and multimodal data. Compression and tiering are included, and reading your own data is always free.</p>
+            <div class="rates">
+              <div class="rate"><span class="lab" data-i18n="px.st.lab">All data types</span><span class="amt">$0.08 <small data-i18n="px.st.u">/ GB-month</small></span></div>
+            </div>
+          </div>
+
+          <!-- Egress -->
+          <div class="use reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M12 5l-6 6M12 5l6 6"/><path d="M5 21h14"/></svg></div>
+            <h3 data-i18n="px.eg.t">Egress traffic</h3>
+            <p data-i18n="px.eg.p">Outbound data transfer leaving your region for the public internet. Inbound and in-region traffic is always free.</p>
+            <div class="rates">
+              <div class="rate"><span class="lab" data-i18n="px.eg.lab">Outbound transfer</span><span class="amt">$0.05 <small data-i18n="px.eg.u">/ GB</small></span></div>
+            </div>
+            <span class="free"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="px.eg.free">First 100 GB / month free</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INCLUDED ============ -->
+    <section class="section--tight">
+      <div class="container">
+        <div class="inc-strip reveal">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l7.8 2.6v5.2c0 4.6-3.1 8.1-7.8 9.4-4.7-1.3-7.8-4.8-7.8-9.4V5.6L12 3Z"/></svg></span>
+          <p data-i18n="px.inc"><b>Every node ships with the full Agent · Model · Data fabric</b> — native vector search, HTAP queries, governance, lineage and SSO. Nothing is gated behind a higher tier, and all usage is metered to auditable records.</p>
+        </div>
+        <p class="price-foot" data-i18n="px.usd">All prices in USD and exclude local taxes. Hourly usage is billed per second; monthly nodes are a fixed reservation.</p>
       </div>
     </section>
 
@@ -154,39 +308,39 @@
     <section class="section">
       <div class="container">
         <div class="section-head center reveal">
-          <span class="eyebrow" data-i18n="pr.faq.eyebrow">FAQ</span>
-          <h2 data-i18n="pr.faq.title">Questions, answered</h2>
+          <span class="eyebrow" data-i18n="px.faq.eb">FAQ</span>
+          <h2 data-i18n="px.faq.h">Pricing questions, answered</h2>
         </div>
         <div class="faq reveal">
           <div class="faq-item">
-            <button class="faq-q"><span data-i18n="pr.faq.q1">Do I still need a separate vector database?</span>
+            <button class="faq-q"><span data-i18n="px.faq.q1">Monthly or hourly — which should I pick?</span>
               <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button>
-            <div class="faq-a"><p data-i18n="pr.faq.a1">No. Vector search is native to OmniFabric — embeddings live next to your relational data, so you run hybrid keyword + vector queries in a single statement, with no extra system to operate or pay for.</p></div>
+            <div class="faq-a"><p data-i18n="px.faq.a1">Use hourly pay-as-you-go for spiky, short-lived or experimental workloads — you're billed per second with no commitment. Reserve monthly nodes for steady production and save around 20%. You can mix both in the same project and switch a node between the two at any time.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q"><span data-i18n="pr.faq.q2">How does usage-based billing work?</span>
+            <button class="faq-q"><span data-i18n="px.faq.q2">How are AI tokens billed?</span>
               <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button>
-            <div class="faq-a"><p data-i18n="pr.faq.a2">You pay for storage, compute, and model calls you actually consume. Every charge maps to auditable usage records, so finance and engineering see exactly what drove the bill.</p></div>
+            <div class="faq-a"><p data-i18n="px.faq.a2">Every model call is metered by input and output tokens and priced per million. Use OmniFabric's routed models, or bring your own provider keys — in which case tokens pass through at the provider's cost with no markup, while still wrapped in the same lineage and governance.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q"><span data-i18n="pr.faq.q3">Can I bring my own models?</span>
+            <button class="faq-q"><span data-i18n="px.faq.q3">Does pricing change by region?</span>
               <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button>
-            <div class="faq-a"><p data-i18n="pr.faq.a3">Yes. Route to any hosted LLM or embedding model through one API, or connect your own private endpoints. There's no lock-in — every call is wrapped in the same lineage and governance.</p></div>
+            <div class="faq-a"><p data-i18n="px.faq.a3">List pricing is consistent across all seven regions. Your data is processed and stored only in the region you choose. For committed or high-volume use in a specific region, talk to sales for a tailored quote.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q"><span data-i18n="pr.faq.q4">Is OmniFabric available self-hosted?</span>
+            <button class="faq-q"><span data-i18n="px.faq.q4">Is there a free way to start?</span>
               <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button>
-            <div class="faq-a"><p data-i18n="pr.faq.a4">Enterprise plans support single-tenant cloud and fully self-hosted deployments, with multi-region data residency, SSO, and a dedicated solutions architect.</p></div>
+            <div class="faq-a"><p data-i18n="px.faq.a4">Yes — create a workspace for free, connect a source and ship a first agent. You only start paying when you provision a compute node or consume metered AI, storage or egress.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q"><span data-i18n="pr.faq.q5">What happens to my agents' memory if I roll back?</span>
+            <button class="faq-q"><span data-i18n="px.faq.q5">What counts as storage and egress?</span>
               <span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
             </button>
-            <div class="faq-a"><p data-i18n="pr.faq.a5">Memory is versioned and fully audited. You can view memory as of any point in time and roll back safely — every write is traceable and reversible.</p></div>
+            <div class="faq-a"><p data-i18n="px.faq.a5">Storage is the data you keep in the fabric — tables, vectors and files — billed per GB-month. Egress is outbound traffic leaving the region for the public internet. Reads of your own data and traffic within a region are free.</p></div>
           </div>
         </div>
       </div>
@@ -196,13 +350,13 @@
     <section class="cta-band">
       <div class="container">
         <div class="cta-inner reveal">
-          <h2 data-i18n="pr.cta.title">Ready to weave data and AI together?</h2>
-          <p data-i18n="pr.cta.desc">Spin up a free workspace, connect your first source, and ship a trusted agent today.</p>
+          <h2 data-i18n="px.cta.h">Start free, scale when you're ready</h2>
+          <p data-i18n="px.cta.p">Spin up a workspace, provision your first node by the hour, and only commit monthly once you're in production.</p>
           <div class="hero-cta">
-            <a href="#" class="btn btn-primary btn-lg"><span data-i18n="pr.cta.b1">Start building free</span>
+            <a href="auth.html" class="btn btn-primary btn-lg"><span data-i18n="px.cta.b1">Start building free</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a href="#" class="btn btn-ghost btn-lg" data-i18n="pr.cta.b2">Talk to sales</a>
+            <a href="https://calendly.com/tan-dovan/30min" target="_blank" rel="noopener" class="btn btn-ghost btn-lg" data-i18n="px.cta.b2">Talk to sales</a>
           </div>
         </div>
       </div>
@@ -216,41 +370,39 @@
         <div class="footer-about">
           <a class="brand" href="index.html">
             <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
-              <rect width="32" height="32" rx="8" fill="#21a948"/>
-              <path d="M9 9h14M9 16h14M9 23h14" stroke="#06250f" stroke-width="2.4" stroke-linecap="round"/>
-              <circle cx="12" cy="9" r="2.4" fill="#06250f"/><circle cx="20" cy="16" r="2.4" fill="#06250f"/><circle cx="14" cy="23" r="2.4" fill="#06250f"/>
+              <rect width="32" height="32" rx="8" fill="#00a94f"/>
+              <path d="M16 6.5L24.2 11L24.2 21L16 25.5L7.8 21L7.8 11Z" fill="none" stroke="#06250f" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/><path d="M16 16L16 9.2M16 16L10 19.4M16 16L22 19.4" fill="none" stroke="#06250f" stroke-width="2.1" stroke-linecap="round"/><circle cx="16" cy="16" r="2.3" fill="#06250f"/><circle cx="16" cy="9.2" r="1.9" fill="#06250f"/><circle cx="10" cy="19.4" r="1.9" fill="#06250f"/><circle cx="22" cy="19.4" r="1.9" fill="#06250f"/>
             </svg>
-            <span class="wordmark">OmniFabric</span>
+            <span class="wordmark">CloudSigma OmniFabric</span>
           </a>
           <p data-i18n="footer.about">The unified intelligence fabric for data and AI. Control your data, trust your
             agents, and turn AI strategy into real business ROI.</p>
         </div>
         <div>
-          <h5 data-i18n="footer.platform">Platform</h5>
+          <h5 data-i18n="nav.product">Product</h5>
           <ul>
-            <li><a href="index.html#platform" data-i18n="footer.pf1">Intelligence flywheel</a></li>
-            <li><a href="index.html#capabilities" data-i18n="footer.pf2">OmniFabric Core</a></li>
-            <li><a href="index.html#capabilities" data-i18n="footer.pf3">Intelligence</a></li>
-            <li><a href="index.html#capabilities" data-i18n="footer.pf4">Agent &amp; Memory</a></li>
+            <li><a href="product.html" data-i18n="footer.pf1">Intelligence flywheel</a></li>
+            <li><a href="solutions.html" data-i18n="nav.solutions">Solutions</a></li>
+            <li><a href="demo.html" data-i18n="nav.demo">Demos</a></li>
+            <li><a href="product.html#regions" data-i18n="nav.regions">Regions</a></li>
           </ul>
         </div>
         <div>
           <h5 data-i18n="footer.solutions">Solutions</h5>
           <ul>
-            <li><a href="index.html#solutions" data-i18n="footer.sf1">Document intelligence</a></li>
-            <li><a href="index.html#solutions" data-i18n="footer.sf2">Customer copilots</a></li>
-            <li><a href="index.html#solutions" data-i18n="footer.sf3">Real-time analytics</a></li>
-            <li><a href="index.html#solutions" data-i18n="footer.sf4">Enterprise search</a></li>
+            <li><a href="solutions.html" data-i18n="footer.sf1">Document intelligence</a></li>
+            <li><a href="solutions.html" data-i18n="footer.sf2">Customer copilots</a></li>
+            <li><a href="solutions.html" data-i18n="footer.sf3">Real-time analytics</a></li>
+            <li><a href="solutions.html" data-i18n="footer.sf4">Enterprise search</a></li>
           </ul>
         </div>
         <div>
           <h5 data-i18n="footer.company">Company</h5>
           <ul>
             <li><a href="about.html" data-i18n="footer.cf1">About</a></li>
-            <li><a href="regions.html" data-i18n="nav.regions">Regions</a></li>
-            <li><a href="docs.html" data-i18n="footer.cf2">Documentation</a></li>
-            <li><a href="#" data-i18n="footer.cf3">Security</a></li>
             <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+            <li><a href="customers.html" data-i18n="nav.customers">Case Studies</a></li>
+            <li><a href="docs.html" data-i18n="footer.cf2">Documentation</a></li>
           </ul>
         </div>
       </div>
@@ -265,7 +417,55 @@
     </div>
   </footer>
 
-  <script src="assets/js/i18n.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/i18n.js?v=10"></script>
+  <script src="assets/js/main.js?v=10"></script>
+  <script>
+  /* pricing: hourly/monthly toggle + region selector, re-rendered on language change */
+  (function () {
+    var billing = "mo";
+    function fmt(n) { return n.toLocaleString("en-US"); }
+    function t(k) { return (window.ofT && window.ofT(k)) || ""; }
+    function render() {
+      var moU = t("px.u.mo"), hrU = t("px.u.hr"), or = t("px.or");
+      document.querySelectorAll(".node").forEach(function (node) {
+        var hr = parseFloat(node.getAttribute("data-hr"));
+        var mo = parseInt(node.getAttribute("data-mo"), 10);
+        var hrStr = hr.toFixed(2), moStr = fmt(mo);
+        var pv = node.querySelector(".pv"), pu = node.querySelector(".pu"), alt = node.querySelector(".alt");
+        if (!pv) return;
+        if (billing === "mo") {
+          pv.textContent = moStr; pu.textContent = moU;
+          alt.textContent = or + " $" + hrStr + " " + hrU + " " + t("px.payg");
+        } else {
+          pv.textContent = hrStr; pu.textContent = hrU;
+          alt.textContent = or + " $" + moStr + " " + moU + " " + t("px.resv");
+        }
+      });
+    }
+    function setBilling(b) {
+      billing = b;
+      document.querySelectorAll("[data-bill]").forEach(function (btn) {
+        btn.classList.toggle("on", btn.getAttribute("data-bill") === b);
+        btn.setAttribute("aria-selected", btn.getAttribute("data-bill") === b ? "true" : "false");
+      });
+      render();
+    }
+    document.querySelectorAll("[data-bill]").forEach(function (btn) {
+      btn.addEventListener("click", function () { setBilling(btn.getAttribute("data-bill")); });
+    });
+    document.querySelectorAll(".rg-chip").forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        document.querySelectorAll(".rg-chip").forEach(function (c) { c.classList.remove("on"); c.setAttribute("aria-pressed", "false"); });
+        chip.classList.add("on"); chip.setAttribute("aria-pressed", "true");
+        var nm = document.getElementById("rgName");
+        if (nm) nm.textContent = chip.getAttribute("data-name");
+      });
+    });
+    // i18n calls window.ofRefreshRegions() after every apply() — chain into it to re-render units
+    var prev = window.ofRefreshRegions;
+    window.ofRefreshRegions = function () { if (typeof prev === "function") prev(); render(); };
+    render();
+  })();
+  </script>
 </body>
 </html>

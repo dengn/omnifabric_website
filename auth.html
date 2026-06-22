@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in — CloudSigma OmniFabric</title>
+  <meta name="description" content="Sign in or create your CloudSigma OmniFabric account — the unified, sovereign platform for data, models and agents." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=10" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300a94f'/%3E%3Cstop offset='1' stop-color='%232fb265'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 6.5L24.2 11L24.2 21L16 25.5L7.8 21L7.8 11Z' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linejoin='round'/%3E%3Cpath d='M16 16L16 9.2M16 16L10 19.4M16 16L22 19.4' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='2.3' fill='%2306250f'/%3E%3Ccircle cx='16' cy='9.2' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='10' cy='19.4' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='22' cy='19.4' r='1.9' fill='%2306250f'/%3E%3C/svg%3E" />
+  <style>
+  body{min-height:100vh}
+  .auth-split{display:grid;grid-template-columns:minmax(0,46fr) minmax(0,54fr);min-height:100vh}
+  /* ---- value panel ---- */
+  .auth-aside{position:relative;overflow:hidden;background:var(--grad-deep);color:#eafff3;display:flex;flex-direction:column;justify-content:space-between;padding:44px 52px}
+  .auth-aside::before{content:"";position:absolute;width:560px;height:560px;right:-180px;top:-160px;border-radius:50%;
+    background:radial-gradient(circle,rgba(56,186,108,.32),transparent 62%)}
+  .auth-aside::after{content:"";position:absolute;inset:auto -120px -160px auto;width:420px;height:420px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.06);box-shadow:0 0 0 40px rgba(255,255,255,.04),0 0 0 90px rgba(255,255,255,.025)}
+  .auth-aside>*{position:relative;z-index:1}
+  .aside-brand{display:flex;align-items:center;gap:11px}
+  .aside-brand img{height:26px;filter:brightness(0) invert(1)}
+  .aside-brand .bd{width:1px;height:20px;background:rgba(255,255,255,.28)}
+  .aside-brand b{font-weight:800;font-size:1.16rem;letter-spacing:-.02em;
+    background:linear-gradient(120deg,#7af0ab,#cffbe0);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .aside-mid{max-width:430px}
+  .aside-mid h1{font-size:clamp(2rem,3.2vw,2.9rem);line-height:1.08;letter-spacing:-.02em;font-weight:800;margin-bottom:16px}
+  .aside-mid h1 .g{background:linear-gradient(120deg,#56e08c,#a9f5c8);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .aside-mid .lead{font-size:1.02rem;color:rgba(234,255,243,.78);line-height:1.6;margin-bottom:26px}
+  .aside-points{display:flex;flex-direction:column;gap:13px;margin-bottom:28px}
+  .aside-points li{display:flex;align-items:flex-start;gap:11px;font-size:.96rem;color:rgba(234,255,243,.92);line-height:1.4}
+  .aside-points .ck{flex:none;width:22px;height:22px;border-radius:7px;background:rgba(86,224,140,.16);
+    display:flex;align-items:center;justify-content:center;color:#7af0ab;margin-top:1px}
+  .aside-points .ck svg{width:13px;height:13px}
+  .aside-stats{display:flex;gap:22px;flex-wrap:wrap}
+  .aside-stats div{display:flex;flex-direction:column}
+  .aside-stats b{font-size:1.5rem;font-weight:800;letter-spacing:-.02em}
+  .aside-stats span{font-size:.72rem;color:rgba(234,255,243,.66);font-weight:500}
+  .aside-foot{font-size:.78rem;color:rgba(234,255,243,.6);letter-spacing:.01em;border-top:1px solid rgba(255,255,255,.1);padding-top:18px}
+  /* ---- form panel ---- */
+  .auth-main{position:relative;display:flex;align-items:center;justify-content:center;padding:48px 32px;background:var(--surface)}
+  .auth-top{position:absolute;top:22px;right:26px}
+  .auth-card{width:100%;max-width:404px}
+  .auth-card .home{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;color:var(--muted);font-weight:600;margin-bottom:26px}
+  .auth-card .home svg{width:15px;height:15px}
+  .auth-tabs{display:flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:24px}
+  .auth-tabs button{flex:1;border:none;background:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:.92rem;
+    color:var(--slate);padding:9px;border-radius:9px;transition:.18s}
+  .auth-tabs button.on{background:#fff;color:var(--ink);box-shadow:var(--shadow-sm)}
+  .auth-h{font-size:1.42rem;font-weight:800;letter-spacing:-.02em;margin-bottom:4px}
+  .auth-sub{font-size:.9rem;color:var(--slate);margin-bottom:22px}
+  .fld{margin-bottom:14px}
+  .fld label{display:block;font-size:.8rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+  .ipt{position:relative}
+  .ipt input{width:100%;font-family:inherit;font-size:.95rem;color:var(--ink);background:#fff;
+    border:1px solid var(--line);border-radius:11px;padding:13px 14px;transition:border-color .18s,box-shadow .18s;outline:none}
+  .ipt input::placeholder{color:#9fb0a6}
+  .ipt input:focus{border-color:var(--teal-500);box-shadow:0 0 0 3px rgba(0,169,79,.14)}
+  .ipt .eye{position:absolute;right:11px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--muted);padding:4px;display:flex}
+  .ipt .eye svg{width:18px;height:18px}
+  .row-b{display:flex;align-items:center;justify-content:space-between;margin:6px 0 20px;font-size:.85rem}
+  .chkline{display:flex;align-items:flex-start;gap:9px;font-size:.85rem;color:var(--slate);line-height:1.45;margin:4px 0 20px}
+  .chkline a{color:var(--teal-600);font-weight:600}
+  input[type=checkbox]{appearance:none;-webkit-appearance:none;width:17px;height:17px;flex:none;border:1.5px solid var(--line);border-radius:5px;cursor:pointer;position:relative;margin-top:1px;transition:.15s}
+  input[type=checkbox]:checked{background:var(--teal-500);border-color:var(--teal-500)}
+  input[type=checkbox]:checked::after{content:"";position:absolute;left:5px;top:1.5px;width:4px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .lbl-inline{display:flex;align-items:center;gap:8px;color:var(--slate);cursor:pointer}
+  .link-g{color:var(--teal-600);font-weight:600}
+  .btn-full{width:100%;justify-content:center}
+  .auth-or{display:flex;align-items:center;gap:12px;margin:20px 0;color:var(--muted);font-size:.78rem;font-weight:600}
+  .auth-or::before,.auth-or::after{content:"";flex:1;height:1px;background:var(--line)}
+  .sso{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .sso a{display:flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line);border-radius:11px;padding:11px;
+    background:#fff;font-weight:600;font-size:.84rem;color:var(--ink);transition:.18s}
+  .sso a:hover{border-color:var(--teal-300);background:var(--surface-2)}
+  .sso a svg{width:17px;height:17px}
+  .auth-foot{text-align:center;margin-top:22px;font-size:.88rem;color:var(--slate)}
+  .auth-view[hidden]{display:none}
+  @media(max-width:900px){
+    .auth-split{grid-template-columns:1fr}
+    .auth-aside{padding:32px 26px;gap:22px}
+    .auth-aside::after{display:none}
+    .aside-mid h1{font-size:1.7rem;margin-bottom:10px}
+    .aside-points{gap:9px;margin-bottom:18px}
+    .aside-mid .lead{margin-bottom:16px}
+    .auth-main{padding:34px 22px}
+  }
+  @media(max-width:560px){.sso{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="auth-split">
+
+    <!-- ============ VALUE PANEL ============ -->
+    <aside class="auth-aside">
+      <a class="aside-brand" href="index.html">
+        <img src="assets/img/cloudsigma-logo.svg?v=10" alt="CloudSigma" />
+        <span class="bd"></span>
+        <b>OmniFabric</b>
+      </a>
+      <div class="aside-mid">
+        <h1><span data-i18n="au.head1">Control your data.</span><br><span class="g" data-i18n="au.head2">Power your AI.</span></h1>
+        <p class="lead" data-i18n="au.sub">One sovereign platform for data, models and agents — from raw data to production AI, on infrastructure you control.</p>
+        <ul class="aside-points">
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="au.p1">All-in-one: data, vectors, models &amp; agents on one fabric</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="au.p2">Sovereign by design — your region, your rules</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="au.p3">Ship production agents in weeks, not months</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="au.p4">100% auditable — full lineage on every decision</span></li>
+        </ul>
+        <div class="aside-stats">
+          <div><b>100+</b><span data-i18n="au.s1">models, one API</span></div>
+          <div><b>4ms</b><span data-i18n="au.s2">p99 vector search</span></div>
+          <div><b>7</b><span data-i18n="au.s3">sovereign regions</span></div>
+        </div>
+      </div>
+      <div class="aside-foot" data-i18n="au.trusted">Trusted by Amway · Tencent · Stone Castle · Mercury Insurance &amp; more</div>
+    </aside>
+
+    <!-- ============ FORM PANEL ============ -->
+    <main class="auth-main">
+      <div class="auth-top">
+        <div class="lang-select">
+          <button class="lang-btn" data-lang-btn aria-haspopup="true" aria-expanded="false" aria-label="Language">
+            <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+            <span data-lang-current>EN</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul class="lang-menu" data-lang-menu>
+            <li><button data-set-lang="en">English</button></li>
+            <li><button data-set-lang="zh">中文</button></li>
+            <li><button data-set-lang="fr">Français</button></li>
+            <li><button data-set-lang="es">Español</button></li>
+            <li><button data-set-lang="ar">العربية</button></li>
+              <li><button data-set-lang="id">Bahasa Indonesia</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="auth-card">
+        <a class="home" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-i18n="au.back">Back to site</span></a>
+
+        <div class="auth-tabs" role="tablist">
+          <button class="on" data-tab="in" data-i18n="au.tab.in">Sign in</button>
+          <button data-tab="up" data-i18n="au.tab.up">Create account</button>
+        </div>
+
+        <!-- SIGN IN -->
+        <form class="auth-view" id="view-in" onsubmit="return false">
+          <h2 class="auth-h" data-i18n="au.in.h">Welcome back</h2>
+          <p class="auth-sub" data-i18n="au.in.sub">Sign in to your CloudSigma OmniFabric account.</p>
+          <div class="fld"><label data-i18n="au.email">Work email</label><div class="ipt"><input type="email" autocomplete="email" data-i18n-ph="au.email.ph" placeholder="you@company.com" /></div></div>
+          <div class="fld"><label data-i18n="au.pw">Password</label><div class="ipt"><input type="password" autocomplete="current-password" data-i18n-ph="au.pw.ph" placeholder="Enter your password" /><button type="button" class="eye" aria-label="Show password"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div>
+          <div class="row-b">
+            <label class="lbl-inline"><input type="checkbox" /> <span data-i18n="au.remember">Remember me</span></label>
+            <a href="#" class="link-g" data-i18n="au.forgot">Forgot password?</a>
+          </div>
+          <button type="button" class="btn btn-primary btn-lg btn-full" data-i18n="au.in.btn">Sign in</button>
+        </form>
+
+        <!-- SIGN UP -->
+        <form class="auth-view" id="view-up" hidden onsubmit="return false">
+          <h2 class="auth-h" data-i18n="au.up.h">Start for free</h2>
+          <p class="auth-sub" data-i18n="au.up.sub">Create your account — no credit card required.</p>
+          <div class="fld"><label data-i18n="au.email">Work email</label><div class="ipt"><input type="email" autocomplete="email" data-i18n-ph="au.email.ph" placeholder="you@company.com" /></div></div>
+          <div class="fld"><label data-i18n="au.pw">Password</label><div class="ipt"><input type="password" autocomplete="new-password" data-i18n-ph="au.pw.ph2" placeholder="Create a password" /><button type="button" class="eye" aria-label="Show password"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div>
+          <label class="chkline"><input type="checkbox" /> <span data-i18n="au.terms">I agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>.</span></label>
+          <button type="button" class="btn btn-primary btn-lg btn-full" data-i18n="au.up.btn">Create account</button>
+        </form>
+
+        <div class="auth-or"><span data-i18n="au.or">or continue with</span></div>
+        <div class="sso">
+          <a href="#"><svg viewBox="0 0 24 24"><path fill="#EA4335" d="M12 11v3.8h5.3c-.23 1.4-1.66 4.1-5.3 4.1-3.2 0-5.8-2.65-5.8-5.9S8.8 7.1 12 7.1c1.82 0 3.04.78 3.74 1.45l2.55-2.46C16.68 4.6 14.55 3.7 12 3.7 6.98 3.7 2.9 7.78 2.9 12.8S6.98 21.9 12 21.9c6.06 0 7.86-4.25 7.86-7.34 0-.5-.05-.86-.12-1.23z"/></svg>Google</a>
+          <a href="#"><svg viewBox="0 0 24 24" fill="#1B1F23"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 6.8 9.8.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.5-1.1-4.5-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.5 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.4 6.8-5.3 6.8-9.8C22 6.6 17.5 2 12 2Z"/></svg>GitHub</a>
+          <a href="#"><svg viewBox="0 0 24 24"><path fill="#F25022" d="M3 3h8.5v8.5H3z"/><path fill="#7FBA00" d="M12.5 3H21v8.5h-8.5z"/><path fill="#00A4EF" d="M3 12.5h8.5V21H3z"/><path fill="#FFB900" d="M12.5 12.5H21V21h-8.5z"/></svg>Microsoft</a>
+        </div>
+
+        <p class="auth-foot">
+          <span class="foot-in"><span data-i18n="au.noacct">Don't have an account?</span> <a href="#" class="link-g" data-go="up" data-i18n="au.signup">Sign up</a></span>
+          <span class="foot-up" hidden><span data-i18n="au.haveacct">Already have an account?</span> <a href="#" class="link-g" data-go="in" data-i18n="au.tab.in">Sign in</a></span>
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+  (function(){
+    var tabs=document.querySelectorAll('.auth-tabs button'),
+        vin=document.getElementById('view-in'), vup=document.getElementById('view-up'),
+        fin=document.querySelector('.foot-in'), fup=document.querySelector('.foot-up');
+    function set(mode){
+      var up=mode==='up';
+      vin.hidden=up; vup.hidden=!up;
+      fin.hidden=up; fup.hidden=!up;
+      tabs.forEach(function(b){b.classList.toggle('on', b.dataset.tab===mode);});
+    }
+    tabs.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.tab);});});
+    document.querySelectorAll('[data-go]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();set(a.dataset.go);});});
+    document.querySelectorAll('.eye').forEach(function(btn){btn.addEventListener('click',function(){
+      var i=btn.parentNode.querySelector('input'); i.type = i.type==='password'?'text':'password';
+    });});
+  })();
+  </script>
+  <script src="assets/js/i18n.js?v=10"></script>
+  <script src="assets/js/main.js?v=10"></script>
+</body>
+</html>

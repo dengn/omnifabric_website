@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solutions — CloudSigma OmniFabric</title>
+  <meta name="description" content="Turn your enterprise data into AI-ready assets. OmniFabric powers document intelligence, agentic RAG, LLM fine-tuning, multimodal data ETL and a unified AI data foundation — plus production AI agent applications across industries." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=10" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300a94f'/%3E%3Cstop offset='1' stop-color='%232fb265'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 6.5L24.2 11L24.2 21L16 25.5L7.8 21L7.8 11Z' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linejoin='round'/%3E%3Cpath d='M16 16L16 9.2M16 16L10 19.4M16 16L22 19.4' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='2.3' fill='%2306250f'/%3E%3Ccircle cx='16' cy='9.2' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='10' cy='19.4' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='22' cy='19.4' r='1.9' fill='%2306250f'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav" id="nav">
+        <a class="brand" href="index.html" aria-label="CloudSigma OmniFabric home">
+          <img class="cs-logo" src="assets/img/cloudsigma-logo.svg?v=10" alt="CloudSigma" width="90" height="27" />
+          <span class="brand-div" aria-hidden="true"></span>
+          <span class="wordmark">OmniFabric</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="product.html" data-i18n="nav.product">Product</a></li>
+          <li><a href="solutions.html" data-i18n="nav.solutions">Solutions</a></li>
+          <li><a href="demo.html" data-i18n="nav.demo">Demos</a></li>
+          <li><a href="customers.html" data-i18n="nav.customers">Case Studies</a></li>
+          <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+          <li><a href="docs.html" data-i18n="nav.docs">Docs</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="lang-select">
+            <button class="lang-btn" data-lang-btn aria-haspopup="true" aria-expanded="false" aria-label="Language">
+              <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+              <span data-lang-current>EN</span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <ul class="lang-menu" data-lang-menu>
+              <li><button data-set-lang="en">English</button></li>
+              <li><button data-set-lang="zh">中文</button></li>
+              <li><button data-set-lang="fr">Français</button></li>
+              <li><button data-set-lang="es">Español</button></li>
+              <li><button data-set-lang="ar">العربية</button></li>
+              <li><button data-set-lang="id">Bahasa Indonesia</button></li>
+            </ul>
+          </div>
+          <a href="auth.html" class="signin" data-i18n="nav.signin">Sign in</a>
+          <a href="auth.html" class="btn btn-primary"><span data-i18n="nav.cta">Start building</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ SUB HERO ============ -->
+    <section class="subhero">
+      <div class="container">
+        <span data-i18n="s.hero.eb" class="eyebrow center" style="display:inline-flex;">Solutions</span>
+        <h1 data-i18n="s.hero.h">Turn your enterprise data into AI-ready assets</h1>
+        <p data-i18n="s.hero.p">Drive business innovation and growth — one platform powers a range of high-value,
+          production AI applications, from data capabilities to deployed agents.</p>
+      </div>
+    </section>
+
+    <!-- ============ AI DATA CAPABILITIES ============ -->
+    <section class="section" id="capabilities">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span data-i18n="s.cap.eb" class="eyebrow">AI data capabilities</span>
+          <h2 data-i18n="s.cap.h">Build the foundation your AI runs on</h2>
+          <p data-i18n="s.cap.p">Five core capabilities that turn raw, fragmented enterprise data into trusted, AI-ready assets.</p>
+        </div>
+        <div class="sol-grid">
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg></div>
+            <h4 data-i18n="s.c1.t">Document intelligence</h4>
+            <p data-i18n="s.c1.d">Unlock data trapped in complex documents. Automate the whole workflow — parsing, extraction, generation — and build a production-ready Document Copilot.</p>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c1.f1">Intelligent document parsing &amp; extraction</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c1.f2">Multimodal semantic understanding</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c1.f3">Enterprise-grade knowledge base</span></li>
+            </ul>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+            <h4 data-i18n="s.c2.t">Agentic RAG</h4>
+            <p data-i18n="s.c2.d">Empower agents to go beyond search. Robust multimodal processing gives Agentic RAG a solid foundation for advanced reasoning and precise execution.</p>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c2.f1">Multi-source heterogeneous integration</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c2.f2">Multimodal knowledge base construction</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c2.f3">Seamless data support &amp; response</span></li>
+            </ul>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+            <h4 data-i18n="s.c3.t">LLM fine-tuning</h4>
+            <p data-i18n="s.c3.d">Turn private data into a competitive advantage. Process and curate raw data into high-quality training sets so your model becomes a true domain expert.</p>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c3.f1">Multimodal AI parsing</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c3.f2">Low-code data processing</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c3.f3">High-quality training data generation</span></li>
+            </ul>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></div>
+            <h4 data-i18n="s.c4.t">Multimodal data ETL</h4>
+            <p data-i18n="s.c4.d">Solve data fragmentation in the AI era. Integrate diverse, fragmented sources through advanced connectors into high-quality, agent-ready pipelines.</p>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c4.f1">Multi-source heterogeneous connectors</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c4.f2">End-to-end pipeline monitoring</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c4.f3">Flexible task scheduling</span></li>
+            </ul>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+            <h4 data-i18n="s.c5.t">AI data foundation</h4>
+            <p data-i18n="s.c5.d">Scale effortlessly in the agent era. A unified, high-performance foundation built for the throughput and velocity of modern AI workloads.</p>
+            <ul class="fb-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c5.f1">PB-scale data analytics</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c5.f2">Multimodal data management</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="s.c5.f3">Flexible, multi-cloud scalability</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AI AGENT APPLICATIONS ============ -->
+    <section class="section" style="background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span data-i18n="s.ag.eb" class="eyebrow">AI agent applications</span>
+          <h2 data-i18n="s.ag.h">Production agents for high-value workflows</h2>
+          <p data-i18n="s.ag.p">Pre-built agent applications that put your AI data foundation to work.</p>
+        </div>
+        <div class="sol-grid">
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div>
+            <h4 data-i18n="s.a1.t">Contract review</h4>
+            <p data-i18n="s.a1.d">AI risk detection and clause analysis — surface risky terms in seconds instead of days.</p>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+            <h4 data-i18n="s.a2.t">Smart bidding</h4>
+            <p data-i18n="s.a2.d">Automated bid generation and review — extract RFP requirements and assemble responses fast.</p>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 9l-5 5-3-3-3 3"/></svg></div>
+            <h4 data-i18n="s.a3.t">AI investment intelligence</h4>
+            <p data-i18n="s.a3.d">Multi-source investment research that automates analysis across dozens of data sources.</p>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M8 11h6"/></svg></div>
+            <h4 data-i18n="s.a4.t">Data query agent</h4>
+            <p data-i18n="s.a4.d">Natural-language queries across all your data sources — answers with full lineage.</p>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></div>
+            <h4 data-i18n="s.a5.t">Smart form filling</h4>
+            <p data-i18n="s.a5.d">Auto-extract and populate forms from source documents — no more manual data entry.</p>
+          </article>
+          <article class="sol reveal">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17V9a2 2 0 0 1 2-2h2l2-3h4l2 3h2a2 2 0 0 1 2 2v8"/><circle cx="12" cy="13" r="3"/></svg></div>
+            <h4 data-i18n="s.a6.t">Sourcing &amp; price comparison</h4>
+            <p data-i18n="s.a6.d">Internal and external data-driven procurement decisions, with comparison built in.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BY INDUSTRY ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span data-i18n="s.ind.eb" class="eyebrow">By industry</span>
+          <h2 data-i18n="s.ind.h">Tailored to your domain</h2>
+        </div>
+        <div class="logos-row reveal" style="flex-wrap:wrap;gap:16px 28px;">
+          <span data-i18n="s.ind1" class="lg">Financial Services</span>
+          <span data-i18n="s.ind2" class="lg">Manufacturing</span>
+          <span data-i18n="s.ind3" class="lg">Retail &amp; Consumer</span>
+          <span data-i18n="s.ind4" class="lg">Government &amp; Public</span>
+          <span data-i18n="s.ind5" class="lg">Healthcare</span>
+          <span data-i18n="s.ind6" class="lg">Telecom &amp; Transport</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta-band" id="get-started">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <h2 data-i18n="cta.title">Weave your data and AI into one fabric</h2>
+          <p data-i18n="cta.desc">Start free, connect your first source in minutes, and ship a trusted agent the
+            same day. Talk to us when you're ready to scale.</p>
+          <div class="hero-cta">
+            <a href="auth.html" class="btn btn-primary btn-lg"><span data-i18n="cta.b1">Start building free</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="https://calendly.com/tan-dovan/30min" target="_blank" rel="noopener" class="btn btn-ghost btn-lg" data-i18n="cta.b2">Book a demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html">
+            <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#00a94f"/>
+              <path d="M16 6.5L24.2 11L24.2 21L16 25.5L7.8 21L7.8 11Z" fill="none" stroke="#06250f" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/><path d="M16 16L16 9.2M16 16L10 19.4M16 16L22 19.4" fill="none" stroke="#06250f" stroke-width="2.1" stroke-linecap="round"/><circle cx="16" cy="16" r="2.3" fill="#06250f"/><circle cx="16" cy="9.2" r="1.9" fill="#06250f"/><circle cx="10" cy="19.4" r="1.9" fill="#06250f"/><circle cx="22" cy="19.4" r="1.9" fill="#06250f"/>
+            </svg>
+            <span class="wordmark">CloudSigma OmniFabric</span>
+          </a>
+          <p data-i18n="footer.about">The unified intelligence fabric for data and AI. Control your data, trust your
+            agents, and turn AI strategy into real business ROI.</p>
+        </div>
+        <div>
+          <h5 data-i18n="nav.product">Product</h5>
+          <ul>
+            <li><a href="product.html#sovereignty" data-i18n="sov.h.eb">Data sovereignty</a></li>
+            <li><a href="product.html#architecture" data-i18n="footer.pf1">Platform architecture</a></li>
+            <li><a href="product.html#capabilities" data-i18n="footer.pf2">Engines</a></li>
+            <li><a href="product.html#regions" data-i18n="nav.regions">Regions</a></li>
+            <li><a href="docs.html" data-i18n="footer.cf2">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 data-i18n="footer.solutions">Solutions</h5>
+          <ul>
+            <li><a href="solutions.html#capabilities" data-i18n="footer.sf1">Document intelligence</a></li>
+            <li><a href="solutions.html#capabilities" data-i18n="footer.sf2">Agentic RAG</a></li>
+            <li><a href="solutions.html#capabilities" data-i18n="footer.sf3">Multimodal data ETL</a></li>
+            <li><a href="solutions.html#capabilities" data-i18n="footer.sf4">AI data foundation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 data-i18n="footer.company">Company</h5>
+          <ul>
+            <li><a href="about.html" data-i18n="footer.cf1">About</a></li>
+            <li><a href="customers.html" data-i18n="nav.customers">Case Studies</a></li>
+            <li><a href="docs.html" data-i18n="footer.cf2">Documentation</a></li>
+            <li><a href="https://calendly.com/tan-dovan/30min" target="_blank" rel="noopener" data-i18n="footer.cf4">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="footer.copyright">© 2026 OmniFabric. All rights reserved.</span>
+        <div class="social">
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 6.8 9.8.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.5-1.1-4.5-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.5 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.4 6.8-5.3 6.8-9.8C22 6.6 17.5 2 12 2Z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2h3.3l-7.2 8.3L23 22h-6.6l-5.2-6.8L5.2 22H1.9l7.7-8.8L1 2h6.8l4.7 6.2L18.2 2Zm-1.2 18h1.8L7.1 3.9H5.2L17 20Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.2 8.2h4.6V24H.2V8.2Zm7.5 0h4.4v2.2h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 6.9V24h-4.6v-7.1c0-1.7 0-3.9-2.4-3.9s-2.7 1.8-2.7 3.7V24H7.7V8.2Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js?v=10"></script>
+  <script src="assets/js/main.js?v=10"></script>
+</body>
+</html>
