@@ -49,8 +49,8 @@
               <li><button data-set-lang="id">Bahasa Indonesia</button></li>
             </ul>
           </div>
-          <a href="auth.html" class="signin" data-i18n="nav.signin">Sign in</a>
-          <a href="auth.html" class="btn btn-primary"><span data-i18n="nav.cta">Start building</span>
+          <a href="#" class="signin" data-auth-action="login" data-i18n="nav.signin">Sign in</a>
+          <a href="#" class="btn btn-primary" data-auth-action="register"><span data-i18n="nav.cta">Start building</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -204,7 +204,7 @@
           <p data-i18n="cta.desc">Start free, connect your first source in minutes, and ship a trusted agent the
             same day. Talk to us when you're ready to scale.</p>
           <div class="hero-cta">
-            <a href="auth.html" class="btn btn-primary btn-lg"><span data-i18n="cta.b1">Start building free</span>
+            <a href="#" class="btn btn-primary btn-lg" data-auth-action="register"><span data-i18n="cta.b1">Start building free</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
             <a href="https://calendly.com/tan-dovan/30min" target="_blank" rel="noopener" class="btn btn-ghost btn-lg" data-i18n="cta.b2">Book a demo</a>
@@ -270,6 +270,7 @@
   </footer>
 
   <script src="assets/js/i18n.js?v=10"></script>
+  <script src="assets/js/auth.js"></script>
   <script src="assets/js/main.js?v=10"></script>
 </body>
 </html>

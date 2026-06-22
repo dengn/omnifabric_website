@@ -122,8 +122,8 @@
               <li><button data-set-lang="id">Bahasa Indonesia</button></li>
             </ul>
           </div>
-          <a href="auth.html" class="signin" data-i18n="nav.signin">Sign in</a>
-          <a href="auth.html" class="btn btn-primary"><span data-i18n="nav.cta">Start building</span>
+          <a href="#" class="signin" data-auth-action="login" data-i18n="nav.signin">Sign in</a>
+          <a href="#" class="btn btn-primary" data-auth-action="register"><span data-i18n="nav.cta">Start building</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -194,7 +194,7 @@
             </div>
             <div class="price"><span class="cur">$</span><span class="pv">59</span> <small class="pu">/ mo</small></div>
             <div class="alt"></div>
-            <a href="auth.html" class="btn btn-outline" data-i18n="px.cn.cta">Get started</a>
+            <a href="#" class="btn btn-outline" data-auth-action="register" data-i18n="px.cn.cta">Get started</a>
           </div>
 
           <!-- Standard (featured) -->
@@ -209,7 +209,7 @@
             </div>
             <div class="price"><span class="cur">$</span><span class="pv">119</span> <small class="pu">/ mo</small></div>
             <div class="alt"></div>
-            <a href="auth.html" class="btn btn-primary" data-i18n="px.cn.cta">Get started</a>
+            <a href="#" class="btn btn-primary" data-auth-action="register" data-i18n="px.cn.cta">Get started</a>
           </div>
 
           <!-- Performance -->
@@ -223,7 +223,7 @@
             </div>
             <div class="price"><span class="cur">$</span><span class="pv">239</span> <small class="pu">/ mo</small></div>
             <div class="alt"></div>
-            <a href="auth.html" class="btn btn-outline" data-i18n="px.cn.cta">Get started</a>
+            <a href="#" class="btn btn-outline" data-auth-action="register" data-i18n="px.cn.cta">Get started</a>
           </div>
 
           <!-- GPU -->
@@ -237,7 +237,7 @@
             </div>
             <div class="price"><span class="cur">$</span><span class="pv">1,090</span> <small class="pu">/ mo</small></div>
             <div class="alt"></div>
-            <a href="auth.html" class="btn btn-outline" data-i18n="px.cn.cta">Get started</a>
+            <a href="#" class="btn btn-outline" data-auth-action="register" data-i18n="px.cn.cta">Get started</a>
           </div>
         </div>
 
@@ -353,7 +353,7 @@
           <h2 data-i18n="px.cta.h">Start free, scale when you're ready</h2>
           <p data-i18n="px.cta.p">Spin up a workspace, provision your first node by the hour, and only commit monthly once you're in production.</p>
           <div class="hero-cta">
-            <a href="auth.html" class="btn btn-primary btn-lg"><span data-i18n="px.cta.b1">Start building free</span>
+            <a href="#" class="btn btn-primary btn-lg" data-auth-action="register"><span data-i18n="px.cta.b1">Start building free</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
             <a href="https://calendly.com/tan-dovan/30min" target="_blank" rel="noopener" class="btn btn-ghost btn-lg" data-i18n="px.cta.b2">Talk to sales</a>
@@ -418,6 +418,7 @@
   </footer>
 
   <script src="assets/js/i18n.js?v=10"></script>
+  <script src="assets/js/auth.js"></script>
   <script src="assets/js/main.js?v=10"></script>
   <script>
   /* pricing: hourly/monthly toggle + region selector, re-rendered on language change */
