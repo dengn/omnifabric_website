@@ -5,10 +5,13 @@ const { test } = require("node:test");
 const pages = [
   "about.html",
   "customers.html",
+  "demo.html",
   "docs.html",
   "index.html",
   "pricing.html",
+  "product.html",
   "regions.html",
+  "solutions.html",
 ];
 
 test("nav Start building links use the CloudSigma register broker", () => {
@@ -28,4 +31,12 @@ test("homepage hero Start building free uses the CloudSigma register broker", ()
     html,
     /<a href="#" class="btn btn-primary btn-lg" data-auth-action="register"><span data-i18n="hero\.cta1">Start building free<\/span>/,
   );
+});
+
+test("public pages load broker auth script and do not link the legacy auth page", () => {
+  for (const page of pages) {
+    const html = fs.readFileSync(page, "utf8");
+    assert.doesNotMatch(html, /auth\.html/, `${page} should not link the legacy auth page`);
+    assert.match(html, /<script src="assets\/js\/auth\.js"><\/script>/, `${page} should load auth.js`);
+  }
 });
