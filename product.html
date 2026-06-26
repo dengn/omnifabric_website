@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=12" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=13" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300a94f'/%3E%3Cstop offset='1' stop-color='%232fb265'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 6.5L24.2 11L24.2 21L16 25.5L7.8 21L7.8 11Z' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linejoin='round'/%3E%3Cpath d='M16 16L16 9.2M16 16L10 19.4M16 16L22 19.4' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='2.3' fill='%2306250f'/%3E%3Ccircle cx='16' cy='9.2' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='10' cy='19.4' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='22' cy='19.4' r='1.9' fill='%2306250f'/%3E%3C/svg%3E" />
 </head>
 <body>
@@ -18,7 +18,7 @@
     <div class="container">
       <nav class="nav" id="nav">
         <a class="brand" href="index.html" aria-label="CloudSigma OmniFabric home">
-          <img class="cs-logo" src="assets/img/cloudsigma-logo.svg?v=12" alt="CloudSigma" width="90" height="27" />
+          <img class="cs-logo" src="assets/img/cloudsigma-logo.svg?v=13" alt="CloudSigma" width="90" height="27" />
           <span class="brand-div" aria-hidden="true"></span>
           <span class="wordmark">OmniFabric</span>
         </a>
@@ -29,7 +29,6 @@
           <li><a href="demo.html" data-i18n="nav.demo">Demos</a></li>
           <li><a href="customers.html" data-i18n="nav.customers">Case Studies</a></li>
           <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
-          <li><a href="docs.html" data-i18n="nav.docs">Docs</a></li>
           <li><a href="about.html" data-i18n="nav.about">About</a></li>
         </ul>
 
@@ -73,7 +72,6 @@
           <a data-i18n="p.hero.cta1" href="#get-started" class="btn btn-primary btn-lg">Try it free
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a data-i18n="p.hero.cta2" href="docs.html" class="btn btn-outline btn-lg">Read the docs</a>
         </div>
       </div>
     </section>
@@ -423,7 +421,6 @@
             <li><a href="product.html#architecture" data-i18n="footer.pf1">Platform architecture</a></li>
             <li><a href="product.html#capabilities" data-i18n="footer.pf2">Engines</a></li>
             <li><a href="product.html#regions" data-i18n="nav.regions">Regions</a></li>
-            <li><a href="docs.html" data-i18n="footer.cf2">Documentation</a></li>
           </ul>
         </div>
         <div>
@@ -440,7 +437,6 @@
           <ul>
             <li><a href="about.html" data-i18n="footer.cf1">About</a></li>
             <li><a href="customers.html" data-i18n="nav.customers">Case Studies</a></li>
-            <li><a href="docs.html" data-i18n="footer.cf2">Documentation</a></li>
             <li><a href="https://calendly.com/tan-dovan/30min" target="_blank" rel="noopener" data-i18n="footer.cf4">Contact</a></li>
           </ul>
         </div>
@@ -456,8 +452,12 @@
     </div>
   </footer>
 
-  <script src="assets/js/i18n.js?v=12"></script>
+  <script>/* TEMP bridge: route auth CTAs to the static sign-in page until the
+     CloudSigma SSO broker is deployed. Remove (or repoint to /auth/cloudsigma/*)
+     once the broker service is live. */
+  window.OMNIFABRIC_AUTH_CONFIG = { loginUrl: "auth.html", registerUrl: "auth.html" };</script>
+  <script src="assets/js/i18n.js?v=13"></script>
   <script src="assets/js/auth.js"></script>
-  <script src="assets/js/main.js?v=12"></script>
+  <script src="assets/js/main.js?v=13"></script>
 </body>
 </html>
