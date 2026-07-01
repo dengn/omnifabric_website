@@ -14,6 +14,24 @@ const pages = [
   "solutions.html",
 ];
 
+test("create account legal links point to implemented pages", () => {
+  const html = fs.readFileSync("auth.html", "utf8");
+  const i18n = fs.readFileSync("assets/js/i18n.js", "utf8");
+
+  assert.match(html, /<a href="privacy\.html">Privacy Policy<\/a>/);
+  assert.match(html, /<a href="terms\.html">Terms of Service<\/a>/);
+  assert.doesNotMatch(i18n, /au\.terms": "[^"]*href=\\"#\\"/);
+  assert.match(i18n, /href=\\"privacy\.html\\"/);
+  assert.match(i18n, /href=\\"terms\.html\\"/);
+});
+
+test("legal pages exist with document titles", () => {
+  for (const page of ["privacy.html", "terms.html"]) {
+    const html = fs.readFileSync(page, "utf8");
+    assert.match(html, /<title>.+OmniFabric<\/title>/, `${page} should have an OmniFabric title`);
+  }
+});
+
 test("nav Start building links use the CloudSigma register broker", () => {
   for (const page of pages) {
     const html = fs.readFileSync(page, "utf8");
