@@ -31,3 +31,9 @@ test("buildAuthUrl preserves absolute broker origin", function () {
     "https://accounts.next.cloudsigma.com/auth/cloudsigma/login?redirect=https%3A%2F%2Fgenai.next.cloudsigma.com%2F",
   );
 });
+
+test("buildAuthUrl leaves direct MOI app entrypoint unchanged", function () {
+  const url = buildAuthUrl("https://genai.next.cloudsigma.com", "https://genai.next.cloudsigma.com/");
+
+  assert.equal(url, "https://genai.next.cloudsigma.com");
+});

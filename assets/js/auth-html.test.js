@@ -32,7 +32,7 @@ test("legal pages exist with document titles", () => {
   }
 });
 
-test("nav Start building links use the CloudSigma register broker", () => {
+test("nav Start building links use auth.js CTA wiring", () => {
   for (const page of pages) {
     const html = fs.readFileSync(page, "utf8");
     assert.match(
@@ -43,7 +43,7 @@ test("nav Start building links use the CloudSigma register broker", () => {
   }
 });
 
-test("homepage hero Start building free uses the CloudSigma register broker", () => {
+test("homepage hero Start building free uses auth.js CTA wiring", () => {
   const html = fs.readFileSync("index.html", "utf8");
   assert.match(
     html,

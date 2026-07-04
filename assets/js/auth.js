@@ -32,6 +32,15 @@
   function buildAuthUrl(entryUrl, redirectUrl) {
     var isAbsolute = /^https?:\/\//i.test(entryUrl);
     var url = new URL(entryUrl, "https://omnifabric.local");
+    var redirect = new URL(redirectUrl, "https://omnifabric.local");
+    if (
+      url.origin === redirect.origin &&
+      url.pathname.replace(/\/$/, "") === redirect.pathname.replace(/\/$/, "") &&
+      !url.search &&
+      !url.hash
+    ) {
+      return entryUrl;
+    }
     url.searchParams.set("redirect", redirectUrl);
     if (isAbsolute) {
       return url.href;
