@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=14" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=15" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300a94f'/%3E%3Cstop offset='1' stop-color='%232fb265'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 6.5L24.2 11L24.2 21L16 25.5L7.8 21L7.8 11Z' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linejoin='round'/%3E%3Cpath d='M16 16L16 9.2M16 16L10 19.4M16 16L22 19.4' fill='none' stroke='%2306250f' stroke-width='2.1' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='2.3' fill='%2306250f'/%3E%3Ccircle cx='16' cy='9.2' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='10' cy='19.4' r='1.9' fill='%2306250f'/%3E%3Ccircle cx='22' cy='19.4' r='1.9' fill='%2306250f'/%3E%3C/svg%3E" />
 </head>
 <body>
@@ -18,7 +18,7 @@
     <div class="container">
       <nav class="nav" id="nav">
         <a class="brand" href="index.html" aria-label="CloudSigma OmniFabric home">
-          <img class="cs-logo" src="assets/img/cloudsigma-logo.svg?v=14" alt="CloudSigma" width="90" height="27" />
+          <img class="cs-logo" src="assets/img/cloudsigma-logo.svg?v=15" alt="CloudSigma" width="90" height="27" />
           <span class="brand-div" aria-hidden="true"></span>
           <span class="wordmark">OmniFabric</span>
         </a>
@@ -68,6 +68,39 @@
         <h1 data-i18n="s.hero.h">Turn your enterprise data into AI-ready assets</h1>
         <p data-i18n="s.hero.p">Drive business innovation and growth — one platform powers a range of high-value,
           production AI applications, from data capabilities to deployed agents.</p>
+      </div>
+    </section>
+
+    <!-- ============ TYPICAL SCENARIOS ============ -->
+    <section class="section" id="scenarios" style="background:var(--surface-2);border-bottom:1px solid var(--line);">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span data-i18n="s.sc.eb" class="eyebrow">In action</span>
+          <h2 data-i18n="s.sc.h">Typical scenarios, built on one platform</h2>
+          <p data-i18n="s.sc.p">Every high-value pattern is one governed pipeline on OmniFabric — from raw data to a production outcome.</p>
+        </div>
+        <div class="pipes">
+          <div class="pipe reveal">
+            <h4 data-i18n="s.p1.t">Document intelligence</h4>
+            <div class="flow"><span data-i18n="s.p1.s1">PDF · scans · images</span><i>→</i><span data-i18n="s.p1.s2">Layout + OCR parse</span><i>→</i><span data-i18n="s.p1.s3">Extract → JSON schema</span><i>→</i><span data-i18n="s.p1.s4">API / RPA automation</span></div>
+            <div class="out" data-i18n="s.p1.o">Contract review · IDP · bids</div>
+          </div>
+          <div class="pipe reveal">
+            <h4 data-i18n="s.p2.t">RAG knowledge base</h4>
+            <div class="flow"><span data-i18n="s.p2.s1">Docs · web · tickets</span><i>→</i><span data-i18n="s.p2.s2">Chunk + embed → vector</span><i>→</i><span data-i18n="s.p2.s3">ANN retrieve + rerank</span><i>→</i><span data-i18n="s.p2.s4">LLM grounded output</span></div>
+            <div class="out" data-i18n="s.p2.o">Search · Q&amp;A · assistants</div>
+          </div>
+          <div class="pipe reveal">
+            <h4 data-i18n="s.p3.t">Chat to data warehouse</h4>
+            <div class="flow"><span data-i18n="s.p3.s1">Sources · CDC</span><i>→</i><span data-i18n="s.p3.s2">Bronze · Silver · Gold</span><i>→</i><span data-i18n="s.p3.s3">Semantic layer</span><i>→</i><span data-i18n="s.p3.s4">NL2SQL → HTAP query</span></div>
+            <div class="out" data-i18n="s.p3.o">Self-service BI · Chat2BI</div>
+          </div>
+          <div class="pipe reveal">
+            <h4 data-i18n="s.p4.t">Agent development</h4>
+            <div class="flow"><span data-i18n="s.p4.s1">LLM (open / commercial)</span><i>→</i><span data-i18n="s.p4.s2">Connect data (SQL · vector · API)</span><i>→</i><span data-i18n="s.p4.s3">Tool calls (MCP)</span><i>→</i><span data-i18n="s.p4.s4">Governed runtime → auto</span></div>
+            <div class="out" data-i18n="s.p4.o">Workflow &amp; ops automation</div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -177,6 +210,40 @@
       </div>
     </section>
 
+    <!-- ============ INDUSTRY CASE STUDIES ============ -->
+    <section class="section" id="industry-cases" style="background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span data-i18n="s.cs.eb" class="eyebrow">Industry case studies</span>
+          <h2 data-i18n="s.cs.h">Three deployments, one pattern</h2>
+          <p data-i18n="s.cs.p">The problem, the pipeline on OmniFabric, and the outcome — each on sovereign infrastructure with a private LLM.</p>
+        </div>
+        <div class="sol-grid">
+          <article class="ics reveal">
+            <span class="tag" data-i18n="s.cs1.tag">Transport</span>
+            <h4 data-i18n="s.cs1.t">From data chaos to business insight</h4>
+            <div><h5 data-i18n="s.cs.prl">Problem</h5><p data-i18n="s.cs1.pr">Operational data fragmented across OT and IT systems — toll lanes, ANPR, RFID, payment gateways, traffic sensors — with limited real-time visibility and slow root-cause analysis.</p></div>
+            <div><h5 data-i18n="s.cs.sol">On OmniFabric</h5><p data-i18n="s.cs1.so">Real-time streaming into Bronze · Silver · Gold layers, a knowledge base plus semantic layer, and a data agent for natural-language Q&amp;A — on sovereign AI infrastructure with a private LLM.</p></div>
+            <div class="res"><h5 data-i18n="s.cs.ol">Business outcome</h5><p data-i18n="s.cs1.o">Time to insight: from weeks or months to minutes, with TB-scale analytics in seconds.</p></div>
+          </article>
+          <article class="ics reveal">
+            <span class="tag" data-i18n="s.cs2.tag">Telecom</span>
+            <h4 data-i18n="s.cs2.t">From information to expertise</h4>
+            <div><h5 data-i18n="s.cs.prl">Problem</h5><p data-i18n="s.cs2.pr">Enterprise knowledge fragmented across ERP, CRM, SharePoint, document systems and collaboration tools — not AI-ready, not governed, and dependent on a few subject-matter experts.</p></div>
+            <div><h5 data-i18n="s.cs.sol">On OmniFabric</h5><p data-i18n="s.cs2.so">Unstructured documents from S3, Google Drive and uploads parsed, chunked, vectorized and indexed into a governed knowledge base, answering questions with source citations.</p></div>
+            <div class="res"><h5 data-i18n="s.cs.ol">Business outcome</h5><p data-i18n="s.cs2.o">Finding information and surfacing insight 90%+ faster — across support, operations, training and sales.</p></div>
+          </article>
+          <article class="ics reveal">
+            <span class="tag" data-i18n="s.cs3.tag">Oil &amp; gas</span>
+            <h4 data-i18n="s.cs3.t">From talent acquisition to talent intelligence</h4>
+            <div><h5 data-i18n="s.cs.prl">Problem</h5><p data-i18n="s.cs3.pr">High-volume recruitment could not scale: manual CV screening, inconsistent evaluations, and concerns over sending sensitive HR data to external AI providers — with an SLA of 50,000 CVs a month.</p></div>
+            <div><h5 data-i18n="s.cs.sol">On OmniFabric</h5><p data-i18n="s.cs3.so">CVs recognized, parsed and scored by sovereign LLMs with Arabic support, scores written to structured tables, and a simple recruiter front-end for ranked shortlists — subscription or pay-as-you-go.</p></div>
+            <div class="res"><h5 data-i18n="s.cs.ol">Business outcome</h5><p data-i18n="s.cs3.o">Thousands of résumés an hour — tens of times faster than manual screening. The same pattern applies to invoices, contracts and tenders.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ BY INDUSTRY ============ -->
     <section class="section">
       <div class="container">
@@ -191,6 +258,7 @@
           <span data-i18n="s.ind4" class="lg">Government &amp; Public</span>
           <span data-i18n="s.ind5" class="lg">Healthcare</span>
           <span data-i18n="s.ind6" class="lg">Telecom &amp; Transport</span>
+          <span data-i18n="s.ind7" class="lg">Energy &amp; Utilities</span>
         </div>
       </div>
     </section>
@@ -225,25 +293,24 @@
             </svg>
             <span class="wordmark">CloudSigma OmniFabric</span>
           </a>
-          <p data-i18n="footer.about">The unified intelligence fabric for data and AI. Control your data, trust your
-            agents, and turn AI strategy into real business ROI.</p>
+          <p data-i18n="footer.about">Enterprise data intelligence for the sovereign cloud — all your data, knowledge and intelligence on one platform you fully control.</p>
         </div>
         <div>
           <h5 data-i18n="nav.product">Product</h5>
           <ul>
             <li><a href="product.html#sovereignty" data-i18n="sov.h.eb">Data sovereignty</a></li>
-            <li><a href="product.html#architecture" data-i18n="footer.pf1">Platform architecture</a></li>
-            <li><a href="product.html#capabilities" data-i18n="footer.pf2">Engines</a></li>
+            <li><a href="product.html#architecture" data-i18n="footer.pf1">Architecture</a></li>
+            <li><a href="product.html#one" data-i18n="footer.pf2">OmniFabric One</a></li>
             <li><a href="product.html#regions" data-i18n="nav.regions">Regions</a></li>
           </ul>
         </div>
         <div>
           <h5 data-i18n="footer.solutions">Solutions</h5>
           <ul>
-            <li><a href="solutions.html#capabilities" data-i18n="footer.sf1">Document intelligence</a></li>
-            <li><a href="solutions.html#capabilities" data-i18n="footer.sf2">Agentic RAG</a></li>
-            <li><a href="solutions.html#capabilities" data-i18n="footer.sf3">Multimodal data ETL</a></li>
-            <li><a href="solutions.html#capabilities" data-i18n="footer.sf4">AI data foundation</a></li>
+            <li><a href="solutions.html#scenarios" data-i18n="footer.sf1">Document intelligence</a></li>
+            <li><a href="solutions.html#scenarios" data-i18n="footer.sf2">RAG knowledge base</a></li>
+            <li><a href="solutions.html#scenarios" data-i18n="footer.sf3">Chat to data warehouse</a></li>
+            <li><a href="solutions.html#scenarios" data-i18n="footer.sf4">Agent development</a></li>
           </ul>
         </div>
         <div>
@@ -270,8 +337,8 @@
      CloudSigma SSO broker is deployed. Remove (or repoint to /auth/cloudsigma/*)
      once the broker service is live. */
   window.OMNIFABRIC_AUTH_CONFIG = { loginUrl: "auth.html", registerUrl: "auth.html" };</script>
-  <script src="assets/js/i18n.js?v=14"></script>
+  <script src="assets/js/i18n.js?v=15"></script>
   <script src="assets/js/auth.js"></script>
-  <script src="assets/js/main.js?v=14"></script>
+  <script src="assets/js/main.js?v=15"></script>
 </body>
 </html>
